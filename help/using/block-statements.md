@@ -11,7 +11,7 @@ content-type: 引用
 discoiquuid: 58aa6ea8-1d45-4f6f-a77 e-4819f593 a19 d
 mwpw-migration-script-version: 2017-10-12T214658.665-0400
 translation-type: tm+mt
-source-git-commit: 796c55d3d85e6b5a3efaa5c04a25be1b0b4e54dd
+source-git-commit: 7a94b0b010461b29d2b74c9c717e3b218d0ca5a8
 
 ---
 
@@ -388,7 +388,7 @@ cssClassName='className'}"></article>
 
 >[!NOTE]
 >
->AEM提供清楚簡單的邏輯控制包含包含元素的裝飾標籤。如需詳細資訊，請參閱 [開發元件說明文件中的裝飾標籤](https://helpx.adobe.com/experience-manager/6-3/sites/developing/using/decoration-tag) 。
+>AEM提供清楚簡單的邏輯，可控制包含元素的裝飾標籤。如需詳細資訊，請參閱 [開發元件說明文件中的裝飾標籤](https://helpx.adobe.com/experience-manager/6-4/sites/developing/using/decoration-tag.html) 。
 
 ## include {#include}
 
