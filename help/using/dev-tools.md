@@ -14,7 +14,7 @@ index: y
 internal: n
 snippet: y
 translation-type: tm+mt
-source-git-commit: 796c55d3d85e6b5a3efaa5c04a25be1b0b4e54dd
+source-git-commit: 271c355ae56e16e309853b02b8ef09f2ff971a2e
 
 ---
 
@@ -26,9 +26,9 @@ source-git-commit: 796c55d3d85e6b5a3efaa5c04a25be1b0b4e54dd
 * [HTL閱讀Eval Print Loop](https://github.com/Adobe-Marketing-Cloud/aem-htl-repl)\
    用於學習語言的即時執行環境，適合學習。
 
-* [AEM Brackets擴充功能](https://helpx.adobe.com/experience-manager/6-3/sites/developing/using/aem-brackets.html)\
+* [AEM Brackets擴充功能](https://helpx.adobe.com/experience-manager/6-4/sites/developing/using/aem-brackets.html)\
    讓前端開發人員使用AEM元件的簡單工具。
 
-* [AEM Eclipse擴充功能](https://helpx.adobe.com/experience-manager/6-3/sites/developing/using/aem-eclipse.html)\
+* [AEM Eclipse擴充功能](https://helpx.adobe.com/experience-manager/6-4/sites/developing/using/aem-eclipse.html)\
    可供後端開發人員建立AEM專案並輕鬆編輯的工具。
 
