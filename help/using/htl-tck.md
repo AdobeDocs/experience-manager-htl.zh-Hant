@@ -6,7 +6,7 @@ seo-description: HTL是AEM的正式伺服器端範本系統，TCK提供測試的
 uuid: cpfe68f3-d26 a-4a-4b-a35 b-a35 f849288 b7
 discoiquuid: 5af8b9d6-d776-4b49-be12-6492e0016096
 translation-type: tm+mt
-source-git-commit: 796c55d3d85e6b5a3efaa5c04a25be1b0b4e54dd
+source-git-commit: 271c355ae56e16e309853b02b8ef09f2ff971a2e
 
 ---
 

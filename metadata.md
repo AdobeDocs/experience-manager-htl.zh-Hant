@@ -10,7 +10,7 @@ tutorials-url: https://helpx.adobe.com/experience-manager/kt/index/aem-6-4-video
 git-repo: https://github.com/AdobeDocs/experience-manager-htl.en
 index: y
 translation-type: tm+mt
-source-git-commit: 796c55d3d85e6b5a3efaa5c04a25be1b0b4e54dd
+source-git-commit: 271c355ae56e16e309853b02b8ef09f2ff971a2e
 
 ---
 

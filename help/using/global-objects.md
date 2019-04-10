@@ -11,7 +11,7 @@ content-type: 引用
 discoiquuid: fe071a7e-0dance-45c1-9f86-80c558483f87
 mwpw-migration-script-version: 2017-10-12T214658.665-0400
 translation-type: tm+mt
-source-git-commit: 796c55d3d85e6b5a3efaa5c04a25be1b0b4e54dd
+source-git-commit: 271c355ae56e16e309853b02b8ef09f2ff971a2e
 
 ---
 
