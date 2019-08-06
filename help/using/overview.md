@@ -1,8 +1,8 @@
 ---
-title: 綜覽
-seo-title: 綜覽
+title: AEM HTL概觀
+seo-title: AEM HTL技術文件概觀。
 description: AEM支援HTL的目的，在於提供具高生產力的企業級網頁架構，以提高安全性，並讓不具備Java知識的HTML開發人員更能參與AEM專案。
-seo-description: HTML範本語言- HTL-由Adobe Experience Manager支援的目的，在於提供具高生產力的企業級網頁架構，以提高安全性，並讓不具備Java知識的HTML開發人員更能參與AEM專案。
+seo-description: 本文件討論HTML範本語言- HTL-由Adobe Experience Manager支援的原則和目的。HTL是具高生產力的企業級網頁架構，可提高安全性，並讓HTML開發人員不需具備Java知識，就能更好地參與AEM專案。
 uuid: 8f 486325-a1 b-4186-a998-96fc0034 c44 a
 contentOwner: 使用者
 products: SG_ PERIENCENCENAGER/HTL
@@ -11,7 +11,7 @@ content-type: 引用
 discoiquuid: 8f779e08-94c7-43bc-a6 e5-d81 a9 f818 c5 c
 mwpw-migration-script-version: 2017-10-12T214658.665-0400
 translation-type: tm+mt
-source-git-commit: 271c355ae56e16e309853b02b8ef09f2ff971a2e
+source-git-commit: 1d4565a4cffa6e5d42d6a5242f7ce62203dc7c63
 
 ---
 
