@@ -6,7 +6,7 @@ seo-description: HTL是AEM的正式伺服器端範本系統，TCK提供測試的
 uuid: cpfe68f3-d26 a-4a-4b-a35 b-a35 f849288 b7
 discoiquuid: 5af8b9d6-d776-4b49-be12-6492e0016096
 translation-type: tm+mt
-source-git-commit: 271c355ae56e16e309853b02b8ef09f2ff971a2e
+source-git-commit: 32eaffd24a2734036467a6231b8a1f1bd1659338
 
 ---
 
@@ -17,7 +17,7 @@ source-git-commit: 271c355ae56e16e309853b02b8ef09f2ff971a2e
 
 [HTML範本語言簡介(](https://docs.adobe.com/docs/en/htl.html "HTML範本語言") (HTL)前身為SiteC)是由 [Adobe Experience Manager](http://www.adobe.com/solutions/web-experience-management.html) 6.0引入，並將JSP(JavaServer Pages)取代為偏好且建議的伺服器端範本系統。
 
-HTML範本語言技術相容性套件- HCL TCK-提供一組測試，用來認證HTL實作符合官方 [語言規格](https://github.com/adobe/htl-spec)。
+HTML範本語言技術相容性套件- HTL TCK-提供一組測試，用來認證HTL實作符合官方 [語言規格](https://github.com/adobe/htl-spec)。
 
 ## 更多資訊
 
