@@ -2,23 +2,23 @@
 title: HTL運算式語言
 seo-title: HTL運算式語言
 description: HTML範本語言使用運算式語言來存取提供HTML輸出動態元素的資料結構。
-seo-description: HTML範本語言使用運算式語言來存取提供HTML輸出動態元素的資料結構。
+seo-description: 'HTML範本語言使用運算式語言來存取提供HTML輸出動態元素的資料結構。 '
 uuid: 38b4a259-03b5-4847-91c6-e20377600070
 contentOwner: 使用者
-products: SG_ PERIENCENCENAGER/HTL
+products: SG_EXPERIENCEMANAGER/HTL
 topic-tags: html-template-language
 content-type: 引用
-discoiquuid: 9ba37ca0-f318-48b0-a791-a944 a72502 eed
-mwpw-migration-script-version: 2017-10-12T214658.665-0400
+discoiquuid: 9ba37ca0-f318-48b0-a791-a944a72502ed
+mwpw-migration-script-version: 2017-10-12T21 46 58.665-0400
 translation-type: tm+mt
-source-git-commit: 271c355ae56e16e309853b02b8ef09f2ff971a2e
+source-git-commit: 84ed515309831fe413abf317d8739f2bba79afdb
 
 ---
 
 
 # HTL運算式語言 {#htl-expression-language}
 
-HTML範本語言使用運算式語言來存取提供HTML輸出動態元素的資料結構。這些運算式會以字元 `${` 分隔 `}`。為避免格式錯誤，運算式只能用於屬性值、元素內容中或註解中。
+HTML範本語言使用運算式語言來存取提供HTML輸出動態元素的資料結構。 這些運算式會以字元和 `${` 分隔 `}`。 為避免格式錯誤的HTML，運算式只能用於屬性值、元素內容或注釋中。
 
 ```xml
 <!-- ${component.path} -->
@@ -27,46 +27,46 @@ HTML範本語言使用運算式語言來存取提供HTML輸出動態元素的資
 </h1>
 ```
 
-運算式可由 **`\`** 字元前頭逸出，例如 **`\${test}`** 演算 **`${test}`**。
+運算式可以由字元前置逸出 **`\`** ，例如，將 **`\${test}`** 會演算 **`${test}`**。
 
 >[!NOTE]
 >
->若要試用本頁上提供的範例，可使用稱為「Read Eval Print Loop [](https://github.com/Adobe-Marketing-Cloud/aem-sightly-repl) 」的即時執行環境。
+>要試用本頁上提供的示例，可以使用名為「讀取評估打印循環 [](https://github.com/Adobe-Marketing-Cloud/aem-sightly-repl) 」的即時執行環境。
 
-運算式語法包含 [變數](#variables)、 [字詞](#literals)、 [運算子](#operators) 和 [選項](#options)：
+運算式變 [數](#variables)、文 [字](#literals)、運算 [子和選](#operators) 項語法 [](#options):
 
 ## 變數 {#variables}
 
-變數是儲存資料值或物件的容器。變數名稱稱為識別碼。
+變數是儲存資料值或物件的容器。 變數的名稱稱為識別碼。
 
-HTL不需指定任何項目，可讓您存取在加入JSP後常用的所有物件 `global.jsp`。[「全域物件](global-objects.md) 」頁面提供所有物件的清單，由HTL提供存取權。
+HTL不需指定任何項目，就可讓您在加入後，存取JSP中常用的所有物件 `global.jsp`。 「全 [域物件](global-objects.md) 」頁面提供HTL可存取的所有物件清單。
 
 ### 屬性存取 {#property-access}
 
-有兩種方法可存取變數屬性、點標記或括號符號：
+存取變數屬性的方法有兩種：點記號或方括弧記號：
 
 `${currentPage.title}  
 ${currentPage['title']} or ${currentPage["title"]}`
 
-大多數情況下應偏好較簡單的點標記，且應使用括號符號來存取包含無效識別碼字元的屬性，或動態存取屬性。下列兩個章節將提供這兩個案例的詳細資訊。
+大多數情況下，最好使用更簡單的點標籤法，並且應使用括弧標籤法來訪問包含無效標識符字元的屬性，或動態訪問屬性。 以下兩章將提供這兩個案例的詳細資訊。
 
-存取的屬性可以是函數，但傳遞的引數不受支援，所以只有不預期引數的函數才能存取，例如getter。這是所需的限制，目的是降低嵌入運算式中的邏輯量。如有需要， [`data-sly-use`](block-statements.md#use) 可使用陳述式來傳遞參數至邏輯。
+訪問的屬性可以是函式，但不支援傳遞參數，因此只能訪問不期望參數的函式，如getter。 這是一個需要的限制，其目的是減少內嵌在運算式中的邏輯量。 如果需要， [`data-sly-use`](block-statements.md#use) 可以使用語句將參數傳遞到邏輯。
 
-上述範例中也顯示Java getter函數(例如 `getTitle()`，可存取)而不預先擱置， **`get`**並降低後續字元的大小寫。
+上例中還顯示了Java getter函式(如 `getTitle()`,)可以訪問，而不用預置 **`get`**，並通過降低後面字元的大小寫。
 
-### 有效的Indentifier字元 {#valid-indentifier-characters}
+### 有效的識別碼字元 {#valid-indentifier-characters}
 
-變數名稱(稱為識別碼)符合某些規則。它們必須以字母(-**`A`****`Z`** 和 **`a`**-)**`z`**開頭，而後續**`_`**的字元也可以是**`0`**數字(-**`9`**)或冒號(**`:`**)。Unicode字母(例如 **`å`** ， **`ü`** 無法用於識別碼)。
+變數的名稱（稱為識別碼）符合特定規則。 它們必須以字母(**`A`**-**`Z`****`a`**&#x200B;和-**`z`**)或下划線(**`_`**)開頭，後續字元也可以是數字(-**`0`****`9`****`:`**)或冒號()。 Unicode字母(如 **`å`** 和) **`ü`** 不能用於標識符。
 
-由於冒號(**：**)字元在AEM屬性名稱中很常見，因此很方便它是有效的識別碼字元：
+由於冒號(**:**)字元在AEM屬性名稱中很常見，因此它是有效的識別碼字元很方便：
 
 `${properties.jcr:title}`
 
-括號符號可用來存取包含無效識別碼字元的屬性，例如下列範例中的空格字元：
+括弧符號可用於訪問包含無效標識符字元的屬性，如以下示例中的空格字元：
 
 `${properties['my property']}`
 
-### 動態存取成員 {#accessing-members-dynamically}
+### 動態訪問成員 {#accessing-members-dynamically}
 
 <!-- 
 
@@ -80,7 +80,7 @@ Comment Type: draft
 ${properties[myVar]}
 ```
 
-### 空值的權限處理 {#permissive-handling-of-null-values}
+### Null值的權限處理 {#permissive-handling-of-null-values}
 
 <!-- 
 
@@ -94,63 +94,63 @@ Comment Type: draft
 ${currentPage.lastModified.time.toString}
 ```
 
-## 常式 {#literals}
+## 文字 {#literals}
 
 常值是表示固定值的符號。
 
 ### 布林值 (Boolean){#boolean}
 
-布林代表邏輯實體，可以有兩個值： **`true`****`false`**以及.
+布爾值表示邏輯實體，可以有兩個值： **`true`**&#x200B;和 **`false`**。
 
 `${true} ${false}`
 
 ### 數字 {#numbers}
 
-只有一種數字類型：正整數。雖然其他數字格式(例如浮點)在變數中受支援，但無法以文字表示。
+只有一種數字類型：正整數。 其他數字格式（如浮點）在變數中受支援，但不能表示為文字。
 
 `${42}`
 
 ### 字串 {#strings}
 
-它們代表文字資料，而且可以是單一或雙引號：
+它們代表文字資料，可以是單引號或雙引號：
 
 `${'foo'} ${"bar"}`
 
-除了一般字元之外，還可使用下列特殊字元：
+除了普通字元外，還可使用下列特殊字元：
 
 * **`\\`** 反斜線字元
-* **`\'`** 單引號(或撇號)
+* **`\'`** 單引號（或撇號）
 * **`\"`** 雙引號
-* **`\t`** 標籤式
+* **`\t`** 表格
 * **`\n`** 新行
 * **`\r`** 歸位
 * **`\f`** 表單摘要
-* **`\b`** Backspace
+* **`\b`** 回空格
 * `\uXXXX` 由四個十六進位數字XXXX指定的Unicode字元。\
-   一些有用的Unicode逸出序列為：
+   一些有用的Unicode轉義序列包括：
 
    * **\u0022** for **"**
    * **\u0027** for **'**
 
-For characters not listed above, preceding a backslash caracter will display an error.
+對於上方未列出的字元，反斜線字元的前面會顯示錯誤。
 
-Here are some examples of how to use string escaping:
+以下是如何使用字串逸出的一些範例：
 
 ```xml
 <p>${'it\'s great, she said "yes!"'}</p>
 <p title="${'it\'s great, she said \u0022yes!\u0022'}">...</p>
 ```
 
-which will result in following output, because HTL will apply context-specific escaping:
+這會導致下列輸出，因為HTL會套用內容特定逸出：
 
 ```xml
 <p>it&#39;s great, she said &#34;yes!&#34;</p>
 <p title="it&#39;s great, she said &#34;yes!&#34;">...</p>
 ```
 
-### Arrays {#arrays}
+### 陣列 {#arrays}
 
-An array is an ordered set of values that can be referred to with a name and an index. The types of its elements can be mixed.
+陣列是一組有序值，可以用名稱和索引引用。 其元素類型可混合。
 
 <!-- 
 
@@ -165,7 +165,7 @@ ${[1,2,3,4]}
 ${myArray[2]}
 ```
 
-Arrays are useful to provide a list of values from the template.
+陣列在提供模板值清單時很有用。
 
 ```xml
 <ul data-sly-list="${[1,2,3,4]}">
@@ -173,29 +173,29 @@ Arrays are useful to provide a list of values from the template.
 </ul>
 ```
 
-## Operators {#operators}
+## 營運商 {#operators}
 
-### Logical Operators {#logical-operators}
+### 邏輯運算子 {#logical-operators}
 
-These operators are typically used with Boolean values, however, like in JavaScript, they actually return the value of one of the specified operands, so when used with non-Boolean values, they may return a non-Boolean value.
+這些運算子通常與布林值搭配使用，但是，就像在JavaScript中一樣，它們實際上會傳回其中一個指定運算元的值，因此當與非布林值搭配使用時，可能會傳回非布林值。
 
-If a value can be converted to **`true`**, the value is so-called truthy. If a value can be converted to **`false`**, the value is so-called falsy. Values that can be converted to **`false`** are: undefined variables, null values, the number zero, and empty strings.
+如果值可以轉換為 **`true`**，則該值稱為truthy。 如果值可轉換為 **`false`**，則該值稱為falsy。 可轉換為的值 **`false`** 為：未定義的變數、空值、數字零和空字串。
 
-#### Logical NOT {#logical-not}
+#### 邏輯非 {#logical-not}
 
-**`${!myVar}`** returns **`false`** if its single operand can be converted to `true`; otherwise, returns **`true`**.
+**`${!myVar}`** 如果 **`false`** 其單個操作數可轉換為 `true`;否則，返回 **`true`**。
 
-This can for instance be used to invert a test condition, like displaying an element only if there are no child pages:
+例如，這可用於反轉測試條件，例如只有在沒有子頁面時才顯示元素：
 
 ```xml
 <p data-sly-test="${!currentPage.hasChild}">current page has no children</p>
 ```
 
-#### Logical AND {#logical-and}
+#### 邏輯和 {#logical-and}
 
-**`${varOne && varTwo}`** returns `varOne` if it is falsy; otherwise, returns **varTwo**.
+**`${varOne && varTwo}`** 如果 `varOne` 是假的，則返回；否則，傳 **回varTwo**。
 
-This operator can be used to test two conditions at once, like verifying the existence of two properties:
+此運算子可用來一次測試兩個條件，例如驗證是否存在兩個屬性：
 
 ```xml
 <div data-sly-test="${properties.jcr:title && properties.jcr:description}">
@@ -204,73 +204,73 @@ This operator can be used to test two conditions at once, like verifying the exi
 </div>
 ```
 
-The logical AND operator can also be used to conditionally display HTML attributes, because HTL removes attributes with values set dynamically that evaluate to false, or to an empty string. So in the example below, the **`class`** attribute is only shown if **`logic.showClass`** is truthy and if **`logic.className`** exists and is not empty:
+邏輯AND運算子也可用來有條件地顯示HTML屬性，因為HTL會移除值動態設定為false或空字串的屬性。 因此，在以下範例中， **`class`** 只有在屬性真實且 **`logic.showClass`** 存在且非空 **`logic.className`** 白時，才會顯示屬性：
 
 ```xml
 <div class="${logic.showClass && logic.className}">...</div>
 ```
 
-#### Logical OR {#logical-or}
+#### 邏輯或 {#logical-or}
 
-**`${varOne || varTwo}`** returns **varOne** if it is truthy; otherwise, returns **varTwo**.
+**`${varOne || varTwo}`** 傳 **回varOne** （若為真實）;否則，傳 **回varTwo**。
 
-This operator can be used to test if one of two conditions apply, like verifying the existence of at least one property:
+此運算子可用來測試是否適用下列兩種條件之一，例如驗證是否存在至少一個屬性：
 
 ```xml
 <div data-sly-test="${properties.jcr:title || properties.jcr:description}">...</div>
 ```
 
-As the logical OR operator returns the first variable that is truthy, it can also very conveniently be used to provide fallback values.
+由於邏輯OR運算子會傳回第一個真實的變數，因此也可非常方便地用來提供備援值。
 
-conditionally display HTML attributes, because HTL removes attributes with values set by expressions that evaluate to false or to an empty string. So the example below will display **`properties.jcr:`**title if it exists and is not empty, else it falls back to dislaying **`properties.jcr:description`** if it exists and is not empty, else it will display the message "no title or description provided":
+有條件地顯示HTML屬性，因為HTL會移除由運算式設定的值屬性，這些運算式會評估為false或空字串。 因此，下列範例將顯示**`properties.jcr:`**title（如果存在且不為空），否則它會返回顯示 **`properties.jcr:description`** if exists and is not empty，否則會顯示訊息「no title or description provided」:
 
 ```xml
 <p>${properties.jcr:title || properties.jcr:description || "no title or description provided"}</p>
 ```
 
-### Conditional (ternary) Operator {#conditional-ternary-operator}
+### 條件（三元）運算子 {#conditional-ternary-operator}
 
-**`${varCondition ? varOne : varTwo}`** returns **`varOne`** if **`varCondition`** is truthy; otherwise it returns **`varTwo`**.
+**`${varCondition ? varOne : varTwo}`** 如果 **`varOne`** 真 **`varCondition`** 實，則回報；否則，它將返回 **`varTwo`**。
 
-This operator can typically be used to define conditions within expressions, like displaying a different message based on the status of the page:
+此運算子通常可用來定義運算式中的條件，例如根據頁面狀態顯示不同的訊息：
 
 ```xml
 <p>${currentPage.isLocked ? "page is locked" : "page can be edited"}</p>
 ```
 
-An important note, since colon characters are also permitted in identifiers, it is best to separate the ternary operators with a white space to provide clarity to the parser:
+重要的注意事項是，由於識別碼中也允許冒號字元，因此最好將三元運算子與空白區分開，以清楚說明解析器：
 
 ```xml
 <p>${properties.showDescription ? properties.jcr:description : properties.jcr:title}</p>
 ```
 
-### Comparison Operators {#comparison-operators}
+### 比較運算子 {#comparison-operators}
 
-The equality and inequality operators only support operands that are of identical types. When the types don't match, an error is displayed.
+等式和不等式運算子僅支援相同類型的操作數。 當類型不符合時，會顯示錯誤。
 
-* Strings are equal when they have the same sequence of characters.
-* Numbers are equal when they have the same value
-* Booleans are equal if both are **`true`** or both are **`false`**.
+* 如果字串具有相同的字元順序，則字串是相等的。
+* 數值相同時，數值相等
+* 如果兩者皆為或兩者皆 **`true`** 為，則布爾 **`false`**&#x200B;數相等。
 
-* Null or undefined variables are equal to themselves and to each other.
+* Null或未定義的變數彼此相等。
 
-**`${varOne == varTwo}`** returns **`true`** if **`varOne`** and **`varTwo`** are equal.
+**`${varOne == varTwo}`** 若 **`true`** 和 **`varOne`** 等 **`varTwo`** 於則傳回。
 
-**`${varOne != varTwo}`** returns **`true`** if **`varOne`** and **`varTwo`** are not equal.
+**`${varOne != varTwo}`** 若 **`true`** 和 **`varOne`** 不 **`varTwo`** 相等，則傳回。
 
-The relational operators only support operands that are numbers. For all other types, an error is displayed.
+關係運算子僅支援數字操作數。 對於所有其他類型，都會顯示錯誤。
 
-**`${varOne > varTwo}`** returns **`true`** if **`varOne`** is greater than **`varTwo`**.
+**`${varOne > varTwo}`** 若 **`true`** 大於 **`varOne`** 則傳回 **`varTwo`**。
 
-**`${varOne < varTwo}`** returns **`true`** if **`varOne`** is smaller than **`varTwo`**.
+**`${varOne < varTwo}`** 傳 **`true`** 回 **`varOne`** 小於的 **`varTwo`**&#x200B;值。
 
-**`${varOne >= varTwo}`** returns **`true`** if **`varOne`** is greater or equal to **`varTwo`**.
+**`${varOne >= varTwo}`** 若 **`true`** 大於或等於 **`varOne`** 則傳回 **`varTwo`**。
 
-**`${varOne <= varTwo}`** returns **`true`** if **`varOne`** is smaller or equal to **`varTwo`**.
+**`${varOne <= varTwo}`** 若 **`true`** 小 **`varOne`** 於或等於則傳回 **`varTwo`**。
 
-### Grouping parentheses {#grouping-parentheses}
+### 分組括弧 {#grouping-parentheses}
 
-The grouping operator **`(`** **`)`** controls the precedence of evaluation in expressions.
+群組運算子 **`(`** 控制運 **`)`** 算式中評估的優先順序。
 
 `${varOne && (varTwo || varThree)}`
 
@@ -284,15 +284,15 @@ Comment Type: draft
 
  -->
 
-Expression options can act on the expression and modify it, or serve as parameters when used in conjunction with block statements.
+運算式選項可對運算式執行並加以修改，或與區塊陳述式搭配使用時，可當成參數。
 
-Everything after the **`@`** is an option:
+之後的一 **`@`** 切都是一種選擇：
 
 ```xml
 ${myVar @ optOne}
 ```
 
-Options can have a value, which may be a variable or a literal:
+選項可以有值，該值可以是變數或常值：
 
 ```xml
 ${myVar @ optOne=someVar}
@@ -301,120 +301,120 @@ ${myVar @ optOne=10}
 ${myVar @ optOne=true}
 ```
 
-Multiple options are separated by commas:
+多個選項以逗號分隔：
 
 ```xml
 ${myVar @ optOne, optTwo=bar}
 ```
 
-Parametric expressions containing only options are also possible:
+也可以使用只包含選項的參數表達式：
 
 ```xml
 ${@ optOne, optTwo=bar}
 ```
 
-### String Formatting {#string-formatting}
+### 字串格式 {#string-formatting}
 
-Option that replaces the enumerated placeholders, {*n*}, with the corresponding variable:
+將列舉的預留位置{*n*}替換為對應變數的選項：
 
 ```xml
 ${'Page {0} of {1}' @ format=[current, total]}
 ```
 
-### Internationalization {#internationalization}
+### 國際化 {#internationalization}
 
-Translates the string to the language of the current *source* (see below), using the current [dictionary](https://helpx.adobe.com/experience-manager/6-3/sites/developing/using/i18n-translator). If no translation is found, the original string is used.
+使用目前的字典，將字串轉譯為 *目前來源* (請參閱下 [文)](https://helpx.adobe.com/experience-manager/6-3/sites/developing/using/i18n-translator)。 如果找不到任何轉譯，則會使用原始字串。
 
 ```xml
 ${'Page' @ i18n}
 ```
 
-The hint option can be used to provide a comment for translators, specifying the context in which the text is used:
+提示選項可用於為翻譯者提供注釋，指定使用文本的上下文：
 
 ```xml
 ${'Page' @ i18n, hint='Translation Hint'}
 ```
 
-The default source for the language is 'resource', meaning that the text gets translated to the same language as the content. This can be changed to 'user', meaning that the language is taken from the browser locale or from the locale of the logged-in user:
+語言的預設來源為'resource'，這表示文字會翻譯成與內容相同的語言。 這可變更為'user'，這表示語言是從瀏覽器地區設定或登入使用者的地區設定取得：
 
 ```xml
 ${'Page' @ i18n, source='user'}
 ```
 
-Providing an explicit locale overrides the source settings:
+提供明確的語言環境會覆蓋源設定：
 
 ```xml
 ${'Page' @ i18n, locale='en-US'}
 ```
 
-To embed variables into a translated string, the format option can be used:
+若要將變數內嵌至已翻譯的字串，可使用format選項：
 
 ```xml
 ${'Page {0} of {1}' @ i18n, format=[current, total]}
 ```
 
-### Array Join {#array-join}
+### 陣列連接 {#array-join}
 
-By default, when displaying an array as text, HTL will display comma separated values (without spacing).
+依預設，當將陣列顯示為文字時，HTL會顯示逗號分隔值（無間距）。
 
-Use the join option to specify a different separator:
+使用聯接選項指定不同的分隔符：
 
 ```xml
 ${['one', 'two'] @ join='; '}
 ```
 
-### Display Context {#display-context}
+### 顯示內容 {#display-context}
 
-The display context of a HTL expression refers to its location within the structure of the HTML page. For example, if the expression appears in place that would produce a text node once rendered, then it is said to be in a **`text`** context. If it is found within the value of an attribute, then it is said to be in an **`attribute`** context, and so forth.
+HTL運算式的顯示內容會參照其在HTML頁面結構中的位置。 例如，如果表達式出現在原地，在渲染後將生成文本節點，則該表達式據說位於上 **`text`** 下文。 如果在屬性的值中找到，則表示它位於上 **`attribute`** 下文中，依此類推。
 
-With the exception of script (JS) and style (CSS) contexts, HTL will automatically detect the context of expressions and escape them appropriately, to prevent XSS security problems. In the case of scripts and CSS, the desired context behavior must be explicitly set. Additionally, the context behavior can also be explicitly set in any other case where an override of the automatic behavior is desired.
+除了指令碼(JS)和樣式(CSS)上下文外，HTL會自動偵測運算式的上下文並適當地逸出它們，以防止XSS安全性問題。 在指令碼和CSS中，必須明確設定所要的上下文行為。 此外，在需要覆蓋自動行為的任何其他情況下，也可以顯式設定上下文行為。
 
-Here we have three variables in three different contexts: **`properties.link`** ( `uri` context), **`properties.title`** (**`attribute`** context) and **`properties.text`**(**`text`** context). HTL will escape each of these differently in accordance with the security requirements of their respective contexts. No explicit context setting is required in normal cases such as this one:
+在這裡，我們有三個變數，分為三個不同的上下文： **`properties.link`** (上 `uri` 下文)、 **`properties.title`** (上下文&#x200B;**`attribute`** ) **`properties.text`**&#x200B;和(上&#x200B;**`text`** 下文)。 HTL將根據其各自上下文的安全要求以不同方式逃離其中每一個。 一般情況下，如下情況，則不需要明確的上下文設定：
 
 ```xml
 <a href="${properties.link}" title="${properties.title}">${properties.text}</a>
 ```
 
-To safely output markup (that is, where the expression itself evaluates to HTML), the `html` context is used:
+要安全輸出標籤（即，表達式本身評估為HTML的位置），請使 `html` 用上下文：
 
 ```xml
 <div>${properties.richText @ context='html'}</div>
 ```
 
-Explicit context must be set for style contexts:
+必須為樣式上下文設定顯式上下文：
 
 ```xml
 <span style="color: ${properties.color @ context='styleToken'};">...</span>
 ```
 
-Explicit context must be set for script contexts:
+必須為指令碼上下文設定顯式上下文：
 
 ```xml
 <span onclick="${properties.function @ context='scriptToken'}();">...</span>
 ```
 
-Escaping and XSS protection can also be turned off:
+逸出和XSS保護也可以關閉：
 
 ```xml
 <div>${myScript @ context='unsafe'}</div>
 ```
 
-### Context Settings {#context-settings}
+### 內容設定 {#context-settings}
 
-| 上下文 | When to use | What it does |
+| 上下文 | 使用時機 | 它的功能 |
 |--- |--- |--- |
-| 文字 | Default for content inside elements | Encodes all HTML special characters. |
-| html | To safely output markup | Filters HTML to meet the AntiSamy policy rules, removing what doesn't match the rules. |
-| attribute | Default for attribute values | Encodes all HTML special characters. |
-| uri | To display links and paths Default for href and src attribute values | Validates URI for writing as an href or src attribute value, outputs nothing if validation fails. |
-| 數字 | To display numbers | Validates URI for containing an integer, outputs zero if validation fails. |
-| attributeName | Default for data-sly-attribute when setting attribute names | Validates the attribute name, outputs nothing if validation fails. |
-| elementName | Default for data-sly-element | Validates the element name, outputs nothing if validation fails. |
-| scriptToken | For JS identifiers, literal numbers, or literal strings | Validates the JavaScript token, outputs nothing if validation fails. |
-| scriptString | Within JS strings | Encodes characters that would break out of the string. |
-| scriptComment | Within JS comments | Validates the JavaScript comment, outputs nothing if validation fails. |
-| styleToken | For CSS identifiers, numbers, dimensions, strings, hex colours or functions. | Validates the CSS token, outputs nothing if validation fails. |
-| styleString | Within CSS strings | Encodes characters that would break out of the string. |
-| styleComment | Within CSS comments | Validates the CSS comment, outputs nothing if validation fails. |
-| unsafe | Only if none of the above does the job | Disables escaping and XSS protection completely. |
+| 文字 | 元素內容的預設值 | 對所有HTML特殊字元進行編碼。 |
+| html | 要安全輸出標籤 | 篩選HTML以符合AntiSamy原則規則，移除不符合規則的項目。 |
+| 屬性 | 屬性值的預設值 | 對所有HTML特殊字元進行編碼。 |
+| uri | 要顯示連結和路徑，請預設href和src屬性值 | 驗證URI是否寫入為href或src屬性值，如果驗證失敗則不輸出任何內容。 |
+| 數字 | 要顯示數字 | 驗證包含整數的URI，如果驗證失敗，則輸出零。 |
+| attributeName | 設定屬性名稱時的data-sly-attribute預設值 | 驗證屬性名稱，如果驗證失敗，則不輸出任何內容。 |
+|  elementName | 預設的資料密碼元素 | 驗證元素名稱，如果驗證失敗，則不輸出任何內容。 |
+| scriptToken | 對於JS識別碼、常值數字或常值字串 | 驗證JavaScript Token，如果驗證失敗，則不會輸出任何內容。 |
+| scriptString | 在JS字串中 | 編碼將從字串中分開的字元。 |
+| scriptComment | 在JS注釋中 | 驗證JavaScript注釋，如果驗證失敗，則不會輸出任何內容。 |
+| styleToken | 用於CSS識別碼、數字、尺寸、字串、十六進位色彩或函式。 | 驗證CSS Token，如果驗證失敗，則不會輸出任何內容。 |
+| styleString | 在CSS字串中 | 編碼將從字串中分開的字元。 |
+| styleComment | 在CSS注釋中 | 驗證CSS注釋，如果驗證失敗則不輸出任何內容。 |
+| 不安全 | 只有當上述任何一個 | 完全禁用轉義和XSS保護。 |
 
