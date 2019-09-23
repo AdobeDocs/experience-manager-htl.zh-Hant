@@ -3,29 +3,29 @@ title: HTL Use-API
 seo-title: Adobe HTL Use-API
 description: 有兩種 API 適用於 HTL - Java Use-API 和 Javascript Use-API
 seo-description: 有兩種 API 適用於 Adobe HTL - Java Use-API 和 Javascript Use-API
-uuid: ab44aa5c-ce7 e-40b9-97fb-e86 c6 a28405 c
+uuid: ab44aa5c-ce7e-40b9-97fb-e86c6a28405c
 contentOwner: 使用者
-products: SG_ PERIENCENCENAGER/HTL
+products: SG_EXPERIENCEMANAGER/HTL
 topic-tags: html-template-language
 content-type: 引用
-discoiquuid: 89004426-eb59-4b63-913f-51bb98626773
-mwpw-migration-script-version: 2017-10-12T214658.665-0400
+discoiquuid: 89004426-eb59-4b63-913f-51bf98662773
+mwpw-migration-script-version: 2017-10-12T21 46 58.665-0400
 translation-type: tm+mt
-source-git-commit: 271c355ae56e16e309853b02b8ef09f2ff971a2e
+source-git-commit: 5cbaf9c747acf748d12559c2c8e3aba4600cf9a4
 
 ---
 
 
-# HTL Use-API {#htl-use-api}
+# HTL使用API {#htl-use-api}
 
-下表概述每個API的專業人士和並行作業。
+下表概述每個API的優點和缺點。
 
-|  | **Java Use-API** | **JavaScript使用API** |
+|  | **Java Use-API** | **JavaScript Use-API** |
 |--- |--- |--- |
-| **Pros** | <ul><li>faster</li><li>可使用除錯程式進行檢查</li><li>輕鬆單元測試</li></ul> | <ul><li>可由前端開發人員修改</li><li>位於元件內，將元件的檢視邏輯保持在對應的範本中</li></ul> |
-| **Cons** | <ul><li>無法由前端開發人員修改</li></ul> | <ul><li>slow</li><li>無除錯程式(但)</li><li>更難以單元測試</li></ul> |
+| **專業人員** | <ul><li>更快速</li><li>可使用除錯程式進行檢查</li><li>易於單元測試</li></ul> | <ul><li>可由前端開發人員修改</li><li>位於元件中，使元件的檢視邏輯與其對應的範本保持接近</li></ul> |
+| **缺點** | <ul><li>無法由前端開發人員修改</li></ul> | <ul><li>較慢</li><li>no debugger (yet)</li><li>harder to unit-test</li></ul> |
 
 
-對於頁面元件，建議使用混合模型，其中所有模型邏輯都位於Java中，提供清楚的API，對於檢視中發生的任何項目都不一致(亦即元件內)。AEM隨附絕佳的預設模型，例如「頁面」或「資源API」，這些模型應該能夠涵蓋大多數案例。
+For page components, it is recommended to use a mixed model, where all model logic is located in Java, providing clear APIs that are agnostic to anything that happens in the view (i.e. within the components). AEM comes with great default models like the Page or the Resource API that should be able to cover most cases.
 
-所有特定元件的檢視邏輯都應放在該元件中，因為它屬於JavaScript，因為它屬於該元件。
+All view logic that is specific to a component should be placed within that component as JavaScript, because it belongs to that component.
