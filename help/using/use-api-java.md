@@ -1,28 +1,28 @@
 ---
 title: HTL Java Use-API
 seo-title: HTL Java Use-API
-description: HTML範本語言- HTL- Java使用API可讓HTL檔案存取自訂Java類別中的helper方法。
-seo-description: HTML範本語言- HTL- Java使用API可讓HTL檔案存取自訂Java類別中的helper方法。
-uuid: b340f8f7-a193-45c8-aa39-5c6 e2 c0144 ea
+description: 'HTML 範本語言 - HTL - Java Use-API 可讓 HTL 檔案存取自訂 Java 類別中的 Helper 方法。 '
+seo-description: 'HTML 範本語言 - HTL - Java Use-API 可讓 HTL 檔案存取自訂 Java 類別中的 Helper 方法。 '
+uuid: b340f8f7-a193-45c8-aa39-5c6e2c0194ea
 contentOwner: 使用者
-products: SG_ PERIENCENCENAGER/HTL
+products: SG_EXPERIENCEMANAGER/HTL
 topic-tags: html-template-language
 content-type: 引用
-discoiquuid: 126ebc9d-5f7b-7a4-aea2-c8840 d34864 c
-mwpw-migration-script-version: 2017-10-12T214658.665-0400
+discoiquuid: 126ebc9d-5f7b-47a4-aea2-c8840d34864c
+mwpw-migration-script-version: 2017-10-12T21 46 58.665-0400
 translation-type: tm+mt
-source-git-commit: 271c355ae56e16e309853b02b8ef09f2ff971a2e
+source-git-commit: 48f09cfbdc5ef0bc5b951de1444ce40ea53dc07f
 
 ---
 
 
 # HTL Java Use-API{#htl-java-use-api}
 
-HTML範本語言(HTL) Java使用API可讓HTL檔案存取自訂Java類別中的helper方法。這可讓所有複雜的商業邏輯封裝在Java程式碼中，而HTL程式碼只會與直接標記製作搭配使用。
+HTML範本語言(HTL)Java Use-API可讓HTL檔案存取自訂Java類別中的輔助方法。 這可讓所有複雜的商業邏輯封裝在Java程式碼中，而HTL程式碼則僅處理直接標籤製作。
 
 ## 簡單範例 {#a-simple-example}
 
-我們將從沒有使用類別 *的HTL* 元件開始。它包含一個檔案， `/apps/my-example/components/info.html`
+我們將從沒有use類 *別的* HTL元件開始。 它由一個檔案組成， `/apps/my-example/components/info.html`
 
 ### `/apps/my-example/component/info/info.html` {#apps-my-example-component-info-info-html}
 
@@ -33,7 +33,7 @@ HTML範本語言(HTL) Java使用API可讓HTL檔案存取自訂Java類別中的he
 </div>
 ```
 
-我們也會新增部分內容， **`/content/my-example/`**以便在下列位置轉換：
+我們也會為此元件新增一些內容，以便在以下網址進行演算 **`/content/my-example/`**:
 
 ### `http://localhost:4502/content/my-example.json` {#http-localhost-content-my-example-json}
 
@@ -45,7 +45,7 @@ HTML範本語言(HTL) Java使用API可讓HTL檔案存取自訂Java類別中的he
 }
 ```
 
-存取此內容時，會執行HTL檔案。在HTL程式碼中，我們使用上下文物件****`properties`來存取目前資源 `title` 並 `description` 顯示它們。輸出HTML將為：
+存取此內容時，會執行HTL檔案。 在HTL程式碼中，我們使用內容物件**`properties`**來存取目前資源並 `title` 顯 `description` 示它們。 輸出HTML將為：
 
 ### `view-source:http://localhost:4502/content/my-example.html` {#view-source-http-localhost-content-my-example-html}
 
@@ -56,15 +56,15 @@ HTML範本語言(HTL) Java使用API可讓HTL檔案存取自訂Java類別中的he
 </div>
 ```
 
-### 新增使用類別 {#adding-a-use-class}
+### 添加使用類 {#adding-a-use-class}
 
-此 **資訊** 元件不需要使用類別來執行其(非常簡單)函數。但是，在某些情況下，您需要完成無法在HTL中完成的工作，因此需要使用類別。但請記住：
+info **元件** （現狀）不需要use-class來執行其（非常簡單）功能。 不過，在某些情況下，您需要執行無法在HTL中完成的工作，因此您需要使用類別。 但請記住：
 
 >[!NOTE]
 >
->*僅當無法在HTL中完成某事時，才應使用類別。*
+>*僅當無法在HTL中單獨執行某項作業時，才應使用use-class。*
 
-例如，假設您要 `info` 元件顯示資源的屬性 `title` 和 **`description`** 屬性，但全部以小寫顯示。由於HTL沒有小寫字串的方法，所以您需要使用類別。若要這麼做，我們可以新增Java使用類別並變更如下 **`info.html`** ：
+例如，假設您希望元件 `info` 顯示資源的 `title` 和 **`description`** 屬性，但全部以小寫表示。 由於HTL沒有用於小寫字串的方法，因此您需要use-class。 我們可以新增Java use-class並依下列方式變更，以 **`info.html`** 完成此作業：
 
 ### `/apps/my-example/component/info/info.html` {#apps-my-example-component-info-info-html-1}
 
@@ -102,27 +102,27 @@ public class Info extends WCMUsePojo {
 }
 ```
 
-在下列章節中，我們會逐步檢視程式碼的不同部分。
+在以下幾節中，我們將逐一介紹程式碼的不同部分。
 
-### 本機與Bundle Java類別 {#local-vs-bundle-java-class}
+### 本機與搭售Java類 {#local-vs-bundle-java-class}
 
-Java使用類別可透過兩種方式安裝： **本機** 或 **搭售**。*此範例使用本機安裝。*
+Java use-class可以用兩種方式安裝：本 **機** 或 **搭售**。 *此示例使用本地安裝。*
 
-在本機安裝中，Java來源檔案會與HTL檔案一起放置在同一個存放庫檔案夾中。來源會根據需求自動編譯。不需要個別編譯或封裝步驟。
+在本機安裝中，Java來源檔案會放在HTL檔案旁，位於相同的儲存庫檔案夾中。 系統會根據需求自動編譯來源。 不需要個別編譯或封裝步驟。
 
-在安裝套件時，必須使用標準的AEM Bundle部署機制(請參閱 [搭售的Java類別](#bundled-java-class))，將Java類別編譯並部署在OSGi套裝中。
+在套件安裝中，Java類別必須使用標準AEM套件部署機制，在OSGi套件中編譯並部署(請參 [閱套件Java類別](#bundled-java-class))。
 
 >[!NOTE]
 >
->當使用類別特定元件時，建議使用 **本機Java使用類別** 。
+>當 **use-class是相關元件專屬時** ，建議使用本機Java use-class。
 >
->當Java程式碼實作從多個HTL元件存取的服務時，建議 **將Java使用類別** 。
+>當 **Java程式碼實作從多個HTL元件存取的服務時** ，建議使用套裝Java use-class。
 
-### Java套件是存放庫路徑 {#java-package-is-repository-path}
+### Java包是儲存庫路徑 {#java-package-is-repository-path}
 
-使用本機安裝時，使用類別的套件名稱必須符合存放庫檔案夾位置的名稱，而路徑中的任何連字號則會以套件名稱中的底線取代。
+使用本地安裝時，use-class的軟體包名稱必須與儲存庫資料夾位置的軟體包名稱匹配，路徑中的任何連字元都由軟體包名稱中的下划線替換。
 
-在此案例 **`Info.java`** 中， **`/apps/my-example/components/info`** 此套件 **`apps.my_example.components.info`** 為：
+在本例中， **`Info.java`** 位於的 **`/apps/my-example/components/info`** 位置是，因此包 **`apps.my_example.components.info`** :
 
 ### `/apps/my-example/component/info/Info.java` {#apps-my-example-component-info-info-java-1}
 
@@ -140,11 +140,11 @@ public class Info extends WCMUsePojo {
 
 >[!NOTE]
 >
->在AEM開發中建議使用存放庫項目名稱中的連字號。但是，連字號在Java套件名稱中是非法的。因此，存放庫路徑中 **所有連字號都必須轉換為套件名稱**中的底線。
+>在AEM開發中，建議在儲存庫項目名稱中使用連字型大小。 但是，連字型大小在Java包名稱中是非法的。 因此，儲存庫 **路徑中的所有連字元都必須轉換為軟體包名稱中的下划線**。
 
-### 擴充功能 `WCMUsePojo`{#extending-wcmusepojo}
+### 擴充功 `WCMUsePojo` 能 {#extending-wcmusepojo}
 
-雖然有許多方式可將Java類別與HTL搭配使用(請參閱替代項目) `WCMUsePojo`，最簡單的是擴充 `WCMUsePojo` 類別：
+雖然有許多將Java類別與HTL結合的方式(請參閱替代 `WCMUsePojo`)，但最簡單的方式是擴充類 `WCMUsePojo` 別：
 
 #### `/apps/my-example/component/info/Info.java` {#apps-my-example-component-info-info-java-2}
 
@@ -159,9 +159,9 @@ public class Info extends WCMUsePojo {
 }
 ```
 
-### 初始化類別 {#initializing-the-class}
+### 初始化類 {#initializing-the-class}
 
-從使用類別擴充時 **`WCMUsePojo`**，會覆寫 **`activate`** 方法來執行初始化：
+從擴展use-class時，通過 **`WCMUsePojo`**&#x200B;覆蓋方法來執行初 **`activate`** 始化：
 
 ### /apps/my-example/component/info/Info.java {#apps-my-example-component-info-info-java-3}
 
@@ -185,43 +185,43 @@ public class Info extends WCMUsePojo {
 
 ### 上下文 {#context}
 
-通常 [，啓動](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html) 方法會用來根據目前內容(例如目前的請求和資源)，預先計算並儲存HTL程式碼中所需的值。
+通常， [activate](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html) 方法會用來根據目前的上下文（例如目前的請求和資源），預先計算並儲存（在成員變數中）HTL程式碼中所需的值。
 
-`WCMUsePojo` 類別可讓您存取與HTL檔案中可用的相同上下文物件集(請參閱 [全域物件](global-objects.md))。
+類 `WCMUsePojo` 別可讓您存取HTL檔案中可用的相同上下文物件集(請參閱 [全域物件](global-objects.md))。
 
-在延伸 **`WCMUsePojo`**的類別中，可以使用名稱來存取 *上下文* 物件
+在擴充的類中， **`WCMUsePojo`**** 可使用
 
 [`<T> T get(String name, Class<T> type)`](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html)
 
-或者，您可以使用適當 **的便利方法直接存取常用的上下文物件**：
+或者，常用的上下文物件可透過適當的方便方法 **直接存取**:
 
-|  |
+|  |  |
 |---|---|
 | [PageManager](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/day/cq/wcm/api/PageManager.html) | [getPageManager()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getPageManager()) |
 | [頁面](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/day/cq/wcm/api/Page.html) | [getCurrentPage()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getCurrentPage()) |
 | [頁面](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/day/cq/wcm/api/Page.html) | [getResourcePage()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getResourcePage()) |
 | [ValueMap](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) | [getPageProperties()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getPageProperties()) |
 | [ValueMap](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) | [getProperties()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getProperties()) |
-| [Designer](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/day/cq/wcm/api/designer/Designer.html) | [getDesigner()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getDesigner()) |
+| [設計人員](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/day/cq/wcm/api/designer/Designer.html) | [getDesigner()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getDesigner()) |
 | [設計](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/day/cq/wcm/api/designer/Design.html) | [getCurrentDesign()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getCurrentDesign()) |
 | [樣式](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/day/cq/wcm/api/designer/Style.html) | [getCurrentStyle()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getCurrentStyle()) |
 | [元件](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/day/cq/wcm/api/components/Component.html) | [getComponent()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getComponent()) |
-| [ValueMap](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) | [getInDesign屬性()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse#getInheritedProperties.html()) |
+| [ValueMap](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) | [getInheritedProperties()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse#getInheritedProperties.html()) |
 | [資源](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/Resource.html) | [getResource()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getResource()) |
-| [ResourceSolver](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ResourceResolver.html) | [getResourceSolver()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getResourceResolver()) |
-| [slingttpServletRequest](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/SlingHttpServletRequest.html) | [getRequest()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getRequest()) |
-| [slingttpServletResponse](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/SlingHttpServletResponse.html) | [getResponse()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getResponse()) |
+| [資源解析器](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ResourceResolver.html) | [getResourceResolver()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getResourceResolver()) |
+| [SlingHttpServletRequest](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/SlingHttpServletRequest.html) | [getRequest()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getRequest()) |
+| [SlingHttpServletResponse](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/SlingHttpServletResponse.html) | [getResponse()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getResponse()) |
 | [SlingScriptHelper](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/scripting/SlingScriptHelper.html) | [getSlingScriptHelper()](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html#getSlingScriptHelper()) |
 
-### getter方法 {#getter-methods}
+### Getter方法 {#getter-methods}
 
-在使用類別初始化後，就會執行HTL檔案。在此階段中，HTL通常會提取使用類別中各種成員變數的狀態，並將它們轉換為簡報。
+在use-class初始化後，就會執行HTL檔案。 在此階段中，HTL通常會拉入use-class的各個成員變數的狀態，並將它們轉譯為簡報。
 
-若要從HTL檔案中存取這些值，您必須根據下列命名慣例，在使用類別 **中定義自訂getter方法**：
+若要從HTL檔案中存取這些值，您必鬚根據下列命名慣例，在use-class中定 **義自訂getter方法**:
 
-* 表單 **`getXyz`** 的方法會在HTL檔案中公開，名為 ***xyz***。
+* 表單的方法 **`getXyz`** 將在HTL檔案中公開名為xyz的物件屬 ***性***。
 
-例如，在下列範例中，這些方法 **`getTitle`** 會 **`getDescription`** 出現在物件屬性 **`title`** 中，並 **`description`** 可在HTL檔案的內容中存取：
+例如，在下例中，這些方 **`getTitle`** 法 **`getDescription`** 和結果導致對象屬 **`title`** 性，並可 **`description`** 在HTL檔案的上下文中訪問：
 
 ### `/apps/my-example/component/info/Info.java` {#apps-my-example-component-info-info-java-4}
 
@@ -242,9 +242,9 @@ public class Info extends WCMUsePojo {
 }
 ```
 
-### data-sly-use屬性 {#data-sly-use-attribute}
+### data-slyuse屬性 {#data-sly-use-attribute}
 
-**`data-sly-use`** 此屬性用於初始化HTL程式碼中的use-class。在我們的範例中， `data-sly-use` 屬性會宣告我們要使用類別 **`Info`**。我們只能使用本類別的本機名稱，因為我們使用本機安裝(放置Java來源檔案的資料夾與HTL檔案位於相同的檔案夾中)。如果我們使用了搭售功能，我們必須指定完整的合格類別名稱(請參閱 [「使用類別套件安裝](#LocalvsBundleJavaClass)」)。
+此 **`data-sly-use`** 屬性用於初始化HTL程式碼中的use-class。 在我們的示例中， `data-sly-use` 屬性聲明我們要使用類 **`Info`**。 我們只能使用類的本地名稱，因為我們使用的是本地安裝（將Java源檔案放在與HTL檔案相同的資料夾中）。 如果我們使用的是套件安裝，我們必須指定完全限定的類別名稱(請參 [閱使用類別套裝安裝](#LocalvsBundleJavaClass))。
 
 ### `/apps/my-example/component/info/info.html` {#apps-my-example-component-info-info-html-2}
 
@@ -257,7 +257,7 @@ public class Info extends WCMUsePojo {
 
 ### 本機識別碼 {#local-identifier}
 
-在HTL檔案中使用識別碼「**`info`****`data-sly-use.info`**(點後)」來識別類別。此識別碼的範圍在檔案宣告後即為全域。它不限於包含 `data-sly-use` 陳述式的元素。
+識別碼'**`info`**'(在中的點之後 **`data-sly-use.info`**)會用於HTL檔案中，以識別類別。 此標識符的範圍在檔案中是全局的，在聲明後。 它不限於包含語句的元 `data-sly-use` 素。
 
 ### `/apps/my-example/component/info/info.html`{#apps-my-example-component-info-info-html-3}
 
@@ -270,7 +270,7 @@ public class Info extends WCMUsePojo {
 
 ### 取得屬性 {#getting-properties}
 
-接著識別碼 `info` 會用來存取物件屬性 **`title`** ，並 **`description`** 透過getter方法 `Info.getTitle` 公開 **`Info.getDescription`**。
+然後，該 `info` 標識符用於訪問通過getter方 **`title`** 法 **`description`** 和公開的對象屬性 `Info.getTitle` 和 **`Info.getDescription`**。
 
 ### `/apps/my-example/component/info/info.html` {#apps-my-example-component-info-info-html-4}
 
@@ -283,7 +283,7 @@ public class Info extends WCMUsePojo {
 
 ### 輸出 {#output}
 
-現在，當我們存取時 **`/content/my-example.html`** ，將傳回下列HTML：
+現在，當我們存取時， **`/content/my-example.html`** 它會傳回下列HTML:
 
 ### `view-source:http://localhost:4502/content/my-example.html` {#view-source-http-localhost-content-my-example-html-1}
 
@@ -296,15 +296,15 @@ public class Info extends WCMUsePojo {
 
 ## 超越基本概念 {#beyond-the-basics}
 
-在本節中，我們將進一步介紹以上簡單範例：
+在本節中，我們將介紹一些超越上述簡單示例的其他功能：
 
-* 傳遞參數至使用類別。
-* 套裝Java使用類別。
-* 替代以外的替代項目 `WCMUsePojo`
+* 將參數傳遞至use-class。
+* 搭售的Java使用類別。
+* 替代項目 `WCMUsePojo`
 
 ### 傳遞參數 {#passing-parameters}
 
-參數可在初始化時傳遞至使用類別。例如，我們可以這麼做：
+參數可在初始化時傳遞至use-class。 例如，我們可以做這樣的事：
 
 ### `/content/my-example/component/info/info.html` {#content-my-example-component-info-info-html}
 
@@ -316,7 +316,7 @@ public class Info extends WCMUsePojo {
 </div>
 ```
 
-在此處，我們將傳遞呼叫的參數 **`text`**。使用類別，然後我們會擷取擷取的字串 `info.upperCaseText`並顯示結果。以下是調整的使用類別：
+這裡我們傳遞的參數稱為 **`text`**。 use-class接著將我們擷取的字串加上上，並顯示結果與 `info.upperCaseText`。 以下是已調整的使用類別：
 
 ### `/apps/my-example/component/info/Info.java` {#apps-my-example-component-info-info-java-5}
 
@@ -349,29 +349,29 @@ public class Info extends WCMUsePojo {
 }
 ```
 
-參數可透過方法 `WCMUsePojo` 存取
+參數是透過方法存 `WCMUsePojo` 取
 
 [ `<T> T get(String paramName, Class<T> type)`](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/cq/sightly/WCMUse.html)
 
-在本公司案例中，
+就我們而言，這份聲明
 
 `get("text", String.class)`
 
-字串接著會透過方法反轉及公開
+然後，該字串被反轉並通過該方法公開
 
 **`getReverseText()`**
 
-### 僅從資料範本範本傳遞參數 {#only-pass-parameters-from-data-sly-template}
+### 僅從資料密碼模板傳遞參數 {#only-pass-parameters-from-data-sly-template}
 
-上述範例在技術上是正確的，因此從HTL傳遞值以初始化使用類別並沒有意義，當相關的值可在HTL程式碼的執行上下文中使用時(或，也就是因為上述值是靜態的)。
+雖然上述範例在技術上是正確的，但是當相關值在HTL程式碼的執行內容中可用時，從HTL傳遞值來初始化使用類別實際上並不有意義（或者，實際上，如上所述，該值是靜態的）。
 
-原因是use-class永遠都能存取與HTL程式碼相同的執行上下文。這會產生最佳做法的匯入點：
+原因是use-class將永遠擁有與HTL程式碼相同執行內容的存取權。 這就引出了最佳實踐的匯入點：
 
 >[!NOTE]
 >
->將參數傳遞至use-class時，應僅在 **資料-sly範本** 檔案中使用該類別時，才會在呼叫另一個HTL檔案中的參數時完成。
+>只有當use-class用於 **data-sly-template** file中時，才應將參數傳遞至use-class，而此檔案本身是從另一個HTL檔案呼叫，且參數需要傳遞。
 
-例如，讓我們在現有的範例旁邊建立另一 `data-sly-template` 個檔案。我們會呼叫新檔案 `extra.html`。它包含呼叫的 **`data-sly-template`** 區塊 **`extra`**：
+例如，讓我們在現有範例旁 `data-sly-template` 建立個別的檔案。 我們將調用新檔案 `extra.html`。 它包含一個 **`data-sly-template`** 名為 **`extra`**:
 
 ### `/apps/my-example/component/info/extra.html` {#apps-my-example-component-info-extra-html}
 
@@ -382,11 +382,11 @@ public class Info extends WCMUsePojo {
 </template>
 ```
 
-範本 **`extra`**會採用單一參數 **`text`**。接著，它會以本機名稱 `ExtraHelper`**`extraHelper`** 初始化Java使用類別，並將範本參數的值傳遞 **`text`** 給use-class參數 **`text`**。
+範本 **`extra`**&#x200B;會取用單一參數 **`text`**。 然後，它以本地名 `ExtraHelper` 稱初始化Java use-class **`extraHelper`** ，並將模板參數的值 **`text`** 作為use-class參數傳遞給它 **`text`**。
 
-範本的主體會取得屬性 `extraHelper.reversedText` (在此範圍下，實際呼叫) `ExtraHelper.getReversedText()`並顯示該值。
+範本的內文會取得屬性( `extraHelper.reversedText` 在外罩下方實際呼叫)並顯 `ExtraHelper.getReversedText()`示該值。
 
-我們也會改寫現有 **`info.html`** 的範本使用方式：
+我們也會調整現有 **`info.html`** 的範本，以使用此新範本：
 
 ### `/apps/my-example/component/info/info.html` {#apps-my-example-component-info-info-html-5}
 
@@ -402,15 +402,15 @@ public class Info extends WCMUsePojo {
 </div>
 ```
 
-檔案 `info.html` 現在包含兩 **`data-sly-use`** 個陳述式，原始檔案會匯入 **`Info`** Java使用類別，而另一個陳述式會在本機名稱下匯入範本檔案 `extra`。
+檔案現 `info.html` 在包含兩 **`data-sly-use`** 個陳述式，其中原始陳述式會匯入 **`Info`** Java use-class，新陳述式會以本機名稱匯入範本檔案 `extra`。
 
-請注意，我們可以將範本區塊放置 **`info.html`** 在檔案中，以避免第二 **`data-sly-use`**個範本，但另一個範本檔案較常用，而且更容易重復使用。
+請注意，我們可以將範本區塊放在檔案中，以避 **`info.html`** 免第二個範本區塊 **`data-sly-use`**，但是個別範本檔案較常見，而且可重複使用。
 
-The **`Info`** class is employed as before, calling its getter methods **`getLowerCaseTitle()`** and `getLowerCaseDescription()` through their corresponding HTL properties `info.lowerCaseTitle` and **`info.lowerCaseDescription`**.
+類 **`Info`** 和以前一樣使用，調用其getter方法 **`getLowerCaseTitle()`** , `getLowerCaseDescription()` 並通過其相應的HTL屬性 `info.lowerCaseTitle` 和 **`info.lowerCaseDescription`**。
 
-然後，我們 **`data-sly-call`** 執行範本 **`extra`** 並將其傳遞給 `properties.description` 參數作為參數 **`text`**。
+然後，我們對模 **`data-sly-call`** 板執行 **`extra`** ，並將值作為 `properties.description` 參數傳遞 **`text`**。
 
-Java使用類別 `Info.java` 會變更，以處理新的文字參數：
+Java use-class已變 `Info.java` 更，可處理新文字參數：
 
 ### `/apps/my-example/component/info/ExtraHelper.java` {#apps-my-example-component-info-extrahelper-java}
 
@@ -437,11 +437,11 @@ public class ExtraHelper extends WCMUsePojo {
 }
 ```
 
-**`text`** 系統會擷取 **`get("text", String.class)`**參數，值會反轉，並透過getter提供HTL物件 `reversedText``getReversedText()`。
+參 **`text`** 數會擷取， **`get("text", String.class)`**&#x200B;值會反轉，並透過getter `reversedText` 做為HTL物件使用 `getReversedText()`。
 
-### 套裝Java類別 {#bundled-java-class}
+### 捆綁的Java類 {#bundled-java-class}
 
-透過套件使用類別，類別必須使用標準OSGi套件部署機制來編譯、封裝並部署在AEM中。與本機安裝相反的是，使用類別 **套件宣告** 應該命名為一般：
+使用Bundle use-class，必須使用標準OSGi Bundle部署機制，在AEM中編譯、封裝和部署類別。 與本地安裝不同， use-class包聲明 **應正常命** 名：
 
 ### `/apps/my-example/component/info/Info.java` {#apps-my-example-component-info-info-java-6}
 
@@ -455,7 +455,7 @@ public class Info extends WCMUsePojo {
 }
 ```
 
-而且 `data-sly-use` ，此陳述式必須參照 *完整的合格類別名稱*，而不只是本端類別名稱：
+而且，語 `data-sly-use` 句必須引用完 *全限定的類名*，而不是僅引用本地類名：
 
 ### `/apps/my-example/component/info/info.html` {#apps-my-example-component-info-info-html-6}
 
@@ -466,61 +466,61 @@ public class Info extends WCMUsePojo {
 </div>
 ```
 
-### 替代以外的替代項目 `WCMUsePojo`{#alternatives-to-wcmusepojo}
+### 替代方 `WCMUsePojo` 案 {#alternatives-to-wcmusepojo}
 
-建立Java使用類別最常見的方法就是擴充 `WCMUsePojo`。不過，還有一些其他選項。若要瞭解這些變體，有助於瞭解HTL `data-sly-use` 陳述式在此套裝下的運作方式。
+建立Java使用類別最常見的方式是擴充 `WCMUsePojo`。 但是，還有許多其他選擇。 要瞭解這些變體，瞭解HTL陳述式在外罩 `data-sly-use` 下的運作方式會有所幫助。
 
-假設您有下列 `data-sly-use` 陳述式：
+假設您有下列陳 `data-sly-use` 述式：
 
 **`<div data-sly-use.`** `localName`**`="`** `UseClass`**`">`**
 
-系統會處理陳述式，如下所示：
+系統將按以下方式處理語句：
 
 (1)
 
-* 如果本機檔案 *useClass. java* 與HTL檔案位於相同目錄中，請嘗試編譯並載入該類別。如果成功，請至(2)。
+* 如果與HTL檔案位於同一 *目錄中存在本地檔案UseClass.java* ，請嘗試編譯並載入該類。 如果成功轉到(2)。
 
-* 否則，請將 *useClass解譯* 為完全合格的類別名稱，並嘗試從OSGi環境載入它。如果成功，請至(2)。
-* 否則，請將 *useClass解譯* 為HTL或JavaScript檔案的路徑，並載入該檔案。如果成功的goto(4)。
+* 否則，請 *將UseClass* 解譯為完全限定的類名，並嘗試從OSGi環境載入它。 如果成功轉到(2)。
+* 否則，請 *將UseClass* 解譯為HTL或JavaScript檔案的路徑，並載入該檔案。 如果goto(4)成功，
 
 (2)
 
-* 嘗試調整目前 **`Resource`** 是否 *`UseClass.`* 成功，請前往(3)。
+* 請嘗試將目前版本 **`Resource`** 調整為 *`UseClass.`* 如果成功，請轉至(3)。
 
-* 否則，請嘗試調整目前 **`Request`** 的內容 *`UseClass`*。如果成功，請前往(3)。
+* 否則，請嘗試將電流調 **`Request`** 整為 *`UseClass`*。 如果成功，請轉至(3)。
 
-* 否則，請嘗試 *`UseClass`* 使用零引數建構函式進行個體化。如果成功，請前往(3)。
+* 否則，請嘗試使用零 *`UseClass`* 引數建構函式實例化。 如果成功，請轉至(3)。
 
 (3)
 
-* 在HTL內，將新改編或建立的物件系結至名稱 *`localName`*。
-* 如果 *`UseClass`* 實施 [`io.sightly.java.api.Use`](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/io/sightly/java/api/Use.html) ，則呼叫 `init` 方法，傳遞目前的執行內容(以 `javax.scripting.Bindings` 物件的形式)。
+* 在HTL中，將新調整或建立的物件系結至名稱 *`localName`*。
+* 如果 *`UseClass`* 實 [ 現，則調用 `io.sightly.java.api.Use`](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/io/sightly/java/api/Use.html) 方法，傳遞當前執行上下文(以對象的 `init``javax.scripting.Bindings` 形式)。
 
 (4)
 
-* 如果 *`UseClass`* 是包含A `data-sly-template`的HTL檔案路徑，請準備範本。
+* 如果 *`UseClass`* 是包含HTL檔案的路徑，請 `data-sly-template`準備範本。
 
-* 否則，如果 *`UseClass`* 是JavaScript使用類別的路徑，請準備使用類別(請參閱 [JavaScript Use-API](use-api-javascript.md))。
+* 否則， *`UseClass`* 如果是JavaScript use-class的路徑，請準備use-class(請參 [閱JavaScript Use-API](use-api-javascript.md))。
 
-上述說明的幾個重點：
+上述說明的幾個要點：
 
-* 任何可自適應、 `Resource`自適應或 `Request`具有零引數建構函式的類別都可以是使用類別。類別不需要擴充或 `WCMUsePojo` 甚至建置 `Use`。
+* 任何可從中調整、可 `Resource`從中調整或 `Request`具有零引數建構函式的類別都可以是use-class。 類不必擴展甚至 `WCMUsePojo` 實現 `Use`。
 
-* 不過，如果使用類別 *，* 則會 `Use`自動呼叫其 **`init`** 方法，以配合目前的上下文，讓您將初始化程式碼放置在該內容視該上下文而定。
+* 不過，如果use-class實 *作* ，則其方法會自動與目前的內容 `Use`**`init`** 一起呼叫，讓您將初始化程式碼放置在該內容上。
 
-* 延伸 `WCMUsePojo` 的使用類別只是實施 **`Use`**的特殊個案。它提供便利的上下文方法，並自動呼叫其 **`activate`** 方法 `Use.init`。
+* 擴充的使用類別 `WCMUsePojo` 只是實作的特例 **`Use`**。 它提供了方便的上下文方法，並 **`activate`** 且自動調用其方法 `Use.init`。
 
 ### 直接實作介面使用 {#directly-implement-interface-use}
 
-雖然建立使用類別最常見的方法是擴充， `WCMUsePojo`但也可以直接實作 `[io.sightly.java.api.Use](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/io/sightly/java/api/Use.html)`介面本身。
+雖然建立使用類別最常見的方式是擴充， `WCMUsePojo`但您也可以直接實作介 `[io.sightly.java.api.Use](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/io/sightly/java/api/Use.html)`面本身。
 
-`Use` 介面只定義一種方法：
+該接 `Use` 口僅定義一種方法：
 
 `[public void init(javax.script.Bindings bindings)](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/io/sightly/java/api/Use#init(javax.script.Bindings))`
 
-**`init`** 在初始化類別時，會呼叫包含所有上下文物件和任何傳遞至使用類別之參數的 **`Bindings`** 物件。
+在 **`init`** 初始化類時，將調用該方法，該類具有 **`Bindings`** 包含所有上下文對象和傳遞到use-class中的任何參數的對象。
 
-所有其他功能(例如等同於 `WCMUsePojo.getProperties()`)都必須明確地使用 ` [javax.script.Bindings](http://docs.oracle.com/javase/7/docs/api/javax/script/Bindings.html)` 物件。例如：
+所有其他功能(如等同的 `WCMUsePojo.getProperties()`)都必須使用物件明確實 ` [javax.script.Bindings](http://docs.oracle.com/javase/7/docs/api/javax/script/Bindings.html)` 施。 例如：
 
 ### `Info.java` {#info-java}
 
@@ -544,15 +544,15 @@ public class MyComponent implements Use {
 }
 ```
 
-當您想要使用現有類別的子類別做為使用類別時，要自己實施 `Use` 介面而不是擴充 `WCMUsePojo` 。
+要自行實作介面而 `Use` 不是擴展介面， `WCMUsePojo` 主要的案例是您希望使用現有類的子類作為use-class。
 
-### 從資源中調整 {#adaptable-from-resource}
+### 從資源調整 {#adaptable-from-resource}
 
-另一個選擇是使用自適應的輔助類別 **`org.apache.sling.api.resource.Resource`**。
+另一個選項是使用可自適應的輔助類 **`org.apache.sling.api.resource.Resource`**。
 
-假設您需要撰寫HTL指令碼，以顯示DAM資產的MIMI類型。在這種情況下，您知道當呼叫HTL指令碼時，它就會在包含 **`Resource`** nodeType的JCR **`Node`** 的環境中 **`dam:Asset`**。
+假設您需要編寫HTL指令碼，以顯示DAM資產的中型。 在本例中，您知道在呼叫HTL指令檔時，該指令檔會位於包含 **`Resource`** nodetype的JCR的 **`Node`** 內容內 **`dam:Asset`**。
 
-您知道 **`dam:Asset`** 節點的結構如下：
+您知道節點 **`dam:Asset`** 有這樣的結構：
 
 ### 儲存庫結構 {#repository-structure}
 
@@ -600,9 +600,9 @@ public class MyComponent implements Use {
 }
 ```
 
-在這裡我們會顯示預設安裝AEM做為專案幾何圖庫的資產(JPEG影像)。資產被呼叫 **`jane_doe.jpg`** ，其mimame類型 **`image/jpeg`**為。
+在這裡，我們會顯示AEM預設安裝隨附的資產（JPEG影像），做為範例專案geometrixx的一部分。 資產稱為， **`jane_doe.jpg`** 其mimetype為 **`image/jpeg`**。
 
-若要從HTL存取資產，您可以在陳述式中宣告 ` [com.day.cq.dam.api.Asset](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/granite/asset/api/Asset.html)` 為 **`data-sly-use`** 類別：然後使用取得 **`Asset`** 方法擷取所需資訊。例如：
+若要從HTL中存取資產，您可以在 ` [com.day.cq.dam.api.Asset](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/com/adobe/granite/asset/api/Asset.html)` 陳述式中宣告為類 **`data-sly-use`** 別：然後使用get方法來 **`Asset`** 檢索所需資訊。 例如：
 
 ### `mimetype.html` {#mimetype-html}
 
@@ -612,10 +612,10 @@ public class MyComponent implements Use {
 </div>
 ```
 
-`data-sly-use` 此陳述式會指示HTL將目前 **`Resource`** 的內容調整為一個， **`Asset`** 並提供本機名稱 **`asset`**。然後呼叫使用HTL **`getMimeType`**`Asset` getter shorthand的方法： `asset.mimeType`。
+此語 `data-sly-use` 句會指示HTL將目前版本改 **`Resource`** 變為 **`Asset`** 本機名稱，並為其命名 **`asset`**。 然後，它會呼叫 **`getMimeType`** 使用HTL getter `Asset` 速記的方法： `asset.mimeType`。
 
-### 從請求中調整 {#adaptable-from-request}
+### 自請求調整 {#adaptable-from-request}
 
-此外，您也可以使用 **` [org.apache.sling.api.SlingHttpServletRequest](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/SlingHttpServletRequest.html)`**
+您也可以將任何可從 **` [org.apache.sling.api.SlingHttpServletRequest](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/SlingHttpServletRequest.html)`**
 
-與上述使用類別相容的情況一樣， `Resource`可在 [`SlingHttpServletRequest`](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/SlingHttpServletRequest.html)`data-sly-use` 陳述式中指定使用類別的適應性。在執行時，目前的要求將會調整為指定的類別，而產生的物件將可在HTL中提供。
+與上述適用於的use類的情況一樣， `Resource`可在語句中指定 [`SlingHttpServletRequest`](https://helpx.adobe.com/experience-manager/6-2/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/SlingHttpServletRequest.html) 適用於的use類 `data-sly-use` 。 執行時，目前的要求將會適應給定的類別，而產生的物件將可在HTL中使用。
