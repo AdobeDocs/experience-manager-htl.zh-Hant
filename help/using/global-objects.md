@@ -1,41 +1,41 @@
 ---
 title: HTL全域物件
-seo-title: HTL全域物件
-description: HTL不需要指定任何項目，可以在包含全域. jsp後，存取JSP常用的所有物件。
-seo-description: HTL不需要指定任何項目，可以在包含全域. jsp後，存取JSP常用的所有物件。
-uuid: e03affh-a683-4323-8224-53d8 ef59 caef
+seo-title: HTL Global Objects
+description: HTL不需指定任何項目，就可讓您在加入global.jsp後，存取JSP中常用的所有物件。
+seo-description: 'HTL不需指定任何項目，就可讓您在加入global.jsp後，存取JSP中常用的所有物件。 '
+uuid: e03affbb-a683-4323-8224-53d8ef59caef
 contentOwner: 使用者
-products: SG_ PERIENCENCENAGER/HTL
+products: SG_EXPERIENCEMANAGER/HTL
 topic-tags: html-template-language
 content-type: 引用
-discoiquuid: fe071a7e-0dance-45c1-9f86-80c558483f87
-mwpw-migration-script-version: 2017-10-12T214658.665-0400
+discoiquuid: fe071a7e-0dae-45c1-9f86-80c558483f87
+mwpw-migration-script-version: 2017-10-12T21 46 58.665-0400
 translation-type: tm+mt
-source-git-commit: 271c355ae56e16e309853b02b8ef09f2ff971a2e
+source-git-commit: c3beb0d02f18483b1b000c1bf70cd59a3dcc2035
 
 ---
 
 
-# HTL全域物件{#htl-global-objects}
+# HTL Global Objects{#htl-global-objects}
 
-HTL不需指定任何項目，可讓您存取在加入JSP後常用的所有物件 `global.jsp`。這些物件除了可透過「Use-API」( [使用API](use-api.md))導入以外，也是其他物件。
+HTL不需指定任何項目，就可讓您在加入後，存取JSP中常用的所有物件 `global.jsp`。 These objects are in addition to any that may be introduced through the Use-API.[](use-api.md)
 
-## 可列舉物件 {#enumerable-objects}
+## 可枚舉的對象 {#enumerable-objects}
 
-這些物件可方便存取常用資訊。Their content can be accessed with the dot notation, and they can be iterated-through using `data-sly-list` or `data-sly-repeat`.
+這些物件可方便存取常用資訊。 Their content can be accessed with the dot notation, and they can be iterated-through using  or .`data-sly-list``data-sly-repeat`
 
 | 變數名稱 | 說明 |
 |--- |--- |
-| 屬性 | 目前資源的屬性清單。由 [org. apache. sling. api. resource. Value API備份](https://helpx.adobe.com/experience-manager/6-3/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) |
-| pageProperties | 目前頁面的頁面屬性清單。由 [org. apache. sling. api. resource. Value API備份](https://helpx.adobe.com/experience-manager/6-3/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.hmtl) |
-| 繼承頁面屬性 | 目前頁面的繼承頁面屬性清單。由 [org. apache. sling. api. resource. Value API備份](https://helpx.adobe.com/experience-manager/6-3/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) |
+| 屬性 | 當前資源的屬性清單。 由 [org.apache.sling.api.resource.ValueMap支援](https://helpx.adobe.com/experience-manager/6-3/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) |
+| pageProperties | 目前頁面的頁面屬性清單。 由 [org.apache.sling.api.resource.ValueMap支援](https://helpx.adobe.com/experience-manager/6-3/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.hmtl) |
+| inheritedPageProperties | 目前頁面繼承的頁面屬性清單。 由 [org.apache.sling.api.resource.ValueMap支援](https://helpx.adobe.com/experience-manager/6-3/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) |
 
 
-## Java支援的物件 {#java-backed-objects}
+## Java後備對象 {#java-backed-objects}
 
-下列每個物件均由對應的Java物件備份。
+以下每個對象都由相應的Java對象作為備份。
 
-下表中最實用的變數以粗體顯示。
+下表中最有用的變數會以粗體反白顯示。
 
 | 變數名稱 | 說明 |  |
 |---|---|---|
@@ -65,7 +65,7 @@ HTL不需指定任何項目，可讓您存取在加入JSP後常用的所有物�
 
 ## JavaScript支援的物件 {#javascript-backed-objects}
 
-此外，也有可由JavaScript備份的物件。但是，如同AEM6.2，這些物件仍具實驗性，因此使用Java備份物件的效果也比較好。
+還有可用的物件由JavaScript支援。 不過，自AEM 6.2起，這些物件仍為實驗性物件，使用Java支援的物件更好，因此也可以這麼做。
 
 <!-- 
 
