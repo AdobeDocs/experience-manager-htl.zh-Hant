@@ -1,7 +1,7 @@
 ---
 title: AEM HTL Overview
 seo-title: Overview of AEM HTL technical documentation.
-description: AEM支援的HTL旨在提供高生產力的企業層級網頁架構，以提高安全性，並讓不具Java知識的HTML開發人員更能參與AEM專案。
+description: The purpose of HTL supported by AEM, is to offer a highly productive enterprise-level web framework that increases security, and allows HTML developers without Java knowledge to better participate in AEM projects.
 seo-description: This document lays out the principles and purpose of HTML Template Language - HTL - supported by Adobe Experience Manager. HTL is a highly productive enterprise-level web framework that increases security, and allows HTML developers without Java knowledge to better participate in AEM projects.
 uuid: 8f486325-0a1b-4186-a998-96fc0034c44a
 contentOwner: 使用者
@@ -10,8 +10,9 @@ topic-tags: 簡介
 content-type: 引用
 discoiquuid: 8f779e08-94c7-43bc-a6e5-d81a9f818c5c
 mwpw-migration-script-version: 2017-10-12T21 46 58.665-0400
+skyline: 測試複製
 translation-type: tm+mt
-source-git-commit: 1d4565a4cffa6e5d42d6a5242f7ce62203dc7c63
+source-git-commit: 0aa1e905fd6d24f7031dceb0a8a89b56da198719
 
 ---
 
@@ -28,11 +29,11 @@ AEM 6.0已推出HTML範本語言，取代JSP(JavaServer Pages)，成為HTML的�
 
 雖然使用JSP等範本語言可以取得相同的結果，但開發人員必須手動確保將適當的逸出套用至每個變數。 由於所套用逸出的單一遺漏或錯誤可能足以造成跨網站指令碼(XSS)弱點，我們決定使用HTL將此工作自動化。 如果需要，開發人員仍可在運算式上指定不同的逸出，但是使用HTL，預設行為更可能對應至所要的行為，降低發生錯誤的可能性。
 
-## Simplified Development {#simplified-development}
+## 簡化開發 {#simplified-development}
 
-HTML範本語言易學，其功能有意限制，以確保其簡單明瞭。 It also has powerful mechanisms for structuring the markup and invoking logic, while always enforcing strict separation of concerns between markup and logic. HTL itself is standard HTML5 as it uses expressions and data attributes to annotate the markup with the desired dynamic behavior, meaning that it doesn't break the validity of the markup and keeps it readable. Note that the evaluation of the expressions and data attributes is done entirely server-side and won't be visible on the client-side, where any desired JavaScript framework can be used without interfering.
+HTML範本語言易學，其功能有意限制，以確保其簡單明瞭。 它還具有強大的機制來構造標籤和調用邏輯，同時始終在標籤和邏輯之間嚴格地分離關注。 HTL本身是標準HTML5，因為它使用運算式和資料屬性，在標籤上加上所需的動態行為，這表示它不會中斷標籤的有效性，並讓標籤保持可讀性。 請注意，運算式和資料屬性的評估是完全在伺服器端進行，用戶端上不會顯示，因為任何需要的JavaScript架構都可在不干擾的情況下使用。
 
-這些功能可讓不具備Java知識的HTML開發人員，而且幾乎不具備特定產品知識的HTML開發人員編輯HTL範本，讓他們成為開發團隊的一員，並簡化與完整Java開發人員的協作。 And vice versa this allows Java developers to focus on the back-end code without worrying about HTML.
+這些功能可讓不具備Java知識的HTML開發人員，而且幾乎不具備特定產品知識的HTML開發人員編輯HTL範本，讓他們成為開發團隊的一員，並簡化與完整Java開發人員的協作。 反之亦然，讓Java開發人員可專注在後端程式碼上，而不需擔心HTML。
 
 ## 降低成本 {#reduced-costs}
 
@@ -44,9 +45,9 @@ HTML範本語言易學，其功能有意限制，以確保其簡單明瞭。 It 
 
 上圖顯示HTL可能改善的效率：
 
-* **** HTML / CSS / JS:由於HTML開發人員可直接編輯HTL範本，所以前端設計不必再與AEM專案分開實施，而可以直接在實際的AEM元件上實施。 This reduces painful iterations with the full-stack Java developers.
-* **** JSP / HTL: Since HTL itself doesn't require any Java knowledge and is straight-forward to write, any developer with HTML expertise is empowered to edit the templates.
-* **** Java:由於HTL提供的Use-API使用簡單明瞭，所以與商業邏輯的介面也清晰明瞭，這也對Java開發整體有利。
+* **** HTML / CSS / JS:由於HTML開發人員可直接編輯HTL範本，所以前端設計不必再與AEM專案分開實施，而可以直接在實際的AEM元件上實施。 如此可減少與完整堆疊的Java開發人員之間的痛苦重複作業。
+* **** JSP / HTL:由於HTL本身不需要任何Java知識，而且可直接編寫，因此任何具備HTML專業知識的開發人員都可編輯範本。
+* **Java:** Thanks to the clear and simple to use Use-API provided by HTL, the interface with the business logic is clarified, which also benefits Java development overall.
 
 **閱讀下一頁：**
 
