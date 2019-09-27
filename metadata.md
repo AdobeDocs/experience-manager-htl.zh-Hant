@@ -1,30 +1,30 @@
 ---
 cloud: experience-cloud
-solution-title: Experience Cloud HTL
+solution-title: Learn & Support
 solution-hub-url: https://helpx.adobe.com/support/experience-manager/6-4.html
 solution-image: null
-getting-started-title: 快速入門
+getting-started-title: Getting Started
 getting-started-url: https://helpx.adobe.com/experience-manager/get-started.html
-tutorials-title: 教學課程
+tutorials-title: Tutorials
 tutorials-url: https://helpx.adobe.com/experience-manager/kt/index/aem-6-4-videos.html
 git-repo: https://github.com/AdobeDocs/experience-manager-htl.en
 index: y
 translation-type: tm+mt
-source-git-commit: 271c355ae56e16e309853b02b8ef09f2ff971a2e
+source-git-commit: febf84d3ae38626891574ba05958678a3b23aaf1
 
 ---
 
 
-# 中繼資料供內部使用
+# Metadata for internal use
 
-metadata. md檔案包含回推層級中繼資料，可通過回推的使用者指南TOC. md檔案。如果您想要變更任何使用手冊的中繼資料. md內容，請在任何TOC. md檔案中進行。
+The metadata.md file includes repo-level metadata that passes through to user guide TOC.md files in the repo. If you want to change metadata.md content for any user guide, do so in any TOC.md file.
 
-| 中繼資料 | 它的用途 |
+| 中繼資料 | 它的功能 |
 |--- |--- |
-| solution-title | 在文章標題中使用做為連結 |
-| solution-hub-url | 開啓Helpx中心頁面 |
-| solution-icon | 在解決方案標題旁顯示解決方案圖示。尚未實作 |
-| getting-started-url | 連結至說明快速入門頁面 |
-| 教學課程URL | 連結至教學課程影片—提供說明教學課程或KT教學課程 |
-| mini-toc-level | 決定顯示在右側邊欄中的標題層級數目。預設為2 |
-| git-repo | 指定主版回購的位置，以供內部使用 |
+| solution-title | Used in article header as link |
+| solution-hub-url | Opens helpx hub page |
+| 解決方案圖示 | 在解決方案標題旁顯示解決方案圖示。 尚未實施 |
+| getting-started-url | 幫助快速入門頁面的連結 |
+| 教學課程-url | 連結至教學課程影片——說明教學課程或KT教學課程 |
+| 迷你目錄層級 | 決定出現在右側欄中的標題層數。 預設值為2 |
+| git-repo | 指定主回購協定的內部使用位置 |
