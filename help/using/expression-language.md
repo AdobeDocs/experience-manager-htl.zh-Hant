@@ -1,6 +1,6 @@
 ---
-title: HTL運算式語言
-seo-title: HTL運算式語言
+title: HTL 運算式語言
+seo-title: HTL 運算式語言
 description: HTML範本語言使用運算式語言來存取提供HTML輸出動態元素的資料結構。
 seo-description: 'HTML範本語言使用運算式語言來存取提供HTML輸出動態元素的資料結構。 '
 uuid: 38b4a259-03b5-4847-91c6-e20377600070
@@ -11,12 +11,12 @@ content-type: 引用
 discoiquuid: 9ba37ca0-f318-48b0-a791-a944a72502ed
 mwpw-migration-script-version: 2017-10-12T21 46 58.665-0400
 translation-type: tm+mt
-source-git-commit: 84ed515309831fe413abf317d8739f2bba79afdb
+source-git-commit: 6de5ed20e4463c0c2e804e24cb853336229a7c1f
 
 ---
 
 
-# HTL運算式語言 {#htl-expression-language}
+# HTL 運算式語言 {#htl-expression-language}
 
 HTML範本語言使用運算式語言來存取提供HTML輸出動態元素的資料結構。 這些運算式會以字元和 `${` 分隔 `}`。 為避免格式錯誤的HTML，運算式只能用於屬性值、元素內容或注釋中。
 
@@ -45,8 +45,10 @@ HTL不需指定任何項目，就可讓您在加入後，存取JSP中常用的�
 
 存取變數屬性的方法有兩種：點記號或方括弧記號：
 
-`${currentPage.title}  
-${currentPage['title']} or ${currentPage["title"]}`
+```
+${currentPage.title}  
+${currentPage['title']} or ${currentPage["title"]}
+```
 
 大多數情況下，最好使用更簡單的點標籤法，並且應使用括弧標籤法來訪問包含無效標識符字元的屬性，或動態訪問屬性。 以下兩章將提供這兩個案例的詳細資訊。
 
@@ -222,7 +224,7 @@ ${myArray[2]}
 
 由於邏輯OR運算子會傳回第一個真實的變數，因此也可非常方便地用來提供備援值。
 
-有條件地顯示HTML屬性，因為HTL會移除由運算式設定的值屬性，這些運算式會評估為false或空字串。 因此，下列範例將顯示**`properties.jcr:`**title（如果存在且不為空），否則它會返回顯示 **`properties.jcr:description`** if exists and is not empty，否則會顯示訊息「no title or description provided」:
+有條件地顯示HTML屬性，因為HTL會移除由運算式設定的值屬性，這些運算式會評估為false或空字串。 因此，下列範例將顯示 **`properties.jcr:`** 標題（如果存在且不為空），否則它會返回顯示 **`properties.jcr:description`** （如果存在且不為空），否則會顯示訊息「未提供標題或說明」:
 
 ```xml
 <p>${properties.jcr:title || properties.jcr:description || "no title or description provided"}</p>
@@ -409,7 +411,7 @@ HTL運算式的顯示內容會參照其在HTML頁面結構中的位置。 例如
 | uri | 要顯示連結和路徑，請預設href和src屬性值 | 驗證URI是否寫入為href或src屬性值，如果驗證失敗則不輸出任何內容。 |
 | 數字 | 要顯示數字 | 驗證包含整數的URI，如果驗證失敗，則輸出零。 |
 | attributeName | 設定屬性名稱時的data-sly-attribute預設值 | 驗證屬性名稱，如果驗證失敗，則不輸出任何內容。 |
-|  elementName | 預設的資料密碼元素 | 驗證元素名稱，如果驗證失敗，則不輸出任何內容。 |
+| elementName | 預設的資料密碼元素 | 驗證元素名稱，如果驗證失敗，則不輸出任何內容。 |
 | scriptToken | 對於JS識別碼、常值數字或常值字串 | 驗證JavaScript Token，如果驗證失敗，則不會輸出任何內容。 |
 | scriptString | 在JS字串中 | 編碼將從字串中分開的字元。 |
 | scriptComment | 在JS注釋中 | 驗證JavaScript注釋，如果驗證失敗，則不會輸出任何內容。 |
