@@ -1,26 +1,26 @@
 ---
-title: HTL快速入門
-seo-title: HTL快速入門
+title: 開始使用 HTL
+seo-title: 開始使用 HTL
 description: AEM支援的HTL取代JSP，成為AEM中HTML的偏好和建議的伺服器端範本系統。
 seo-description: Adobe Experience manager支援的HTML範本語言- HTL取代JSP，成為AEM中HTML的偏好和建議的伺服器端範本系統。
 uuid: 4a7d6748-8cdf-4280-a85d-6c5319abf487
-content-type: 引用
+content-type: 參考
 topic-tags: 簡介
 discoiquuid: 3bf2ca75-0d68-489d-bd1c-1d4fd730c61a
 mwpw-migration-script-version: 2017-10-12T21 46 58.665-0400
 translation-type: tm+mt
-source-git-commit: 1e3df6159b48da27460f3ad95c22c13d025b1a72
+source-git-commit: 6de5ed20e4463c0c2e804e24cb853336229a7c1f
 
 ---
 
 
-# HTL快速入門 {#getting-started-with-htl}
+# 開始使用 HTL {#getting-started-with-htl}
 
 Adobe Experience Manager(AEM)支援的HTML範本語言(HTL)取代JSP(JavaServer Pages)，成為AEM中HTML的偏好和建議的伺服器端範本系統。
 
 >[!NOTE]
 >
->要運行本頁上提供的大多數示例，可以使用名為「讀取評 [估打印循環](https://github.com/Adobe-Marketing-Cloud/aem-htl-repl) 」的即時執行環境。
+>要運行本頁上提供的大多數示例，可以使用名為「讀取評估打印 [循環](https://github.com/Adobe-Marketing-Cloud/aem-htl-repl) 」的即時執行環境。
 >
 >AEM社群已產生一系列與使 [用HTL相關的文章](related-community-articles.md) 、影片和網路研討會。
 
@@ -48,7 +48,7 @@ Adobe Experience Manager(AEM)支援的HTML範本語言(HTL)取代JSP(JavaServer 
 否，但如「載入用戶端程式庫」 [區段所示](getting-started.md#loading-client-libraries) ，範本 [](block-statements.md#template-call) 和呼叫陳述式提供類似的模式。
 
 **AEM專案中是否可擴充HTL功能？**
-**否，但如「載入用戶端程式庫」 [區段所示](getting-started.md#loading-client-libraries) ，範本 [](block-statements.md#template-call) 和呼叫陳述式提供類似的模式。
+否，但如「載入用戶端程式庫」 [區段所示](getting-started.md#loading-client-libraries) ，範本 [](block-statements.md#template-call) 和呼叫陳述式提供類似的模式。
 不，他們不能。 HTL具有強大的擴充機制，可重複使用邏輯- [Use-API](getting-started.md#use-api-for-accessing-logic) —— 和標籤( [template &amp; call](block-statements.md#template-call) statements)，可用來模組化專案的程式碼。
 
 **HTL優於JSP的主要優點為何？**
@@ -100,7 +100,7 @@ HTL的核心概念是提供重複使用現有HTML元素來定義區塊陳述式�
 </sly>
 ```
 
-將輸出類似以下HTML的內容，但只有在定義了兩個、 **`jcr:title`** a和 **`jcr:decription`** a屬性，且其中沒有一個為空時：
+將輸出類似以下HTML的內容，但只有在同時定義了a和 **`jcr:title`** a屬 **`jcr:decription`** 性，且其中沒有任何屬性為空時：
 
 ```xml
 <h1>MY TITLE</h1>
@@ -109,7 +109,7 @@ HTL的核心概念是提供重複使用現有HTML元素來定義區塊陳述式�
 
 不過，需要注意的一點是，當沒有現有元素可以用區塊陳述式加上註解時，只使用SLY元素，因為SLY元素會阻止語言提供的值，使靜態HTML變為動態。
 
-例如，如果上一個範例原本已包裝在DIV元素內，則新增的SLY元素會是辱罵性的：
+例如，如果先前的範例已包裝在DIV元素內，則新增的SLY元素會是辱罵性的：
 
 ```xml
 <div>
@@ -158,7 +158,7 @@ HTML注釋不能包含HTL注釋，反之亦然。
 
 ### 沒有塊語句的上下文 {#contexts-without-block-statements}
 
-由於HTL使用資料屬性來定義區塊陳述式，因此無法在下列內容中定義此類區塊陳述式，因此只能在此處使用陳述式：
+由於HTL使用資料屬性來定義區塊陳述式，因此無法在下列內容中定義此類區塊陳述式，因此只能在此處使用運算式：
 
 * HTML注釋
 * 指令碼元素
@@ -417,7 +417,7 @@ for (var i = 0; i < elements.length; i++) {
 
 不過，更現代的技巧是改用HTML元素，因為這樣的好處是，它不需要將範本的內容隔離為個別的檔案。 **`template`**
 
-**閱讀下一頁：**
+**閱讀下一節內容:**
 
 * [運算式語言](expression-language.md) -詳細瞭解在HTL運算式中可執行的動作。
 * [塊語句](block-statements.md) -發現HTL中所有可用的塊語句，以及如何使用它們。
