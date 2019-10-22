@@ -11,7 +11,7 @@ content-type: 引用
 discoiquuid: 126ebc9d-5f7b-47a4-aea2-c8840d34864c
 mwpw-migration-script-version: 2017-10-12T21 46 58.665-0400
 translation-type: tm+mt
-source-git-commit: 48f09cfbdc5ef0bc5b951de1444ce40ea53dc07f
+source-git-commit: 6de5ed20e4463c0c2e804e24cb853336229a7c1f
 
 ---
 
@@ -45,7 +45,7 @@ HTML範本語言(HTL)Java Use-API可讓HTL檔案存取自訂Java類別中的輔�
 }
 ```
 
-存取此內容時，會執行HTL檔案。 在HTL程式碼中，我們使用內容物件**`properties`**來存取目前資源並 `title` 顯 `description` 示它們。 輸出HTML將為：
+存取此內容時，會執行HTL檔案。 在HTL程式碼中，我們使用內容物 **`properties`** 件來存取目前資源並 `title` 顯 `description` 示它們。 輸出HTML將為：
 
 ### `view-source:http://localhost:4502/content/my-example.html` {#view-source-http-localhost-content-my-example-html}
 
@@ -404,7 +404,7 @@ public class Info extends WCMUsePojo {
 
 檔案現 `info.html` 在包含兩 **`data-sly-use`** 個陳述式，其中原始陳述式會匯入 **`Info`** Java use-class，新陳述式會以本機名稱匯入範本檔案 `extra`。
 
-請注意，我們可以將範本區塊放在檔案中，以避 **`info.html`** 免第二個範本區塊 **`data-sly-use`**，但是個別範本檔案較常見，而且可重複使用。
+請注意，我們可以將範本區塊放在檔案中，以避 **`info.html`** 免第二個範本區塊 **`data-sly-use`**，但是個別範本檔案比較常見，而且可重複使用。
 
 類 **`Info`** 和以前一樣使用，調用其getter方法 **`getLowerCaseTitle()`** , `getLowerCaseDescription()` 並通過其相應的HTL屬性 `info.lowerCaseTitle` 和 **`info.lowerCaseDescription`**。
 
