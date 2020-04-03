@@ -1,5 +1,5 @@
 ---
-source-git-commit: f09b2268dc4745a8c2e3c53bb20fa3d35f6a7c2b
+source-git-commit: fd7751869a45019e1492218df9cc7824ef507870
 translation-type: tm+mt
 
 ---
@@ -50,9 +50,9 @@ translation-type: tm+mt
 
 ### Adobe員工的貢獻
 
-如果您是Adobe員工，並想要提出提取請求，請使用位於的私人資料庫 `https://git.corp.adobe.com/AdobeDocs`。
+如果您是Adobe員工並有貢獻，請使用 `AdobeDocs` 公司Git中的組織。
 
-有關問題，請免費使用公用資料庫。
+當然，我們對任何貢獻都很滿意，如果您的貢獻是在公開存放庫中提供，我們將會審查您的貢獻。不過，從Adobe員工取得的請求更容易處理，而且可在公司回購協定中更快地獲得核准。 請確定公司回購協定中只討論任何專有資訊。
 
 ## 更多資訊
 
