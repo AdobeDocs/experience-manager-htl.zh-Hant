@@ -1,31 +1,26 @@
 ---
 title: HTL Use-API
-seo-title: Adobe HTL Use-API
 description: 有兩種 API 適用於 HTL - Java Use-API 和 Javascript Use-API
-seo-description: 有兩種 API 適用於 Adobe HTL - Java Use-API 和 Javascript Use-API
-uuid: ab44aa5c-ce7e-40b9-97fb-e86c6a28405c
-contentOwner: 使用者
-products: SG_EXPERIENCEMANAGER/HTL
-topic-tags: html-template-language
-content-type: 引用
-discoiquuid: 89004426-eb59-4b63-913f-51bf98662773
-mwpw-migration-script-version: 2017-10-12T21 46 58.665-0400
 translation-type: tm+mt
-source-git-commit: 5cbaf9c747acf748d12559c2c8e3aba4600cf9a4
+source-git-commit: d7efae3d1b4d1bc22c63c21f544a99bf0ae4b3c9
+workflow-type: tm+mt
+source-wordcount: '183'
+ht-degree: 8%
 
 ---
 
 
-# HTL使用API {#htl-use-api}
+# HTL Use-API {#htl-use-api}
 
-下表概述每個API的優點和缺點。
+HTL不允許商業邏輯與標籤混為一談，以鼓勵分離顧慮。 商業邏輯可透過Use-API實作。
+
+下表概述了每個API的優點和缺點。
 
 |  | **Java Use-API** | **JavaScript Use-API** |
 |--- |--- |--- |
-| **專業人員** | <ul><li>更快速</li><li>可使用除錯程式進行檢查</li><li>易於單元測試</li></ul> | <ul><li>可由前端開發人員修改</li><li>位於元件中，使元件的檢視邏輯與其對應的範本保持接近</li></ul> |
-| **缺點** | <ul><li>無法由前端開發人員修改</li></ul> | <ul><li>較慢</li><li>no debugger (yet)</li><li>harder to unit-test</li></ul> |
+| **優勢** | <ul><li>更快速</li><li>可使用除錯程式進行檢查</li><li>易於單元測試</li></ul> | <ul><li>前端開發人員可修改</li><li>位於元件內，使元件的檢視邏輯與其對應的範本保持接近</li></ul> |
+| **缺點** | <ul><li>前端開發人員無法修改</li></ul> | <ul><li>較慢</li><li>尚無除錯程式（尚未）</li><li>單位測試難度較大</li></ul> |
 
+對於頁面元件，建議使用混合模型，其中所有模型邏輯都位於Java中，以提供不受檢視（即元件內）中任何情況影響的清晰API。 AEM隨附絕佳的預設模型，例如應能涵蓋大部分案例的「頁面」或「資源API」。
 
-For page components, it is recommended to use a mixed model, where all model logic is located in Java, providing clear APIs that are agnostic to anything that happens in the view (i.e. within the components). AEM comes with great default models like the Page or the Resource API that should be able to cover most cases.
-
-All view logic that is specific to a component should be placed within that component as JavaScript, because it belongs to that component.
+元件專屬的所有檢視邏輯都應以JavaScript的形式放在該元件中，因為它屬於該元件。
