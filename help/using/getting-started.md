@@ -1,34 +1,28 @@
 ---
 title: 開始使用 HTL
-seo-title: 開始使用 HTL
 description: AEM支援的HTL取代JSP，成為AEM中HTML的偏好和建議的伺服器端範本系統。
-seo-description: Adobe Experience manager支援的HTML範本語言- HTL取代JSP，成為AEM中HTML的偏好和建議的伺服器端範本系統。
-uuid: 4a7d6748-8cdf-4280-a85d-6c5319abf487
-content-type: 參考
-topic-tags: 簡介
-discoiquuid: 3bf2ca75-0d68-489d-bd1c-1d4fd730c61a
-mwpw-migration-script-version: 2017-10-12T21 46 58.665-0400
 translation-type: tm+mt
-source-git-commit: 6de5ed20e4463c0c2e804e24cb853336229a7c1f
+source-git-commit: ee712ef61018b5e05ea052484e2a9a6b12e6c5c8
+workflow-type: tm+mt
+source-wordcount: '2490'
+ht-degree: 0%
 
 ---
 
 
 # 開始使用 HTL {#getting-started-with-htl}
 
-Adobe Experience Manager(AEM)支援的HTML範本語言(HTL)取代JSP(JavaServer Pages)，成為AEM中HTML的偏好和建議的伺服器端範本系統。
+Adobe Experience Manager(AEM)支援的HTML範本語言(HTL)是AEM中HTML的偏好和建議的伺服器端範本系統。 它取代舊版AEM中使用的JSP(JavaServer Pages)。
 
 >[!NOTE]
 >
->要運行本頁上提供的大多數示例，可以使用名為「讀取評估打印 [循環](https://github.com/Adobe-Marketing-Cloud/aem-htl-repl) 」的即時執行環境。
->
->AEM社群已產生一系列與使 [用HTL相關的文章](related-community-articles.md) 、影片和網路研討會。
+>要運行本頁上提供的大多數示例，可以使用名為「讀取評 [估打印循環](https://github.com/Adobe-Marketing-Cloud/aem-htl-repl) 」的即時執行環境。
 
 ## HTL over JSP {#htl-over-jsp}
 
 建議新的AEM專案使用「HTML範本語言」，因為與JSP相比，它提供多項優點。 但是，對於現有項目，只有在預計遷移比在未來幾年維護現有JSP的工作量小的情況下，遷移才有意義。
 
-但改用HTL並非一無是處的選擇，因為使用HTL編寫的元件與使用JSP或ESP編寫的元件相容。 這表示現有專案可以毫無問題地使用HTL來建立新元件，同時保留現有元件的JSP。
+但是，改用HTL並非一無是處的選擇，因為以HTL編寫的元件與以JSP或ESP編寫的元件相容。 這表示現有專案可以毫無問題地使用HTL來建立新元件，同時保留現有元件的JSP。
 
 即使在同一個元件中，HTL檔案也可與JSP和ESP搭配使用。 以下示例說 **明第1行** ，如何從JSP檔案包含HTL檔案，以及第2 **行** ，如何從HTL檔案包含JSP檔案：
 
@@ -41,21 +35,15 @@ Adobe Experience Manager(AEM)支援的HTML範本語言(HTL)取代JSP(JavaServer 
 
 開始使用HTML範本語言之前，我們先先回答一些與JSP與HTL主題相關的問題。
 
-**HTL是否有JSP所無法提供的限制？**
-與JSP相比，HTL並沒有其他限制，因為使用JSP可做的事也應該可以透過HTL達成。 但是，HTL在設計上比JSP要嚴格，而且在單一JSP檔案中可實現的功能，可能需要將HTL分割為Java類別或JavaScript檔案，才能在HTL中實現。 但這通常是為了確保邏輯和標籤之間的關注之間很好地分離。
+**HTL是否有JSP所無法提供的限制？** -與JSP相比，HTL並沒有其他限制，因為使用JSP可做的事也應該可以透過HTL達成。 但是，HTL在設計上比JSP要嚴格，而且在單一JSP檔案中可實現的功能，可能需要將HTL分割為Java類別或JavaScript檔案，才能在HTL中實現。 但這通常是為了確保邏輯和標籤之間的關注之間很好地分離。
 
-**HTL是否支援JSP標籤庫？**
-否，但如「載入用戶端程式庫」 [區段所示](getting-started.md#loading-client-libraries) ，範本 [](block-statements.md#template-call) 和呼叫陳述式提供類似的模式。
+**HTL是否支援JSP標籤庫？** -否，但如「載入客戶端庫」 [部分所示](getting-started.md#loading-client-libraries) ，模板 [](block-statements.md#template-call) 和調用語句提供類似的模式。
 
-**AEM專案中是否可擴充HTL功能？**
-否，但如「載入用戶端程式庫」 [區段所示](getting-started.md#loading-client-libraries) ，範本 [](block-statements.md#template-call) 和呼叫陳述式提供類似的模式。
-不，他們不能。 HTL具有強大的擴充機制，可重複使用邏輯- [Use-API](getting-started.md#use-api-for-accessing-logic) —— 和標籤( [template &amp; call](block-statements.md#template-call) statements)，可用來模組化專案的程式碼。
+**AEM專案可擴充HTL功能嗎？** -不，他們不能。 HTL具有強大的擴充機制，可重複使用邏輯- [Use-API](getting-started.md#use-api-for-accessing-logic) —— 和標籤( [template &amp; call](block-statements.md#template-call) statements)，可用來模組化專案的程式碼。
 
-**HTL優於JSP的主要優點為何？**
-安全性和專案效率是主要優點，詳見「概 [述」](overview.md)。
+**HTL優於JSP的主要優點為何？** -安全性和項目效率是主要優點，詳見 [概述](overview.md)。
 
-**JSP最終會消失嗎？**
-在目前日期，沒有這些計畫。
+**JSP最終會消失嗎？** -在目前日期，沒有這些計畫。
 
 ## HTL的基本概念 {#fundamental-concepts-of-htl}
 
@@ -73,23 +61,17 @@ HTML範本語言使用運算式語言將內容片段插入轉譯的標籤中，�
 
 有兩種不同的語法可以區分：
 
-* **[區塊陳述](block-statements.md)**&#x200B;式若要有條件地 **顯示&lt;h1&gt;元素** ，則使用 `[data-sly-test](block-statements.md#test)` HTML5資料屬性。 HTL提供多種此類屬性，可將行為附加至任何HTML元素，而且所有屬性都加上前置詞 `data-sly`。
+* **[區塊陳述式](block-statements.md)**-若要有條件地顯&#x200B;**示&lt;h1>元素**，請使用[`data-sly-test`](block-statements.md#test)HTML5資料屬性。 HTL提供多種此類屬性，可將行為附加至任何HTML元素，而且所有屬性都加上前置詞`data-sly`。
 
-* **[運算式語言](expression-language.md)** HTL運算式以字元和分隔 `${` 開 `}`。 在執行時期，會評估這些運算式，並將其值插入傳出的HTML串流。
+* **[運算式語言](expression-language.md)**- HTL運算式以字元和`${`分隔`}`。 在執行時期，會評估這些運算式，並將其值插入傳出的HTML串流。
 
 上述連結的兩頁提供語法可用功能的詳細清單。
 
 ### SLY元素 {#the-sly-element}
 
->[!NOTE]
->
->SLY元素已隨AEM 6.1或HTL 1.1引入。
->
->在此之前，必 `[data-sly-unwrap](block-statements.md)` 須改用屬性。
-
 HTL的核心概念是提供重複使用現有HTML元素來定義區塊陳述式的可能性，避免插入其他分隔字元來定義陳述式的開始和結束位置。 此標籤的不顯眼註解可將靜態HTML轉換為功能正常的動態範本，可讓您不破壞HTML程式碼的有效性，因此即使是靜態檔案，也能正常顯示。
 
-但是，有時在必須插入塊語句的確切位置可能不存在現有元素。 在這種情況下，可以插入將自動從輸出中移除的特殊SLY元素，同時執行附加的塊語句並相應地顯示其內容。
+但是，有時可能沒有現有元素存在於必須插入塊語句的確切位置。 在這種情況下，可以插入將自動從輸出中移除的特殊SLY元素，同時執行附加的塊語句並相應地顯示其內容。
 
 所以，以下例子：
 
@@ -100,16 +82,16 @@ HTL的核心概念是提供重複使用現有HTML元素來定義區塊陳述式�
 </sly>
 ```
 
-將輸出類似以下HTML的內容，但只有在同時定義了a和 **`jcr:title`** a屬 **`jcr:decription`** 性，且其中沒有任何屬性為空時：
+將輸出類似以下HTML的內容，但只有在定義了兩者、a **`jcr:title`** 和 **`jcr:description`** a屬性且兩者均為空時：
 
 ```xml
 <h1>MY TITLE</h1>
 <p>MY DESCRIPTION</p>
 ```
 
-不過，需要注意的一點是，當沒有現有元素可以用區塊陳述式加上註解時，只使用SLY元素，因為SLY元素會阻止語言提供的值，使靜態HTML變為動態。
+要記住的一點是，當沒有現有元素可以用塊陳述式加上註解時，僅使用SLY元素，因為SLY元素會阻止語言提供的值，使靜態HTML變為動態。
 
-例如，如果先前的範例已包裝在DIV元素內，則新增的SLY元素會是辱罵性的：
+例如，如果上一個範例原本已包裝在DIV元素內，則新增的SLY元素會是辱罵性的：
 
 ```xml
 <div>
@@ -128,6 +110,12 @@ HTL的核心概念是提供重複使用現有HTML元素來定義區塊陳述式�
     <p>${properties.jcr:description}</p>
 </div>
 ```
+
+>[!NOTE]
+>
+>SLY元素已隨附於AEM 6.1或HTL 1.1。
+>
+>在此之前，必 [`data-sly-unwrap`](block-statements.md) 須改用屬性。
 
 ### HTL注釋 {#htl-comments}
 
@@ -158,7 +146,7 @@ HTML注釋不能包含HTL注釋，反之亦然。
 
 ### 沒有塊語句的上下文 {#contexts-without-block-statements}
 
-由於HTL使用資料屬性來定義區塊陳述式，因此無法在下列內容中定義此類區塊陳述式，因此只能在此處使用運算式：
+由於HTL使用資料屬性來定義區塊陳述式，因此無法在下列內容中定義此類區塊陳述式，因此只能在此處使用陳述式：
 
 * HTML注釋
 * 指令碼元素
@@ -225,7 +213,7 @@ HTML注釋不能包含HTL注釋，反之亦然。
 
 在伺服器 `logic.js` 端執行的JavaScript檔案旁放置：
 
-```
+```javascript
 use(function () {
     return {
         title: currentPage.getTitle().substring(0, 10) + "..."
@@ -239,7 +227,7 @@ use(function () {
 
 以下各節中對此的詳細說明：
 
-* 有關資料 [密集使用語句的部分](block-statements.md#use) ，說明了使用該語句可以執行的所有操作。
+* 語句上的一節 [`data-sly-use` 說明](block-statements.md#use) ，使用該語句可以執行的所有操作。
 * 「使 [用-API」頁面提供一些資訊](use-api.md) ，可協助您選擇使用Java或JavaScript編寫邏輯。
 * 若要詳細說明如何編寫邏輯， [JavaScript Use-API](use-api-javascript.md) 和 [](use-api-java.md) Java Use-API頁面應有所幫助。
 
@@ -261,7 +249,7 @@ use(function () {
 
 假設有下列 `logic.js` 檔案：
 
-```
+```javascript
 use(function () {
     return {
         link:  "#my link's safe",
@@ -300,14 +288,14 @@ use(function () {
 此外，在運算式中放置的變數類型也很重要：
 
 * **String:**
-   * **** 非空白：將字串設為屬性值。
-   * **** 空白：完全移除屬性。
+   * **非空白：** 將字串設為屬性值。
+   * **空白：** 完全移除屬性。
 
-* **** 編號：將值設定為屬性值。
+* **編號：** 將值設定為屬性值。
 
 * **布林函數:**
-   * **** true:顯示不帶值的屬性（作為布爾型HTML屬性）
-   * **** false:完全移除屬性。
+   * **true:** 顯示不帶值的屬性（作為布爾型HTML屬性）
+   * **false:** 完全移除屬性。
 
 以下是布林運算式如何允許控制布林HTML屬性的範例：
 
@@ -371,7 +359,7 @@ use(function () {
 <div data-sly-use.logic="logic.js" data-json="${logic.json}">...</div>
 ```
 
-```
+```javascript
 /* logic.js file: */
 use(function () {
     var myData = {
@@ -387,7 +375,7 @@ use(function () {
 
 從這裡，您可以輕鬆想像用戶端JavaScript如何存取該屬性並重新剖析JSON。 例如，這會是要放入用戶端程式庫的對應JavaScript:
 
-```
+```javascript
 var elements = document.querySelectorAll("[data-json]");
 for (var i = 0; i < elements.length; i++) {
     var obj = JSON.parse(elements[i].dataset.json);
