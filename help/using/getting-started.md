@@ -2,9 +2,9 @@
 title: 開始使用 HTL
 description: AEM支援的HTL取代JSP，成為AEM中HTML的偏好和建議的伺服器端範本系統。
 translation-type: tm+mt
-source-git-commit: ee712ef61018b5e05ea052484e2a9a6b12e6c5c8
+source-git-commit: c7fa6014cd954a2ccb175e4c3a6be9deb83af890
 workflow-type: tm+mt
-source-wordcount: '2490'
+source-wordcount: '2471'
 ht-degree: 0%
 
 ---
@@ -16,13 +16,13 @@ Adobe Experience Manager(AEM)支援的HTML範本語言(HTL)是AEM中HTML的偏�
 
 >[!NOTE]
 >
->要運行本頁上提供的大多數示例，可以使用名為「讀取評 [估打印循環](https://github.com/Adobe-Marketing-Cloud/aem-htl-repl) 」的即時執行環境。
+>要運行本頁上提供的大多數示例，可以使用名為「讀取評估打印 [循環](https://github.com/Adobe-Marketing-Cloud/aem-htl-repl) 」的即時執行環境。
 
 ## HTL over JSP {#htl-over-jsp}
 
 建議新的AEM專案使用「HTML範本語言」，因為與JSP相比，它提供多項優點。 但是，對於現有項目，只有在預計遷移比在未來幾年維護現有JSP的工作量小的情況下，遷移才有意義。
 
-但是，改用HTL並非一無是處的選擇，因為以HTL編寫的元件與以JSP或ESP編寫的元件相容。 這表示現有專案可以毫無問題地使用HTL來建立新元件，同時保留現有元件的JSP。
+但改用HTL並非一無是處的選擇，因為使用HTL編寫的元件與使用JSP或ESP編寫的元件相容。 這表示現有專案可以毫無問題地使用HTL來建立新元件，同時保留現有元件的JSP。
 
 即使在同一個元件中，HTL檔案也可與JSP和ESP搭配使用。 以下示例說 **明第1行** ，如何從JSP檔案包含HTL檔案，以及第2 **行** ，如何從HTL檔案包含JSP檔案：
 
@@ -61,9 +61,9 @@ HTML範本語言使用運算式語言將內容片段插入轉譯的標籤中，�
 
 有兩種不同的語法可以區分：
 
-* **[區塊陳述式](block-statements.md)**-若要有條件地顯&#x200B;**示&lt;h1>元素**，請使用[`data-sly-test`](block-statements.md#test)HTML5資料屬性。 HTL提供多種此類屬性，可將行為附加至任何HTML元素，而且所有屬性都加上前置詞`data-sly`。
+* **[區塊陳述式](block-statements.md)** -若要有條件地顯 **示&lt;h1>元素** ，請使用 [`data-sly-test`](block-statements.md#test) HTML5資料屬性。 HTL提供多種此類屬性，可將行為附加至任何HTML元素，而且所有屬性都加上前置詞 `data-sly`。
 
-* **[運算式語言](expression-language.md)**- HTL運算式以字元和`${`分隔`}`。 在執行時期，會評估這些運算式，並將其值插入傳出的HTML串流。
+* **[運算式語言](expression-language.md)** - HTL運算式以字元和 `${` 分隔 `}`。 在執行時期，會評估這些運算式，並將其值插入傳出的HTML串流。
 
 上述連結的兩頁提供語法可用功能的詳細清單。
 
@@ -71,7 +71,7 @@ HTML範本語言使用運算式語言將內容片段插入轉譯的標籤中，�
 
 HTL的核心概念是提供重複使用現有HTML元素來定義區塊陳述式的可能性，避免插入其他分隔字元來定義陳述式的開始和結束位置。 此標籤的不顯眼註解可將靜態HTML轉換為功能正常的動態範本，可讓您不破壞HTML程式碼的有效性，因此即使是靜態檔案，也能正常顯示。
 
-但是，有時可能沒有現有元素存在於必須插入塊語句的確切位置。 在這種情況下，可以插入將自動從輸出中移除的特殊SLY元素，同時執行附加的塊語句並相應地顯示其內容。
+但是，有時在必須插入塊語句的確切位置可能不存在現有元素。 在這種情況下，可以插入將自動從輸出中移除的特殊SLY元素，同時執行附加的塊語句並相應地顯示其內容。
 
 所以，以下例子：
 
@@ -111,12 +111,6 @@ HTL的核心概念是提供重複使用現有HTML元素來定義區塊陳述式�
 </div>
 ```
 
->[!NOTE]
->
->SLY元素已隨附於AEM 6.1或HTL 1.1。
->
->在此之前，必 [`data-sly-unwrap`](block-statements.md) 須改用屬性。
-
 ### HTL注釋 {#htl-comments}
 
 下列範例顯 **示第1行** HTL註解和第2 **行** HTML註解：
@@ -152,7 +146,7 @@ HTML注釋不能包含HTL注釋，反之亦然。
 * 指令碼元素
 * 樣式元素
 
-原因是這些上下文的內容是文字而非HTML，而且包含的HTML元素會被視為簡單的字元資料。 因此，若沒有真正的HTML元素，也無法執行 **`data-sly`** 屬性。
+其原因是這些上下文的內容是文字而非HTML，而且包含的HTML元素會被視為簡單的字元資料。 因此，若沒有真正的HTML元素，也無法執行 **`data-sly`** 屬性。
 
 這聽起來可能像是一個很大的限制，但是它是需要的，因為HTML範本語言不應被濫用來產生非HTML的輸出。 以下 [](getting-started.md#use-api-for-accessing-logic) 的「存取邏輯的使用API」一節介紹如何從範本呼叫其他邏輯，如果需要範本來準備複雜輸出，則可使用範本。 例如，從後端傳送資料至前端指令碼的簡單方式是讓元件的邏輯產生JSON字串，然後再將它放入資料屬性中，並使用簡單的HTL運算式。
 
