@@ -1,10 +1,10 @@
 ---
 title: HTL 運算式語言
-description: 「HTML範本語言」使用運算式語言來存取提供HTML輸出動態元素的資料結構。
+description: HTML範本語言使用運算式語言來存取提供HTML輸出動態元素的資料結構。
 translation-type: tm+mt
-source-git-commit: ee712ef61018b5e05ea052484e2a9a6b12e6c5c8
+source-git-commit: c7fa6014cd954a2ccb175e4c3a6be9deb83af890
 workflow-type: tm+mt
-source-wordcount: '1848'
+source-wordcount: '1854'
 ht-degree: 0%
 
 ---
@@ -86,7 +86,7 @@ ${currentPage.lastModified.time.toString}
 
 ### 數字 {#numbers}
 
-只有一種數字類型： 正整數。 其他數字格式（如浮點）在變數中受支援，但不能表示為文字。
+只有一種數字類型：正整數。 其他數字格式（如浮點）在變數中受支援，但不能表示為文字。
 
 `${42}`
 
@@ -137,7 +137,7 @@ ${[1,2,3,4]}
 ${myArray[2]}
 ```
 
-陣列在提供範本值清單時很實用。
+陣列在提供模板值清單時很有用。
 
 ```xml
 <ul data-sly-list="${[1,2,3,4]}">
@@ -155,7 +155,7 @@ ${myArray[2]}
 
 #### 邏輯非 {#logical-not}
 
-`${!myVar}` 如果 `false` 其單個操作數可轉換為 `true`; 否則，返回 `true`。
+`${!myVar}` 如果 `false` 其單個操作數可轉換為 `true`;否則，返回 `true`。
 
 例如，這可用於反轉測試條件，例如只有在沒有子頁面時才顯示元素：
 
@@ -165,7 +165,7 @@ ${myArray[2]}
 
 #### 邏輯和 {#logical-and}
 
-`${varOne && varTwo}` 如果 `varOne` 是假的，則返回； 否則，返回 `varTwo`。
+`${varOne && varTwo}` 如果 `varOne` 是假的，則返回；否則，返回 `varTwo`。
 
 此運算子可用來一次測試兩個條件，例如驗證是否存在兩個屬性：
 
@@ -184,7 +184,7 @@ ${myArray[2]}
 
 #### 邏輯或 {#logical-or}
 
-`${varOne || varTwo}` 如果 `varOne` 是真的，則返回； 否則，返回 `varTwo`。
+`${varOne || varTwo}` 如果 `varOne` 是真的，則返回；否則，返回 `varTwo`。
 
 此運算子可用來測試是否適用下列兩種條件之一，例如驗證是否存在至少一個屬性：
 
@@ -194,7 +194,7 @@ ${myArray[2]}
 
 由於邏輯OR運算子會傳回第一個真實的變數，因此也可非常方便地用來提供備援值。
 
-有條件地顯示HTML屬性，因為HTL會移除由運算式設定的值屬性，這些運算式會評估為false或空字串。 因此，以下範例將顯示 **`properties.jcr:`** 標題（如果存在且不為空白），否則它會返回顯示 **`properties.jcr:description`** （如果存在且不空白），否則它將顯示訊息「未提供標題或說明」:
+它也可用來有條件地顯示HTML屬性，因為HTL會移除由運算式設定的值，以評估為false或空字串的屬性。 因此，以下範例將顯示 **`properties.jcr:`** 標題（如果存在且不為空白），否則它會返回顯示 **`properties.jcr:description`** （如果存在且不空白），否則它將顯示訊息「未提供標題或說明」:
 
 ```xml
 <p>${properties.jcr:title || properties.jcr:description || "no title or description provided"}</p>
@@ -202,7 +202,7 @@ ${myArray[2]}
 
 ### 條件（三元）運算子 {#conditional-ternary-operator}
 
-`${varCondition ? varOne : varTwo}` 如果 `varOne` 真 `varCondition` 實，則回報； 否則，它將返回 `varTwo`。
+`${varCondition ? varOne : varTwo}` 如果 `varOne` 真 `varCondition` 實，則回報；否則，它將返回 `varTwo`。
 
 此運算子通常可用來定義運算式中的條件，例如根據頁面狀態顯示不同的訊息：
 
