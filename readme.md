@@ -1,9 +1,16 @@
 ---
-source-git-commit: 96e201fd34c7bffb8e7ea2f88b36a557ae05dc33
+source-git-commit: c952e1cba774aef252ab16da9cff7c530d329329
+workflow-type: tm+mt
 translation-type: tm+mt
+source-wordcount: '158'
+ht-degree: 3%
 
 ---
 # Adobe Experience Manager HTL檔案
+
+| EXL-PR | EXL | 預覽 | 啟動 | 已發佈 | 說明 |
+|--- |--- |--- |--- |--- |--- |
+| [![建置狀態](https://docs.ci.corp.adobe.com/view/exl-pr/job/experience-manager-html.en_pr-exl/badge/icon)](https://docs.ci.corp.adobe.com/view/exl-pr/job/experience-manager-html.en_pr-exl/lastBuild/) | [![建置狀態](https://docs.ci.corp.adobe.com/view/exl-pr/job/experience-manager-html.en_exl/lastBuild/badge/icon)](https://docs.ci.corp.adobe.com/view/exl-pr/job/experience-manager-html.en_exl/lastBuild/lastBuild) | [預覽URL](https://experienceleague.corp.adobe.com/docs/experience-manager-html/using/overview.html?lang=en) | [activate-exl](https://docs.ci.corp.adobe.com/job/activate-exl/build/) | [即時URL](https://experienceleague.adobe.com/docs/experience-manager-html/using/overview.html?lang=en) | [Authoring 指南](https://experienceleague.adobe.com/docs/authoring-guide-exl/using/home.html?lang=en) |
 
 這是Adobe Experience Manager HTML範本語言(HTL)檔案的儲存庫。
 
