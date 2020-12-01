@@ -12,6 +12,6 @@ ht-degree: 8%
 
 # HTL 規格 {#htl-specification}
 
-HTML範本語言(HTL) [先前稱為Sightly,](update.md) Adobe Experience Manager 6.0已推出，是HTML的偏好和建議的伺服器——網站範本系統，取代JSP(JavaServer Pages)。
+HTML範本語言(HTL)[先前稱為Sightly,](update.md)是隨Adobe Experience Manager 6.0推出的，是HTML的偏好和建議的伺服器——網站範本系統，取代JSP(JavaServer Pages)。
 
-完整的HTL規格（定義語言的語法和行為）在其 [Open Source Git儲存庫中詳述](https://github.com/adobe/htl-spec)
+定義語言語法和行為的完整HTL規範，詳見其[Open Source Git儲存庫](https://github.com/adobe/htl-spec)
