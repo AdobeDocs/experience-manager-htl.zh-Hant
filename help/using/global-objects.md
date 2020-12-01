@@ -12,19 +12,19 @@ ht-degree: 3%
 
 # HTL 全域物件 {#htl-global-objects}
 
-HTL不需指定任何項目，就可讓您在加入後，存取JSP中常用的所有物件 `global.jsp`。 這些物件除了可透過 [Use-API引入的任何物件外](use-api.md)。
+HTL不需指定任何項目，就可讓您在包含`global.jsp`後，存取JSP中常用的所有物件。 這些物件除了可透過[Use-API](use-api.md)引進的任何物件外。
 
-## 可枚舉的對象 {#enumerable-objects}
+## 可枚舉對象{#enumerable-objects}
 
-這些物件可方便存取常用資訊。 其內容可以使用點標籤來存取，也可以使用或進行迭代 `data-sly-list` 處理 `data-sly-repeat`。
+這些物件可方便存取常用資訊。 其內容可以使用點符號來存取，也可以使用`data-sly-list`或`data-sly-repeat`來逐次遞回。
 
 | 變數名稱 | 說明 |
 |--- |--- |
-| `properties` | 當前資源的屬性清單。 由 [org.apache.sling.api.resource.ValueMap支援](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) |
-| `pageProperties` | 目前頁面的頁面屬性清單。 由 [org.apache.sling.api.resource.ValueMap支援](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) |
-| `inheritedPageProperties` | 目前頁面繼承的頁面屬性清單。 由 [org.apache.sling.api.resource.ValueMap支援](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) |
+| `properties` | 當前資源的屬性清單。 由[org.apache.sling.api.resource.ValueMap](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html)所支援 |
+| `pageProperties` | 目前頁面的頁面屬性清單。 由[org.apache.sling.api.resource.ValueMap](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html)所支援 |
+| `inheritedPageProperties` | 目前頁面繼承的頁面屬性清單。 由[org.apache.sling.api.resource.ValueMap](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html)所支援 |
 
-## Java後備對象 {#java-backed-objects}
+## Java後備對象{#java-backed-objects}
 
 以下每個對象都由相應的Java對象作為備份。
 
@@ -56,9 +56,9 @@ HTL不需指定任何項目，就可讓您在加入後，存取JSP中常用的�
 | **`wcmmode`** | `com.adobe.cq.sightly.SightlyWCMMode` |
 | `xssAPI` | `com.adobe.granite.xss.XSSAPI` |
 
-## JavaScript支援的物件 {#javascript-backed-objects}
+## JavaScript支援的物件{#javascript-backed-objects}
 
-您可以使用JavaScript來支援HTL邏輯。 不過，偏好或建議的方法是使用 [Sling Models。](https://sling.apache.org/documentation/bundles/models.html)
+您可以使用JavaScript來支援HTL邏輯。 不過，偏好或建議的方法是使用[Sling Models.](https://sling.apache.org/documentation/bundles/models.html)
 
 <!-- 
 
