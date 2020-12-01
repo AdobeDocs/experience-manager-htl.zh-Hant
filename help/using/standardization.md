@@ -14,5 +14,5 @@ ht-degree: 3%
 
 以下是HTL標準：
 
-* [HTL規格](https://github.com/adobe/htl-spec) -針對語言律師，提供正式語法和功能說明。
-* [HTL TCK](https://github.com/adobe/htl-tck) —— 一套測試，以驗證語言的相容性。
+* [HTL規格](https://github.com/adobe/htl-spec) -語言律師的正式語法和功能說明。
+* [HTL TCK](https://github.com/adobe/htl-tck)  —— 一套測試，以驗證語言的相容性。
