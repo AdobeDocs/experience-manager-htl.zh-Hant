@@ -14,9 +14,9 @@ ht-degree: 5%
 
 ## 什麼是HTL TCK
 
-HTML範本語言 [（先前稱為Sightly）是隨](overview.md)Adobe Experience Manager [](http://www.adobe.com/solutions/web-experience-management.html) 6.0推出，取代JSP(Java Server Pages)，成為HTML的偏好和建議的伺服器端範本系統。
+[HTML範本語言](overview.md)（先前稱為Sightly）是隨[Adobe Experience Manager](http://www.adobe.com/solutions/web-experience-management.html) 6.0推出，取代JSP(Java Server Pages)，成為HTML的偏好和建議的伺服器端範本系統。
 
-HTML範本語言技術相容套件- HTL TCK —— 提供一套測試，以驗證HTL實作符合官方語言規 [格](https://github.com/adobe/htl-spec)。
+HTML範本語言技術相容套件- HTL TCK —— 提供一套測試，以驗證HTL實作符合官方的[語言規格](https://github.com/adobe/htl-spec)。
 
 ## 更多資訊
 
