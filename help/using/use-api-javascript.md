@@ -36,16 +36,16 @@ use(['dep1.js', 'dep2.js'], function (Dep1, Dep2) {
 });
 ```
 
-## 簡單範例 {#a-simple-example}
+## 簡單範例{#a-simple-example}
 
-我們定義一個元件， `info`位於
+我們定義一個元件`info`，位於
 
 `/apps/my-example/components/info`
 
 它包含兩個檔案：
 
-* **`info.js`**: 定義use-class的JavaScript檔案。
-* **`info.html`**: 定義元件的HTL檔案 `info`。 此程式碼將透過use-API `info.js` 使用的功能。
+* **`info.js`**:定義use-class的JavaScript檔案。
+* **`info.html`**:定義元件的HTL檔案 `info`。此程式碼將透過use-API使用`info.js`的功能。
 
 ### /apps/my-example/component/info/info.js {#apps-my-example-component-info-info-js}
 
@@ -68,7 +68,7 @@ use(function () {
 </div>
 ```
 
-我們也會建立內容節點，此節點使用 `info` 元件於
+我們也會建立使用`info`元件的內容節點，位於
 
 `/content/my-example`, with屬性：
 
@@ -78,7 +78,7 @@ use(function () {
 
 以下是生成的儲存庫結構：
 
-### 儲存庫結構 {#repository-structure}
+### 儲存庫結構{#repository-structure}
 
 ```java
 {
@@ -115,7 +115,7 @@ use(function () {
 </section>
 ```
 
-對應的邏輯可使用下列伺服器端JavaScript來編寫，此JavaScript位於範本 `component.js` 旁的檔案中：
+可使用下列位於範本旁的`component.js`檔案中的伺服器端JavaScript來編寫對應的邏輯：
 
 ```javascript
 use(function () {
@@ -134,7 +134,7 @@ use(function () {
 });
 ```
 
-這會嘗試從不 `title` 同來源擷取說明，並裁切為50個字元。
+這會嘗試從不同的來源取用`title`，並將說明裁切為50個字元。
 
 ## 相依關係 {#dependencies}
 
@@ -157,11 +157,11 @@ use(['../utils/MyUtils.js'], function (utils) {
 });
 ```
 
-## 延伸 {#extending}
+## 擴展{#extending}
 
-依賴性模式也可用於擴展另一個元件(通常是當前元件 `sling:resourceSuperType` 的邏輯)的邏輯。
+依賴性模式也可用來擴充其他元件的邏輯（通常是目前元件的`sling:resourceSuperType`）。
 
-假設父元件已提供 `title`，我們也想新增 `description` :
+假設父元件已提供`title`，我們也要添加`description`:
 
 ```javascript
 use(['../parent-component/parent-component.js'], function (component) {
@@ -176,9 +176,9 @@ use(['../parent-component/parent-component.js'], function (component) {
 });
 ```
 
-## 將參數傳遞至範本 {#passing-parameters-to-a-template}
+## 將參數傳遞至範本{#passing-parameters-to-a-template}
 
-對於可獨立於 `data-sly-template` 元件的陳述式，將參數傳遞至相關的Use-API會很有用。
+在`data-sly-template`陳述式中，如果陳述式可獨立於元件，則將參數傳遞至相關的Use-API會很有用。
 
 因此，在我們的元件中，讓我們呼叫位於不同檔案中的範本：
 
@@ -186,7 +186,7 @@ use(['../parent-component/parent-component.js'], function (component) {
 <section class="component-name" data-sly-use.tmpl="template.html" data-sly-call="${tmpl.templateName @ page=currentPage}"></section>
 ```
 
-此範本位於 `template.html`:
+這就是位於`template.html`的範本：
 
 ```xml
 <template data-sly-template.templateName="${@ page}" data-sly-use.tmpl="${'template.js' @ page=page, descriptionLength=50}">
@@ -195,7 +195,7 @@ use(['../parent-component/parent-component.js'], function (component) {
 </template>
 ```
 
-對應的邏輯可使用下列伺服器端JavaScript來寫入，此JavaScript位於範本 `template.js` 檔案旁的檔案中：
+對應的邏輯可以使用下列伺服器端JavaScript來寫入，位於範本檔案旁的`template.js`檔案中：
 
 ```javascript
 use(function () {
@@ -213,4 +213,4 @@ use(function () {
 });
 ```
 
-傳遞的參數會設定在關鍵字 `this` 上。
+傳遞的參數會設定在`this`關鍵字上。
