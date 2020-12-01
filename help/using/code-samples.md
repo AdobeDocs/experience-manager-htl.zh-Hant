@@ -14,7 +14,7 @@ ht-degree: 3%
 
 以下是HTL的程式碼範例：
 
-* [WKND教學課程](https://docs.adobe.com/content/help/en/experience-manager-learn/getting-started-wknd-tutorial-develop/overview.html) -本教學課程將逐步介紹WKND虛擬生活品牌的AEM網站實作，並涵蓋專案設定、核心元件、可編輯範本、用戶端程式庫和Adobe Experience Manager Sites元件開發等基本主題，這些全都實作在HTL中。
+* [WKND教學課程](https://docs.adobe.com/content/help/en/experience-manager-learn/getting-started-wknd-tutorial-develop/overview.html) -本教學課程將逐步介紹WKND虛擬生活品牌的AEM網站實作，並涵蓋專案設定、核心元件、可編輯範本、用戶端程式庫以及使用Adobe Experience Manager Sites進行元件開發等基本主題，這些全都實作在HTL中。
 * [HTL TodoMVC範例](https://github.com/Adobe-Marketing-Cloud/aem-sightly-sample-todomvc) -著名練習的AEM + HTL實作。
 
 向專家諮詢：
