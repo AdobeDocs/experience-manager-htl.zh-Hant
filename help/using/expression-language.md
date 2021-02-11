@@ -2,7 +2,7 @@
 title: HTL 運算式語言
 description: HTML範本語言使用運算式語言來存取提供HTML輸出動態元素的資料結構。
 translation-type: tm+mt
-source-git-commit: c7fa6014cd954a2ccb175e4c3a6be9deb83af890
+source-git-commit: f7e46aaac2a4b51d7fa131ef46692ba6be58d878
 workflow-type: tm+mt
 source-wordcount: '1854'
 ht-degree: 0%
@@ -21,7 +21,7 @@ HTML範本語言使用運算式語言來存取提供HTML輸出動態元素的資
 </h1>
 ```
 
-運算式可透過預先標示`\`字元來逸出，例如`\${test}`將會演算`${test}`。
+運算式可透過預先標示`\`字元來逸出，例如`\${test}`將演算`${test}`。
 
 >[!NOTE]
 >
