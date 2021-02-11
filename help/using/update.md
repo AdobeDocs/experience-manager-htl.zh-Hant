@@ -2,7 +2,7 @@
 title: 什麼是 HTL
 description: 'HTML 範本語言 - HTL 是 Adobe Experience Manager 偏好且建議的 HTML 伺服器端範本系統。 '
 translation-type: tm+mt
-source-git-commit: c7fa6014cd954a2ccb175e4c3a6be9deb83af890
+source-git-commit: f7e46aaac2a4b51d7fa131ef46692ba6be58d878
 workflow-type: tm+mt
 source-wordcount: '181'
 ht-degree: 12%
