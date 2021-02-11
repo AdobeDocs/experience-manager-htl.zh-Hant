@@ -2,7 +2,7 @@
 title: HTL 區塊陳述式
 description: HTML範本語言(HTL)區塊陳述式是直接新增至現有HTML的自訂資料屬性。
 translation-type: tm+mt
-source-git-commit: 2336ce8860056f5bc6470b23ee4cda135f7107d8
+source-git-commit: f7e46aaac2a4b51d7fa131ef46692ba6be58d878
 workflow-type: tm+mt
 source-wordcount: '1555'
 ht-degree: 1%
@@ -161,7 +161,7 @@ Hello World
 <div class="popup" data-sly-unwrap="${isPopup}">content</div>
 ```
 
-### 設定{#set}
+### set {#set}
 
 `data-sly-set` 定義具有預先定義值的新標識符。
 
