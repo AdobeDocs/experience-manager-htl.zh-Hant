@@ -2,7 +2,7 @@
 title: 程式碼範例
 description: 程式碼範例，包括We.Retail參考實作
 translation-type: tm+mt
-source-git-commit: d7efae3d1b4d1bc22c63c21f544a99bf0ae4b3c9
+source-git-commit: f7e46aaac2a4b51d7fa131ef46692ba6be58d878
 workflow-type: tm+mt
 source-wordcount: '107'
 ht-degree: 3%
