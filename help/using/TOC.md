@@ -1,6 +1,6 @@
 ---
 sub-product: Adobe Experience Manager HTL
-user-guide-title: Adobe Experience Manager HTL
+user-guide-title: Adobe Experience ManagerHTL
 breadcrumb-title: HTL 指南
 user-guide-description: 使用 HTML 範本語言 (HTL) 來建立企業級 Web 架構。
 translation-type: tm+mt
@@ -12,7 +12,7 @@ ht-degree: 100%
 ---
 
 
-# Adobe Experience Manager HTL 說明 {#using}
+# Adobe Experience ManagerHTL 說明 {#using}
 
 + [綜覽](overview.md)
 + 快速入門{#getting-started}
