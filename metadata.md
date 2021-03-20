@@ -1,18 +1,14 @@
 ---
-product: Adobe Experience Manager
+solution: Experience Manager
+type: 文件
+product: adobe experience manager
 git-repo: https://git.corp.adobe.com/AdobeDocs/experience-manager-htl.zh-Hant
 index: y
-solution-title: HTL的學習與支援
-solution-hub-url: https://docs.adobe.com/content/help/zh-Hant/experience-manager-cloud-service/sites/home.html
-getting-started-title: AEM快速入門開發
-getting-started-url: https://docs.adobe.com/content/help/zh-Hant/experience-manager-cloud-service/core-concepts/home.html
-tutorials-title: AEM 教學課程
-tutorials-url: https://docs.adobe.com/content/help/en/experience-manager-learn/cloud-service/overview.html
 translation-type: tm+mt
-source-git-commit: d3426d87dce09ac34ff1aca431ff2bfad2f7134a
+source-git-commit: 5b88f6255534ef5af0958681c80303ab3da112b5
 workflow-type: tm+mt
-source-wordcount: '139'
-ht-degree: 20%
+source-wordcount: '108'
+ht-degree: 6%
 
 ---
 
@@ -34,6 +30,9 @@ metadata.md
 * `product`
 * `git-repo`
 * `index: y`
+
+不再使用：
+
 * `solution-title`
 * `solution-hub-url`
 * `getting-started-title`
@@ -52,4 +51,4 @@ ToCs
 * `description`
 * `index: n` （僅適用於舊版元件）
 
-有關中繼資料的其他資訊，請參閱內 [部製作指南。](https://docs.adobe.com/help/en/collaborative-doc-instructions/collaboration-guide/markdown/metadata.html#solution-metadata)
+有關中繼資料的其他資訊，請參閱[內部製作指南。](https://docs.adobe.com/help/en/collaborative-doc-instructions/collaboration-guide/markdown/metadata.html#solution-metadata)
