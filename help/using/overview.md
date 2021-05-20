@@ -1,20 +1,19 @@
 ---
-title: Adobe Experience Manager HTL概觀
+title: Adobe Experience Manager HTL概述
 description: AEM 支援的 HTL 旨在提供高生產力的企業級網頁架構，除了提升安全性，也讓不具 Java 知識的 HTML 開發人員更能參與 AEM 專案。
-translation-type: tm+mt
-source-git-commit: f7e46aaac2a4b51d7fa131ef46692ba6be58d878
+exl-id: 5d06ff25-d681-4b95-8375-c28a8364eb7e
+source-git-commit: 8e70ee4921a7ea071ab7e06947824c371f4013d8
 workflow-type: tm+mt
 source-wordcount: '667'
 ht-degree: 94%
 
 ---
 
-
-# 綜覽 {#overview}
+# 概覽 {#overview}
 
 Adobe Experience Manager (AEM) 支援的 HTML 範本語言 (HTL) 旨在提供高生產力的企業級網頁架構，除了提升安全性，也讓不具 Java 知識的 HTML 開發人員更能參與 AEM 專案。
 
-AEM中HTML的偏好和建議的伺服器端範本系統是「HTML範本語言」。 HTL是隨AEM 6.0而推出，取代JSP(JavaServer Pages)。 對需要建立強大企業網站的網頁開發人員而言，HTML 範本語言有助於提升安全性和開發效率。
+HTML範本語言是AEM中HTML偏好且建議的伺服器端範本系統。 HTL隨AEM 6.0推出，取代JSP(JavaServer Pages)。 對需要建立強大企業網站的網頁開發人員而言，HTML 範本語言有助於提升安全性和開發效率。
 
 ## 提升安全性 {#increased-security}
 
@@ -34,7 +33,7 @@ HTML 範本語言簡單易學，其功能刻意有所限制，以確保其簡單
 
 具體而言，使用 HTML 範本語言重新實作 Adobe.com 網站，可發現成本和專案所需時間減少約 25%。
 
-![有效增加及成本減少](assets/chlimage_1.png)
+![有效增加和成本減少](assets/chlimage_1.png)
 
 上圖說明 HTL 提升效率的下列成效:
 
