@@ -1,22 +1,21 @@
 ---
 title: HTL 區塊陳述式
 description: HTML範本語言(HTL)區塊陳述式是直接新增至現有HTML的自訂資料屬性。
-translation-type: tm+mt
-source-git-commit: f7e46aaac2a4b51d7fa131ef46692ba6be58d878
+exl-id: a517dcef-ab7a-4d4c-a1a9-2e57aad034f7
+source-git-commit: 8e70ee4921a7ea071ab7e06947824c371f4013d8
 workflow-type: tm+mt
 source-wordcount: '1555'
 ht-degree: 1%
 
 ---
 
-
 # HTL 區塊陳述式 {#htl-block-statements}
 
-HTML範本語言(HTL)區塊陳述式是自訂`data`屬性，直接新增至現有的HTML。 這可讓原型靜態HTML頁面的註解更簡單且不顯眼，並將它轉換為可運作的動態範本，而不會中斷HTML程式碼的有效性。
+HTML範本語言(HTL)區塊陳述式是直接新增至現有HTML的自訂`data`屬性。 這可讓原型靜態HTML頁面輕鬆且不顯眼的註解，將其轉換為正常運作的動態範本，而不會破壞HTML程式碼的有效性。
 
-## 塊概述{#overview}
+## 區塊概述 {#overview}
 
-HTL區塊外掛程式是由HTML元素上設定的`data-sly-*`屬性所定義。 元素可以有結束標籤或是自行結束。 屬性可以有值（可以是靜態字串或運算式），或只是布林屬性（不含值）。
+HTL區塊外掛程式由HTML元素上設定的`data-sly-*`屬性所定義。 元素可以有結尾標籤或是自閉。 屬性可以有值（可以是靜態字串或運算式），或只是布林屬性（沒有值）。
 
 ```xml
 <tag data-sly-BLOCK></tag>                                 <!--/* A block is simply consists in a data-sly attribute set on an element. */-->
@@ -29,7 +28,7 @@ HTL區塊外掛程式是由HTML元素上設定的`data-sly-*`屬性所定義。 
 
 所有評估的`data-sly-*`屬性都從生成的標籤中刪除。
 
-### 標識符{#identifiers}
+### 識別碼 {#identifiers}
 
 塊語句後面還可以有標識符：
 
@@ -37,7 +36,7 @@ HTL區塊外掛程式是由HTML元素上設定的`data-sly-*`屬性所定義。 
 <tag data-sly-BLOCK.IDENTIFIER="value"></tag>
 ```
 
-此標識符可由block語句以各種方式使用，以下是一些示例：
+該標識符可由block語句以多種方式使用，以下是一些示例：
 
 ```xml
 <!--/* Example of statements that use the identifier to set a variable with their result: */-->
@@ -50,28 +49,28 @@ HTL區塊外掛程式是由HTML元素上設定的`data-sly-*`屬性所定義。 
 <div data-sly-attribute.title="${properties.jcr:title}"></div> <!--/* This will create a title attribute */-->
 ```
 
-頂層識別碼不區分大小寫（因為它們可以透過不區分大小寫的HTML屬性來設定），但是其所有屬性都區分大小寫。
+頂層識別碼不區分大小寫（因為可透過不區分大小寫的HTML屬性來設定），但其所有屬性均區分大小寫。
 
 ## 可用塊語句{#available-block-statements}
 
-有許多可用的塊語句。 在同一元素上使用時，以下優先順序清單定義了塊語句的評估方式：
+有許多可用的塊語句。 在相同元素上使用時，下列優先順序清單會定義評估區塊陳述式的方式：
 
 1. `data-sly-template`
-1. `data-sly-set`,  `data-sly-test`  `data-sly-use`
+1. `data-sly-set`,  `data-sly-test`,  `data-sly-use`
 1. `data-sly-call`
 1. `data-sly-text`
-1. `data-sly-element`,  `data-sly-include`  `data-sly-resource`
+1. `data-sly-element`,  `data-sly-include`,  `data-sly-resource`
 1. `data-sly-unwrap`
 1. `data-sly-list`, `data-sly-repeat`
 1. `data-sly-attribute`
 
 當兩個塊語句具有相同的優先順序時，其評估順序從左到右。
 
-### 使用{#use}
+### use {#use}
 
-`data-sly-use` 初始化幫助程式對象（在JavaScript或Java中定義），並通過變數將其公開。
+`data-sly-use` 初始化協助程式物件（在JavaScript或Java中定義），並透過變數公開它。
 
-初始化JavaScript物件，其中來源檔案位於與範本相同的目錄中。 請注意，必須使用檔案名稱：
+初始化JavaScript物件，其中來源檔案與範本位於相同目錄中。 請注意，必須使用檔案名稱：
 
 ```xml
 <div data-sly-use.nav="navigation.js">${nav.foo}</div>
@@ -83,13 +82,13 @@ HTL區塊外掛程式是由HTML元素上設定的`data-sly-*`屬性所定義。 
 <div data-sly-use.nav="Navigation">${nav.foo}</div>
 ```
 
-初始化Java類，該類作為OSGi包的一部分安裝。 請注意，必須使用其全限定類名：
+初始化Java類，該類作為OSGi套件組合的一部分進行安裝。 請注意，必須使用其完全限定的類名：
 
 ```xml
 <div data-sly-use.nav="org.example.Navigation">${nav.foo}</div>
 ```
 
-參數可以使用選項傳遞至初始化。 一般而言，此功能僅應用於位於`data-sly-template`區塊內的HTL程式碼：
+可使用選項將參數傳遞至初始化。 一般而言，此功能僅應由本身位於`data-sly-template`區塊內的HTL程式碼使用：
 
 ```xml
 <div data-sly-use.nav="${'navigation.js' @parentPage=currentPage}">${nav.foo}</div>
@@ -106,12 +105,12 @@ HTL區塊外掛程式是由HTML元素上設定的`data-sly-*`屬性所定義。 
 >如需Use-API的詳細資訊，請參閱：
 >
 >* [Java Use-API](use-api-java.md)
->* [JavaScript Use-API](use-api-javascript.md)
+* [JavaScript Use-API](use-api-javascript.md)
 
 
-#### 資源{#data-sly-use-with-resources}的資料密集使用
+#### 對資源{#data-sly-use-with-resources}使用data-sly
 
-這可讓使用`data-sly-use`直接在HTL中取得資源，而不需要編寫程式碼即可取得。
+這可讓您透過`data-sly-use`直接在HTL中取得資源，且不需要編寫程式碼即可取得。
 
 例如：
 
@@ -122,14 +121,13 @@ HTL區塊外掛程式是由HTML元素上設定的`data-sly-*`屬性所定義。 
 ```
 
 >[!TIP]
->
->另請參閱[Path not Always Required.](#path-not-required)一節
+另請參閱[Path Not Always Required（不總是必需）部分。](#path-not-required)
 
-### 取消換行{#unwrap}
+### 取消繞排 {#unwrap}
 
-`data-sly-unwrap` 從生成的標籤中移除主機元素，同時保留其內容。這可排除HTL呈現邏輯中需要但實際輸出中不需要的元素。
+`data-sly-unwrap` 從生成的標籤中刪除主元素，同時保留其內容。這可排除HTL呈現邏輯中所需但實際輸出中不需要的元素。
 
-不過，應謹慎使用此陳述。 一般而言，最好將HTL標籤盡量靠近預期的輸出標籤。 換言之，新增HTL區塊陳述式時，請盡量試著只註解現有的HTML，而不要引入新元素。
+但應謹慎使用此陳述式。 一般而言，最好將HTL標籤盡量保持在接近預期的輸出標籤。 換句話說，新增HTL區塊陳述式時，請盡量在現有HTML上加上注釋，而不要引入新元素。
 
 例如，
 
@@ -155,7 +153,7 @@ HTL區塊外掛程式是由HTML元素上設定的`data-sly-*`屬性所定義。 
 Hello World
 ```
 
-您也可以有條件地解除包覆元素：
+您也可以有條件地取消包住元素：
 
 ```xml
 <div class="popup" data-sly-unwrap="${isPopup}">content</div>
@@ -163,7 +161,7 @@ Hello World
 
 ### set {#set}
 
-`data-sly-set` 定義具有預先定義值的新標識符。
+`data-sly-set` 會以預先定義的值定義新識別碼。
 
 ```xml
 <span data-sly-set.profile="${user.profile}">Hello, ${profile.firstName} ${profile.lastName}!</span>
@@ -172,7 +170,7 @@ Hello World
 
 ### 文字 {#text}
 
-`data-sly-text` 將其主機元素的內容替換為指定的文本。
+`data-sly-text` 以指定的文字取代其主機元素的內容。
 
 例如，
 
@@ -186,11 +184,11 @@ Hello World
 <p data-sly-text="${properties.jcr:description}">Lorem ipsum</p>
 ```
 
-兩者都會將`jcr:description`值顯示為段落文字。 第二種方法的優點是，允許HTML的不顯眼註解，同時保留原始設計人員的靜態預留位置內容。
+兩者都會將`jcr:description`的值顯示為段落文字。 第二種方法的優點是，允許對HTML進行不顯眼的註解，同時保留原始設計人員的靜態預留位置內容。
 
-### 屬性{#attribute}
+### 屬性 {#attribute}
 
-`data-sly-attribute` 將屬性添加到主機元素。
+`data-sly-attribute` 將屬性新增至主機元素。
 
 例如，
 
@@ -204,17 +202,17 @@ Hello World
 <div title="Lorem Ipsum" data-sly-attribute.title="${properties.jcr:title}"></div>
 ```
 
-兩者都會將`title`屬性設為`jcr:title`的值。 第二種方法的優點是，允許HTML的不顯眼註解，同時保留原始設計人員的靜態預留位置內容。
+兩者都會將`title`屬性設為`jcr:title`的值。 第二種方法的優點是，允許對HTML進行不顯眼的註解，同時保留原始設計人員的靜態預留位置內容。
 
-屬性由左至右解析，最右側的屬性例項（常值或透過`data-sly-attribute`定義）優先於其左側定義的相同屬性例項（逐字定義或透過`data-sly-attribute`定義）。
+屬性由左到右解析，最右邊的屬性實例（通過`data-sly-attribute`定義或文字）優先於左邊定義的同一屬性實例（按字面或通過`data-sly-attribute`定義）。
 
-請注意，在最終標注中，將刪除其值評估為空字串的屬性（`literal`或通過`data-sly-attribute`設定）。 此規則的一個例外是，將常值屬性設為常值空字串時，將會保留。 例如，
+請注意，其值評估為空字串的屬性（`literal`或透過`data-sly-attribute`設定）將在最終標籤中移除。 此規則的一個例外是，將保留設定為常值空字串的常值屬性。 例如，
 
 ```xml
 <div class="${''}" data-sly-attribute.id="${''}"></div>
 ```
 
-生產、
+生產，
 
 ```xml
 <div></div>
@@ -226,13 +224,13 @@ Hello World
 <div class="" data-sly-attribute.id=""></div>
 ```
 
-生產、
+生產，
 
 ```xml
 <div class=""></div>
 ```
 
-要設定多個屬性，請傳遞對應於屬性及其值的映射對象保持鍵值對。 例如，假設
+若要設定多個屬性，請傳遞對應於屬性及其值的映射對象保留鍵值對。 例如，假設，
 
 ```xml
 attrMap = {
@@ -248,7 +246,7 @@ attrMap = {
 <div data-sly-attribute="${attrMap}"></div>
 ```
 
-生產、
+生產，
 
 ```xml
 <div title="myTitle" class="myClass" id="myId"></div>
@@ -256,7 +254,7 @@ attrMap = {
 
 ### 元素 {#element}
 
-`data-sly-element` 替換主機元素的元素名稱。
+`data-sly-element` 取代主機元素的元素名稱。
 
 例如，
 
@@ -264,9 +262,9 @@ attrMap = {
 <h1 data-sly-element="${titleLevel}">text</h1>
 ```
 
-將`h1`替換為`titleLevel`值。
+以`titleLevel`值取代`h1`。
 
-出於安全原因，`data-sly-element`僅接受以下元素名稱：
+基於安全理由，`data-sly-element`僅接受以下元素名稱：
 
 ```xml
 a abbr address article aside b bdi bdo blockquote br caption cite code col colgroup
@@ -275,26 +273,26 @@ kbd li main mark nav ol p pre q rp rt ruby s samp section small span strong sub
 sup table tbody td tfoot th thead time tr u var wbr
 ```
 
-要設定其他元素，必須關閉XSS安全性(`@context='unsafe'`)。
+若要設定其他元素，必須關閉XSS安全性(`@context='unsafe'`)。
 
 ### 測試 {#test}
 
-`data-sly-test` 有條件地移除主機元素及其內容。值`false`會移除元素；值`true`保留元素。
+`data-sly-test` 有條件地移除主機元素及其內容。值`false`會移除元素；`true`值會保留元素。
 
-例如，`p`元素及其內容只有在`isShown`為`true`時才會呈現：
+例如，`isShown`為`true`時，才會轉譯`p`元素及其內容：
 
 ```xml
 <p data-sly-test="${isShown}">text</p>
 ```
 
-測試結果可指派給變數，以供稍後使用。 這通常用於構造&quot;if else&quot;邏輯，因為沒有明確的else語句：
+測試的結果可指派給變數，以便稍後使用。 這通常用於建構「if else」邏輯，因為沒有明確的else陳述式：
 
 ```xml
 <p data-sly-test.abc="${a || b || c}">is true</p>
 <p data-sly-test="${!abc}">or not</p>
 ```
 
-變數一旦設定，就會在HTL檔案中具有全域範圍。
+變數一旦設定，就會在HTL檔案內具有全域範圍。
 
 以下是比較值的一些範例：
 
@@ -310,25 +308,25 @@ sup table tbody td tfoot th thead time tr u var wbr
 </div>
 ```
 
-### 重複{#repeat}
+### 重複 {#repeat}
 
-使用`data-sly-repeat`，您可以根據指定的清單重複多個元素。
+透過`data-sly-repeat`，您可以根據指定的清單重複元素多次。
 
 ```xml
 <div data-sly-repeat="${currentPage.listChildren}">${item.name}</div>
 ```
 
-其運作方式與`data-sly-list`相同，但您不需要容器元素。
+除了您不需要容器元素，其運作方式與`data-sly-list`相同。
 
-以下示例顯示，您也可以參考&#x200B;*item*&#x200B;的屬性：
+下列範例顯示您也可以針對屬性參考&#x200B;*item*:
 
 ```xml
 <div data-sly-repeat="${currentPage.listChildren}" data-sly-attribute.class="${item.name}">${item.name}</div>
 ```
 
-### 清單{#list}
+### 清單 {#list}
 
-`data-sly-list` 為提供的對象中的每個可枚舉屬性重複主機元素的內容。
+`data-sly-list` 對提供的對象中的每個可枚舉屬性重複主機元素的內容。
 
 以下是一個簡單的循環：
 
@@ -339,19 +337,19 @@ sup table tbody td tfoot th thead time tr u var wbr
 </dl>
 ```
 
-下列預設變數可在清單範圍中使用：
+下列預設變數可在清單的範圍內使用：
 
 * `item`:小版本中的當前項。
 * `itemList`:保存以下屬性的對象：
 * `index`:零計數器( `0..length-1`)。
 * `count`:單一計數器( `1..length`)。
-* `first`: `true` 如果當前項目是第一個項目。
-* `middle`: `true` 如果當前項目既不是第一個項目，也不是最後一個項目。
-* `last`: `true` 如果當前項目是最後一個項目。
+* `first`: `true` 如果目前項目是第一個項目。
+* `middle`: `true` 如果當前項不是第一個項或最後一個項。
+* `last`: `true` 如果目前項目是最後一個項目。
 * `odd`: `true` 如果 `index` 是奇數。
-* `even`: `true` 如 `index` 果扯平。
+* `even`: `true` 如果 `index` 是平的。
 
-在`data-sly-list`語句中定義標識符可以更名`itemList`和`item`變數。 `item` 會變 `<variable>` 成 `itemList` 會變 `<variable>List`成。
+在`data-sly-list`陳述式上定義識別碼可讓您重新命名`itemList`和`item`變數。 `item` 會 `<variable>` 變 `itemList` 成 `<variable>List`。
 
 ```xml
 <dl data-sly-list.child="${currentPage.listChildren}">
@@ -371,7 +369,7 @@ sup table tbody td tfoot th thead time tr u var wbr
 
 ### 資源 {#resource}
 
-`data-sly-resource` 包含透過吊索解析度和轉換程式轉換指示資源的結果。
+`data-sly-resource` 包括透過sling解析度和轉譯程式轉譯指出資源的結果。
 
 簡單的資源包括：
 
@@ -379,9 +377,9 @@ sup table tbody td tfoot th thead time tr u var wbr
 <article data-sly-resource="path/to/resource"></article>
 ```
 
-#### 路徑不總是必需{#path-not-required}
+#### 路徑不總是必需的{#path-not-required}
 
-請注意，如果您已擁有資源，則不需要使用具有`data-sly-resource`的路徑。 如果您已擁有資源，則可直接使用。
+請注意，如果您已擁有資源，則不需要使用具有`data-sly-resource`的路徑。 如果您已有資源，則可直接使用。
 
 例如，以下是正確的。
 
@@ -389,22 +387,22 @@ sup table tbody td tfoot th thead time tr u var wbr
 <sly data-sly-resource="${resource.path @ decorationTagName='div'}"></sly>
 ```
 
-但是，以下也完全可以接受。
+但是，下列也完全可以接受。
 
 ```xml
 <sly data-sly-resource="${resource @ decorationTagName='div'}"></sly>
 ```
 
-基於以下原因，建議盡可能直接使用資源。
+由於下列原因，建議盡可能直接使用資源。
 
-* 如果您已經擁有資源，則使用路徑重新解析是額外的不必要工作。
-* 當您已擁有資源時，使用路徑可能會引入非預期的結果，因為Sling資源可以包裝或是合成，而不是在指定路徑上提供。
+* 如果您已有資源，則使用路徑重新解析會是額外的不必要的工作。
+* 當您已有資源時使用路徑，可能會導致非預期的結果，因為Sling資源可以包住或是合成，而不會提供在指定路徑上。
 
 #### 選項 {#resource-options}
 
 選項允許許多其他變體：
 
-控制資源路徑：
+操作資源的路徑：
 
 ```xml
 <article data-sly-resource="${ @ path='path/to/resource'}"></article>
@@ -412,13 +410,13 @@ sup table tbody td tfoot th thead time tr u var wbr
 <article data-sly-resource="${'my/path' @ appendPath='resource'}"></article>
 ```
 
-新增（或取代）選擇器：
+新增（或取代）選取器：
 
 ```xml
 <article data-sly-resource="${'path/to/resource' @ selectors='selector'}"></article>
 ```
 
-添加、替換或刪除多個選擇器：
+新增、取代或移除多個選取器：
 
 ```xml
 <article data-sly-resource="${'path/to/resource' @ selectors=['s1', 's2']}"></article>
@@ -430,19 +428,19 @@ sup table tbody td tfoot th thead time tr u var wbr
 <article data-sly-resource="${'path/to/resource' @ addSelectors='selector'}"></article>
 ```
 
-從現有選擇器中刪除一些選擇器：
+從現有選取器中移除某些選取器：
 
 ```xml
 <article data-sly-resource="${'path/to/resource' @ removeSelectors='selector1'}"></article>
 ```
 
-移除所有選擇器：
+移除所有選取器：
 
 ```xml
 <article data-sly-resource="${'path/to/resource' @ removeSelectors}"></article>
 ```
 
-覆蓋資源的資源類型：
+覆寫資源的資源類型：
 
 ```xml
 <article data-sly-resource="${'path/to/resource' @ resourceType='my/resource/type'}"></article>
@@ -454,7 +452,7 @@ sup table tbody td tfoot th thead time tr u var wbr
 <article data-sly-resource="${'path/to/resource' @ wcmmode='disabled'}"></article>
 ```
 
-依預設，AEM裝飾標籤會停用、centoringTagName選項可讓它們返回，而cssClassName則會將類別新增至該元素。
+預設情況下，會停用AEM裝飾標籤，decorationTagName選項可讓標籤返回，而cssClassName可將類別新增至該元素。
 
 ```xml
 <article data-sly-resource="${'path/to/resource' @ decorationTagName='span',
@@ -462,26 +460,25 @@ cssClassName='className'}"></article>
 ```
 
 >[!NOTE]
->
->AEM提供清晰簡單的邏輯，可控制包住內含元素的裝飾標籤。 如需詳細資訊，請參閱開發元件檔案中的[裝飾標籤](https://docs.adobe.com/content/help/en/experience-manager-65/developing/components/decoration-tag.html)。
+AEM提供清晰且簡單的邏輯，可控制包住所含元素的裝飾標籤。 如需詳細資訊，請參閱開發元件檔案中的[裝飾標籤](https://docs.adobe.com/content/help/en/experience-manager-65/developing/components/decoration-tag.html)。
 
 ### 加入 {#include}
 
-`data-sly-include` 以指示的HTML範本檔案（HTL、JSP、ESP等）產生的標籤取代主機元素的內容當其對應的範本引擎處理時。 內含檔案的呈現內容將不包含目前的HTL內容（包含檔案的呈現內容）;因此，要包含HTL檔案，必須在包含的檔案中重複當前`data-sly-use`（在這種情況下，通常最好使用`data-sly-template`和`data-sly-call`）
+`data-sly-include` 以指示的HTML範本檔案（HTL、JSP、ESP等）產生的標籤取代主機元素的內容當由其對應的範本引擎處理時。 包含檔案的轉譯內容將不包含目前的HTL內容（包含檔案的內容）;因此，若要納入HTL檔案，必須在包含的檔案中重複目前的`data-sly-use`（在這種情況下，通常最好使用`data-sly-template`和`data-sly-call`）
 
-簡單的包括：
+簡單包括：
 
 ```xml
 <section data-sly-include="path/to/template.html"></section>
 ```
 
-JSP的加入方式相同：
+JSP的包含方式與以下相同：
 
 ```xml
 <section data-sly-include="path/to/template.jsp"></section>
 ```
 
-選項可讓您控制檔案的路徑：
+選項可讓您操控檔案的路徑：
 
 ```xml
 <section data-sly-include="${ @ file='path/to/template.html'}"></section>
@@ -497,16 +494,16 @@ JSP的加入方式相同：
 
 ### Request-attributes {#request-attributes}
 
-在`data-sly-include`和`data-sly-resource`中，您可以傳遞`requestAttributes`，以便在接收HTL-script中使用它們。
+在`data-sly-include`和`data-sly-resource`中，您可以傳遞`requestAttributes`，以便在接收HTL指令碼時使用。
 
-這可讓您將參數正確傳入指令碼或元件。
+這可讓您將參數正確傳入指令碼或元件中。
 
 ```xml
 <sly data-sly-use.settings="com.adobe.examples.htl.core.hashmap.Settings"
         data-sly-include="${ 'productdetails.html' @ requestAttributes=settings.settings}" />
 ```
 
-Settings類別的Java程式碼，Map會用來傳入requestAttributes:
+Settings類別的Java程式碼中，使用地圖來傳遞requestAttributes:
 
 ```xml
 public class Settings extends WCMUsePojo {
@@ -523,7 +520,7 @@ public class Settings extends WCMUsePojo {
 
 例如，透過Sling-Model，您可以使用指定`requestAttributes`的值。
 
-在此範例中，版面會透過Use-class的Map插入：
+在此範例中，版面會透過Map從Use-class插入：
 
 ```xml
 @Model(adaptables=SlingHttpServletRequest.class)
@@ -534,13 +531,13 @@ public class ProductSettings {
 }
 ```
 
-### 範本與呼叫{#template-call}
+### 範本和呼叫{#template-call}
 
-範本區塊可像函式呼叫一樣使用：在其聲明中，它們可以得到參數，然後在調用參數時可以傳遞這些參數。 它們也允許遞回。
+範本區塊可像函式呼叫一樣使用：在其聲明中，他們可以取得參數，然後在呼叫參數時傳遞。 也允許遞回。
 
 `data-sly-template` 定義範本。HTL不會輸出主機元素及其內容
 
-`data-sly-call` 調用使用資料漏洞模板定義的模板。所呼叫範本的內容（可選地參數化）會取代呼叫的主機元素的內容。
+`data-sly-call` 呼叫使用data-sly-template定義的範本。呼叫的範本內容（可選地參數化）會取代呼叫的主機元素內容。
 
 定義靜態範本，然後呼叫它：
 
@@ -556,7 +553,7 @@ public class ProductSettings {
 <div data-sly-call="${two @ title=properties.jcr:title}"></div>
 ```
 
-位於不同檔案中的範本可以使用`data-sly-use`初始化。 請注意，在此情況下，`data-sly-use`和`data-sly-call`也可以放置在相同的元素上：
+位於不同檔案中的範本可以使用`data-sly-use`初始化。 請注意，在此情況下，`data-sly-use`和`data-sly-call`也可放置在相同的元素上：
 
 ```xml
 <div data-sly-use.lib="templateLib.html">
@@ -588,12 +585,12 @@ public class ProductSettings {
 <sly data-sly-resource="./header"></sly>
 ```
 
-雖然不是有效的HTML 5標籤，但`<sly>`標籤可使用`data-sly-unwrap`在最終輸出中顯示：
+雖然不是有效的HTML 5標籤，但`<sly>`標籤可使用`data-sly-unwrap`顯示在最終輸出中：
 
 ```xml
 <sly data-sly-unwrap="${false}"></sly> <!--/* outputs: <sly></sly> */-->
 ```
 
-`<sly>`元素的目標是使元素不輸出更加明顯。 如果您想要，您仍可使用`data-sly-unwrap`。
+`<sly>`元素的目標是讓元素不輸出更明顯。 如果您希望仍可使用`data-sly-unwrap`。
 
-與`data-sly-unwrap`一樣，請盡量減少此功能的使用。
+與`data-sly-unwrap`一樣，請嘗試盡量減少此項的使用。
