@@ -4,26 +4,25 @@ type: Documentation
 product: adobe experience manager
 git-repo: https://git.corp.adobe.com/AdobeDocs/experience-manager-htl.zh-Hant
 index: y
-translation-type: tm+mt
-source-git-commit: 5b88f6255534ef5af0958681c80303ab3da112b5
+source-git-commit: 89b9e89254f341e74f1a5a7b99735d2e69c8a91e
 workflow-type: tm+mt
-source-wordcount: '108'
-ht-degree: 6%
+source-wordcount: '107'
+ht-degree: 5%
 
 ---
 
 
 # 內部使用的中繼資料
 
-GitHub製作系統中的中繼資料是階層式的，並定義了下列不斷提升的先例等級。
+GitHub製作系統中的中繼資料是階層式的，其定義為下列不斷提升的先例層級。
 
 1. metadata.md
 1. ToC
 1. 文章
 
-中繼資料。md檔案中定義的中繼資料會套用至整個回購區，但可在ToC和文章層級覆寫。 任何對中繼資料的覆寫都應盡可能在最低層級進行。
+中繼資料.md檔案中定義的中繼資料會套用至整個存放庫，但可以在ToC和文章層級覆寫。 任何中繼資料的覆寫都應盡可能在最低層級完成。
 
-experience-manager-core-components.en repo中的中繼資料是最低要求。
+experience-manager-core-components.en repo中的中繼資料是最低需求。
 
 metadata.md
 
@@ -49,6 +48,6 @@ ToCs
 
 * `title`
 * `description`
-* `index: n` （僅適用於舊版元件）
+* `index: n` （僅限舊版元件）
 
-有關中繼資料的其他資訊，請參閱[內部製作指南。](https://docs.adobe.com/help/en/collaborative-doc-instructions/collaboration-guide/markdown/metadata.html#solution-metadata)
+有關元資料的其他資訊，請參見[內部創作指南。](https://experienceleague.adobe.com/docs/authoring-guide-exl/using/authoring/features/metadata.html#solution)

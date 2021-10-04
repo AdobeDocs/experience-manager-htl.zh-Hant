@@ -2,9 +2,9 @@
 title: HTL 運算式語言
 description: HTML範本語言使用運算式語言來存取提供HTML輸出之動態元素的資料結構。
 exl-id: 57e3961b-8c84-4d56-a049-597c7b277448
-source-git-commit: 8e70ee4921a7ea071ab7e06947824c371f4013d8
+source-git-commit: 89b9e89254f341e74f1a5a7b99735d2e69c8a91e
 workflow-type: tm+mt
-source-wordcount: '1854'
+source-wordcount: '1852'
 ht-degree: 0%
 
 ---
@@ -34,7 +34,7 @@ HTML範本語言使用運算式語言來存取提供HTML輸出之動態元素的
 
 HTL不需指定任何項目，即可存取在包含`global.jsp`後，JSP中通常可用的所有物件。 [全域物件](global-objects.md)頁面提供HTL可存取之所有物件的清單。
 
-### 屬性訪問{#property-access}
+### 屬性存取 {#property-access}
 
 存取變數屬性有兩種方式，點記號或括弧記號：
 
@@ -49,7 +49,7 @@ ${currentPage['title']} or ${currentPage["title"]}
 
 上例中還顯示了Java getter函式（如`getTitle()`）可以訪問，而不需要預置`get`，也可以通過降低以下字元的大小寫來訪問。
 
-### 有效的標識符字元{#valid-identifier-characters}
+### 有效的標識符字元 {#valid-identifier-characters}
 
 變數的名稱（稱為識別碼）符合特定規則。 它們必須以字母（`A`-`Z`和`a`-`z`）或底線(`_`)開頭，後續字元也可以是數字(`0`-`9`)或冒號(`:`)。 標識符中不能使用Unicode字母，如`å`和`ü`。
 
@@ -61,13 +61,13 @@ ${currentPage['title']} or ${currentPage["title"]}
 
 `${properties['my property']}`
 
-### 動態訪問成員{#accessing-members-dynamically}
+### 動態訪問成員 {#accessing-members-dynamically}
 
 ```xml
 ${properties[myVar]}
 ```
 
-### Null值的許可性處理{#permissive-handling-of-null-values}
+### Null值的許可性處理 {#permissive-handling-of-null-values}
 
 ```xml
 ${currentPage.lastModified.time.toString}
@@ -146,7 +146,7 @@ ${myArray[2]}
 
 ## 運算子 {#operators}
 
-### 邏輯運算子{#logical-operators}
+### 邏輯運算子 {#logical-operators}
 
 這些運算子通常與布林值一起使用，但是，與JavaScript中一樣，它們實際上會返回指定操作數之一的值，因此當與非布林值一起使用時，它們可能返回非布林值。
 
@@ -162,7 +162,7 @@ ${myArray[2]}
 <p data-sly-test="${!currentPage.hasChild}">current page has no children</p>
 ```
 
-#### 邏輯和{#logical-and}
+#### 邏輯和 {#logical-and}
 
 `${varOne && varTwo}` 如果 `varOne` 是假的，則返回；否則，它會傳回 `varTwo`。
 
@@ -181,7 +181,7 @@ ${myArray[2]}
 <div class="${logic.showClass && logic.className}">...</div>
 ```
 
-#### 邏輯OR {#logical-or}
+#### 邏輯或 {#logical-or}
 
 `${varOne || varTwo}` 若 `varOne` 為真則傳回；否則，它會傳回 `varTwo`。
 
@@ -199,7 +199,7 @@ HTL也可用來有條件地顯示HTML屬性，因為HTL會移除由運算式設�
 <p>${properties.jcr:title || properties.jcr:description || "no title or description provided"}</p>
 ```
 
-### 條件（三元）運算子{#conditional-ternary-operator}
+### 條件（三元）運算子 {#conditional-ternary-operator}
 
 `${varCondition ? varOne : varTwo}` 若 `varOne` 為 `varCondition` truthy則傳回；否則會傳回 `varTwo`。
 
@@ -217,7 +217,7 @@ HTL也可用來有條件地顯示HTML屬性，因為HTL會移除由運算式設�
 <p>${properties.showDescription ? properties.jcr:description : properties.jcr:title}</p>
 ```
 
-### 比較運算子{#comparison-operators}
+### 比較運算子 {#comparison-operators}
 
 等式和不等式運算子僅支援相同類型的操作數。 類型不相符時，會顯示錯誤。
 
@@ -240,7 +240,7 @@ HTL也可用來有條件地顯示HTML屬性，因為HTL會移除由運算式設�
 
 `${varOne <= varTwo}` 如 `true` 果 `varOne` 小於或等於，則傳 `varTwo`回。
 
-### 分組括弧{#grouping-parentheses}
+### 分組括弧 {#grouping-parentheses}
 
 分組運算子`()`控制表達式中評估的優先順序。
 
@@ -277,7 +277,7 @@ ${myVar @ optOne, optTwo=bar}
 ${@ optOne, optTwo=bar}
 ```
 
-### 字串格式化{#string-formatting}
+### 字串格式 {#string-formatting}
 
 用相應的變數替換枚舉佔位符{*n*}的選項：
 
@@ -285,7 +285,7 @@ ${@ optOne, optTwo=bar}
 ${'Page {0} of {1}' @ format=[current, total]}
 ```
 
-## URL操作{#url-manipulation}
+## URL操作 {#url-manipulation}
 
 提供一組新的URL操作。
 
@@ -315,7 +315,7 @@ ${'Page {0} of {1}' @ format=[current, total]}
 ${ link @ extension = 'html' }
 ```
 
-### 數字/日期格式{#number-date-formatting}
+### 數字/日期格式 {#number-date-formatting}
 
 HTL可讓數字和日期以原生格式設定，而無須編寫自訂程式碼。 這也支援時區和地區設定。
 
@@ -336,7 +336,7 @@ HTL可讓數字和日期以原生格式設定，而無須編寫自訂程式碼�
 
 ### 國際化 {#internationalization}
 
-使用目前的[字典](https://docs.adobe.com/content/help/en/experience-manager-65/developing/components/internationalization/i18n-translator.html)將字串轉譯為目前&#x200B;*source*&#x200B;的語言（請參閱下文）。 如果找不到翻譯，則使用原始字串。
+使用目前的[字典](https://experienceleague.adobe.com/docs/experience-manager-65/developing/components/internationalization/i18n-translator.html)將字串轉譯為目前&#x200B;*source*&#x200B;的語言（請參閱下文）。 如果找不到翻譯，則使用原始字串。
 
 ```xml
 ${'Page' @ i18n}
@@ -366,7 +366,7 @@ ${'Page' @ i18n, locale='en-US'}
 ${'Page {0} of {1}' @ i18n, format=[current, total]}
 ```
 
-### 陣列連接{#array-join}
+### 陣列連接 {#array-join}
 
 依預設，將陣列顯示為文字時，HTL會顯示逗號分隔值（無間距）。
 
@@ -376,7 +376,7 @@ ${'Page {0} of {1}' @ i18n, format=[current, total]}
 ${['one', 'two'] @ join='; '}
 ```
 
-### 顯示上下文{#display-context}
+### 顯示內容 {#display-context}
 
 HTL運算式的顯示內容會參照其在HTML頁面結構內的位置。 例如，如果表達式在呈現後就會生成文本節點，則該表達式據稱位於`text`上下文中。 如果在屬性的值內找到，則表示它位於`attribute`上下文中，以此類推。
 
@@ -418,7 +418,7 @@ HTL會根據其個別內容的安全需求，以不同方式逸出其中的每�
 <div>${myScript @ context='unsafe'}</div>
 ```
 
-### 內容設定{#context-settings}
+### 內容設定 {#context-settings}
 
 | 上下文 | 使用時機 | 它的作用 |
 |--- |--- |--- |

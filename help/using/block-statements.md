@@ -2,7 +2,7 @@
 title: HTL 區塊陳述式
 description: HTML範本語言(HTL)區塊陳述式是直接新增至現有HTML的自訂資料屬性。
 exl-id: a517dcef-ab7a-4d4c-a1a9-2e57aad034f7
-source-git-commit: 8e70ee4921a7ea071ab7e06947824c371f4013d8
+source-git-commit: 89b9e89254f341e74f1a5a7b99735d2e69c8a91e
 workflow-type: tm+mt
 source-wordcount: '1555'
 ht-degree: 1%
@@ -51,7 +51,7 @@ HTL區塊外掛程式由HTML元素上設定的`data-sly-*`屬性所定義。 元
 
 頂層識別碼不區分大小寫（因為可透過不區分大小寫的HTML屬性來設定），但其所有屬性均區分大小寫。
 
-## 可用塊語句{#available-block-statements}
+## 可用塊語句 {#available-block-statements}
 
 有許多可用的塊語句。 在相同元素上使用時，下列優先順序清單會定義評估區塊陳述式的方式：
 
@@ -105,10 +105,10 @@ HTL區塊外掛程式由HTML元素上設定的`data-sly-*`屬性所定義。 元
 >如需Use-API的詳細資訊，請參閱：
 >
 >* [Java Use-API](use-api-java.md)
-* [JavaScript Use-API](use-api-javascript.md)
+>* [JavaScript Use-API](use-api-javascript.md)
 
 
-#### 對資源{#data-sly-use-with-resources}使用data-sly
+#### data-sly搭配資源使用 {#data-sly-use-with-resources}
 
 這可讓您透過`data-sly-use`直接在HTL中取得資源，且不需要編寫程式碼即可取得。
 
@@ -121,7 +121,8 @@ HTL區塊外掛程式由HTML元素上設定的`data-sly-*`屬性所定義。 元
 ```
 
 >[!TIP]
-另請參閱[Path Not Always Required（不總是必需）部分。](#path-not-required)
+>
+>另請參閱[Path Not Always Required（不總是必需）部分。](#path-not-required)
 
 ### 取消繞排 {#unwrap}
 
@@ -377,7 +378,7 @@ sup table tbody td tfoot th thead time tr u var wbr
 <article data-sly-resource="path/to/resource"></article>
 ```
 
-#### 路徑不總是必需的{#path-not-required}
+#### 路徑不總是必需的 {#path-not-required}
 
 請注意，如果您已擁有資源，則不需要使用具有`data-sly-resource`的路徑。 如果您已有資源，則可直接使用。
 
@@ -460,7 +461,8 @@ cssClassName='className'}"></article>
 ```
 
 >[!NOTE]
-AEM提供清晰且簡單的邏輯，可控制包住所含元素的裝飾標籤。 如需詳細資訊，請參閱開發元件檔案中的[裝飾標籤](https://docs.adobe.com/content/help/en/experience-manager-65/developing/components/decoration-tag.html)。
+>
+>AEM提供清晰且簡單的邏輯，可控制包住所含元素的裝飾標籤。 如需詳細資訊，請參閱開發元件檔案中的[裝飾標籤](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/implementing/developing/full-stack/components-templates/decoration-tag.html)。
 
 ### 加入 {#include}
 
@@ -531,7 +533,7 @@ public class ProductSettings {
 }
 ```
 
-### 範本和呼叫{#template-call}
+### 範本與呼叫 {#template-call}
 
 範本區塊可像函式呼叫一樣使用：在其聲明中，他們可以取得參數，然後在呼叫參數時傳遞。 也允許遞回。
 
@@ -576,7 +578,7 @@ public class ProductSettings {
 <div data-sly-call="${nav @ page=currentPage}" data-sly-unwrap></div>
 ```
 
-## Sly元素{#sly-element}
+## Sly元素 {#sly-element}
 
 `<sly>` HTML標籤可用來移除目前的元素，只顯示其子項。 其功能與`data-sly-unwrap`區塊元素類似：
 
