@@ -1,19 +1,19 @@
 ---
 title: HTL JavaScript Use-API
-description: HTML範本語言 — HTL - JavaScript Use-API可讓HTL檔案存取以JavaScript撰寫的協助程式碼。
+description: HTML 範本語言 (HTL) JavaScript Use-API 讓 HTL 檔案能夠存取以 JavaScript 撰寫的 helper 程式碼。
 exl-id: e98bfbd5-fa64-48c7-bd14-477d4c5e1788
 source-git-commit: 8e70ee4921a7ea071ab7e06947824c371f4013d8
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '324'
-ht-degree: 2%
+ht-degree: 100%
 
 ---
 
 # HTL JavaScript Use-API {#htl-javascript-use-api}
 
-HTML範本語言(HTL)JavaScript Use-API可讓HTL檔案存取以JavaScript撰寫的協助程式碼。 這可讓所有複雜的商業邏輯封裝在JavaScript程式碼中，而HTL程式碼僅處理直接標籤生產。
+HTML 範本語言 (HTL) JavaScript Use-API 讓 HTL 檔案能夠存取以 JavaScript 撰寫的 helper 程式碼。 如此可讓所有複雜的商業邏輯都封裝在 JavaScript 程式碼中，而 HTL 程式碼只需處理直接標記的生產。
 
-使用下列慣例。
+以下是使用的慣例。
 
 ```javascript
 /**
@@ -35,16 +35,16 @@ use(['dep1.js', 'dep2.js'], function (Dep1, Dep2) {
 });
 ```
 
-## 簡單範例{#a-simple-example}
+## 簡單範例 {#a-simple-example}
 
-我們定義位於`info`
+我們定義一個元件 `info`，它位在
 
 `/apps/my-example/components/info`
 
 它包含兩個檔案：
 
-* **`info.js`**:定義use類的JavaScript檔案。
-* **`info.html`**:定義元件的HTL檔 `info`案。此程式碼將透過use-API使用`info.js`的功能。
+* **`info.js`**：定義 use 類別的 JavaScript 檔案。
+* **`info.html`**：定義元件 `info` 的 HTL 檔案。 此程式碼將透過 use-API 使用 `info.js` 的功能。
 
 ### /apps/my-example/component/info/info.js {#apps-my-example-component-info-info-js}
 
@@ -67,17 +67,17 @@ use(function () {
 </div>
 ```
 
-我們也會建立一個內容節點，該節點使用`info`元件，位於
+我們也會建立一個使用 `info` 元件的內容節點，它位在
 
-`/content/my-example`，包含屬性：
+`/content/my-example`，具有以下屬性：
 
 * `sling:resourceType = "my-example/component/info"`
 * `title = "My Example"`
 * `description = "This is some example content."`
 
-產生的存放庫結構如下：
+以下是產生的存放庫結構：
 
-### 儲存庫結構{#repository-structure}
+### 存放庫結構 {#repository-structure}
 
 ```java
 {
@@ -114,7 +114,7 @@ use(function () {
 </section>
 ```
 
-可使用下列伺服器端JavaScript寫入對應邏輯，位於範本旁的`component.js`檔案中：
+可使用位於範本旁邊的 `component.js` 檔案中的以下伺服器端 JavaScript 編寫對應的邏輯：
 
 ```javascript
 use(function () {
@@ -133,11 +133,11 @@ use(function () {
 });
 ```
 
-這會嘗試從不同來源取用`title`，並將說明裁切為50個字元。
+這樣會嘗試從不同來源取得 `title`，並將說明裁切成 50 個字元。
 
-## 相依關係 {#dependencies}
+## 相依性 {#dependencies}
 
-假設我們有一個公用程式類別，其中已配備智慧功能，例如導覽標題的預設邏輯，或將字串精心切割至特定長度：
+假設我們有一個公用程式類別已配備智慧功能，像是導覽標題的預設邏輯或是完美地將字串切割成某個長度：
 
 ```javascript
 use(['../utils/MyUtils.js'], function (utils) {
@@ -156,11 +156,11 @@ use(['../utils/MyUtils.js'], function (utils) {
 });
 ```
 
-## 延伸 {#extending}
+## 擴充 {#extending}
 
-相依性模式也可用來擴充其他元件的邏輯（通常是目前元件的`sling:resourceSuperType`）。
+此相依性模式也可用來擴充另一個元件的邏輯 (該元件通常是目前元件的 `sling:resourceSuperType`)。
 
-假設父元件已提供`title`，我們也想新增`description`:
+假設父系元件已提供 `title`，而我們也想要新增 `description`：
 
 ```javascript
 use(['../parent-component/parent-component.js'], function (component) {
@@ -175,17 +175,17 @@ use(['../parent-component/parent-component.js'], function (component) {
 });
 ```
 
-## 將參數傳遞至範本{#passing-parameters-to-a-template}
+## 傳遞參數給範本 {#passing-parameters-to-a-template}
 
-在`data-sly-template`陳述式中，這些陳述式可與元件無關，將參數傳遞至相關聯的Use-API會很實用。
+在使用可獨立於元件之外的 `data-sly-template` 陳述式時，將參數傳遞給相關 Use-API 會很有用。
 
-因此，在元件中，我們將呼叫位於不同檔案中的範本：
+所以在我們的元件中，讓我們來呼叫位於不同檔案中的範本：
 
 ```xml
 <section class="component-name" data-sly-use.tmpl="template.html" data-sly-call="${tmpl.templateName @ page=currentPage}"></section>
 ```
 
-這是位於`template.html`中的模板：
+然後，這是位在 `template.html` 中的範本：
 
 ```xml
 <template data-sly-template.templateName="${@ page}" data-sly-use.tmpl="${'template.js' @ page=page, descriptionLength=50}">
@@ -194,7 +194,7 @@ use(['../parent-component/parent-component.js'], function (component) {
 </template>
 ```
 
-可使用下列伺服器端JavaScript寫入對應邏輯，位於範本檔案旁的`template.js`檔案中：
+可使用位於範本檔案旁邊的 `template.js` 檔案中的以下伺服器端 JavaScript 編寫對應的邏輯：
 
 ```javascript
 use(function () {
@@ -212,4 +212,4 @@ use(function () {
 });
 ```
 
-傳遞的參數是在`this`關鍵字上設定。
+傳遞的參數是在 `this` 關鍵字上設定。
