@@ -1,23 +1,23 @@
 ---
-title: Adobe Experience Manager HTL概述
-description: AEM 支援的 HTL 旨在提供高生產力的企業級網頁架構，除了提升安全性，也讓不具 Java 知識的 HTML 開發人員更能參與 AEM 專案。
+title: Adobe Experience Manager HTL 總覽
+description: AEM 支援的 HTL 旨在提供高生產力的企業級網頁架構，除了提升安全性，也讓不具備 Java 知識的 HTML 開發人員更能參與 AEM 專案。
 exl-id: 5d06ff25-d681-4b95-8375-c28a8364eb7e
 source-git-commit: 8e70ee4921a7ea071ab7e06947824c371f4013d8
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '667'
-ht-degree: 94%
+ht-degree: 100%
 
 ---
 
-# 概覽 {#overview}
+# 總覽 {#overview}
 
-Adobe Experience Manager (AEM) 支援的 HTML 範本語言 (HTL) 旨在提供高生產力的企業級網頁架構，除了提升安全性，也讓不具 Java 知識的 HTML 開發人員更能參與 AEM 專案。
+Adobe Experience Manager (AEM) 支援的 HTML 範本語言 (HTL) 旨在提供高生產力的企業級網頁架構，除了提升安全性，也讓不具備 Java 知識的 HTML 開發人員更能參與 AEM 專案。
 
-HTML範本語言是AEM中HTML偏好且建議的伺服器端範本系統。 HTL隨AEM 6.0推出，取代JSP(JavaServer Pages)。 對需要建立強大企業網站的網頁開發人員而言，HTML 範本語言有助於提升安全性和開發效率。
+HTML 範本語言是 AEM 中適用於 HTML 的首選和推薦的伺服器端範本系統。 HTL 是在 AEM 6.0 中所引進，用來取代 JSP (JavaServer Pages)。 對需要建立強大企業網站的網頁開發人員而言，HTML 範本語言有助於提升安全性和開發效率。
 
 ## 提升安全性 {#increased-security}
 
-HTML 範本語言與 JSP 和大部分其他範本系統相比，可提升在實作中使用 HTL 的網站安全性，因為 HTL 可自動將適當的內容感知逸出，套用到輸出至展示層的所有變數。HTL 之所以能做到這點，是因為其了解 HTML 語法，並運用相關知識，根據運算式在標記中的位置調整其必要逸出。例如，這會導致 `href` 或 `src` 屬性中的運算式，與其他屬性或其他位置的運算式產生不同逸出。
+HTML 範本語言與 JSP 和大部分其他範本系統相比，可提升在實作中使用 HTL 的網站安全性，因為 HTL 可自動將適當的上下文感知逸出，套用到輸出至展示層的所有變數。HTL 之所以能做到這點，是因為其了解 HTML 語法，並運用相關知識，根據運算式在標記中的位置調整其必要逸出。例如，這會導致 `href` 或 `src` 屬性中的運算式，與其他屬性或其他位置的運算式產生不同逸出。
 
 雖然使用 JSP 等範本語言可以達到相同結果，但開發人員必須手動操作，才能確保適當的逸出套用至每個變數。由於套用的逸出只要一有遺漏或錯誤，就可能足以造成跨網站指令碼 (XSS) 出現弱點，因此我們決定使用 HTL 將此工作自動化。如有必要，開發人員仍可在運算式上指定其他逸出，但使用 HTL 的話，預設行為更可能對應到希望的行為，減少發生錯誤的機率。
 
@@ -33,7 +33,7 @@ HTML 範本語言簡單易學，其功能刻意有所限制，以確保其簡單
 
 具體而言，使用 HTML 範本語言重新實作 Adobe.com 網站，可發現成本和專案所需時間減少約 25%。
 
-![有效增加和成本減少](assets/chlimage_1.png)
+![提高效率並降低成本](assets/chlimage_1.png)
 
 上圖說明 HTL 提升效率的下列成效:
 
@@ -41,6 +41,6 @@ HTML 範本語言簡單易學，其功能刻意有所限制，以確保其簡單
 * **JSP/HTL:** HTL 本身不需搭配任何 Java 知識，且容易撰寫，因此所有具備 HTML 專業的開發人員都能編輯這類範本。
 * **Java:** HTL 提供清楚且易於使用的 Use-API，讓具商業邏輯的介面更清晰明瞭，同時有助於整體 Java 開發。
 
-**閱讀下一節內容:**
+**閱讀後續章節：**
 
 * [開始使用 HTML 範本語言](getting-started.md)
