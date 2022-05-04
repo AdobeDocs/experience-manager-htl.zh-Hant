@@ -1,13 +1,13 @@
 ---
 source-git-commit: 89b9e89254f341e74f1a5a7b99735d2e69c8a91e
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '532'
-ht-degree: 97%
+ht-degree: 100%
 
 ---
 # 協助撰寫 Adobe Experience Manager 說明文件
 
-感謝您選擇貢獻Adobe Experience ManagerCloud Service檔案！ 我們樂於接受來自整個讀者社群以及 Adobe 員工的內容貢獻。
+感謝您選擇協助撰寫 Adobe Experience Manager Cloud Service 說明文件！ 我們樂於接受來自整個讀者社群以及 Adobe 員工的內容貢獻。
 
 本檔案說明您應如何提供內容，並指出在提供內容時應遵循的指南。
 
