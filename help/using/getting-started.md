@@ -1,56 +1,56 @@
 ---
-title: 開始使用 HTL
-description: AEM支援的HTL取代JSP，成為AEM中HTML偏好且建議的伺服器端範本系統。
+title: HTL 快速入門
+description: AEM 支援的 HTL 取代了 JSP，成為 AEM 中適用於 HTML 的首選和推薦的伺服器端範本系統。
 exl-id: c95eb1b3-3b96-4727-8f4f-d54e7136a8f9
 source-git-commit: 8e70ee4921a7ea071ab7e06947824c371f4013d8
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '2471'
-ht-degree: 0%
+ht-degree: 100%
 
 ---
 
-# 開始使用 HTL {#getting-started-with-htl}
+# HTL 快速入門 {#getting-started-with-htl}
 
-Adobe Experience Manager(AEM)支援的HTML範本語言(HTL)是AEM中HTML偏好且建議的伺服器端範本系統。 它取代了舊版AEM中使用的JSP(JavaServer Pages)。
+Adobe Experience Manager (AEM) 支援的 HTML 範本語言 (HTL) 是 AEM 中適用於 HTML 的首選和推薦的伺服器端範本系統。 它取代了舊版 AEM 中所使用的 JSP (JavaServer Pages)。
 
 >[!NOTE]
 >
->要運行此頁上提供的大多數示例，可以使用名為[讀取Eval Print Loop](https://github.com/Adobe-Marketing-Cloud/aem-htl-repl)的即時執行環境。
+>若要執行此頁提供的大多數範例，可以使用稱為[「讀取、求值、輸出」迴圈](https://github.com/Adobe-Marketing-Cloud/aem-htl-repl)的即時執行環境。
 
-## JSP上的HTL {#htl-over-jsp}
+## HTL 優於 JSP {#htl-over-jsp}
 
-建議新AEM專案使用HTML範本語言，因為與JSP相比，它提供多項優點。 但是，對於現有項目，只有在預計未來幾年，遷移所花費的精力比維護現有JSP要少時才有意義。
+建議新 AEM 專案最好使用 HTML 範本語言，因為相較於 JSP，HTL 提供了多項優點。 但如果是現有專案，只有在預估遷移比未來幾年維護現有 JSP 的工作量少時，遷移才有意義。
 
-但改用HTL並非一無是處的選擇，因為以HTL撰寫的元件與以JSP或ESP撰寫的元件相容。 這表示現有專案可順利將HTL用於新元件，同時保留現有元件的JSP。
+不過，移至 HTL 不見得是全有或全無的選擇，因為使用 HTL 撰寫的元件與使用 JSP 或 ESP 撰寫的元件相容。 這表示現有專案可以毫無問題地將 HTL 用於新元件，同時繼續將 JSP 用於現有元件。
 
-即使在同一個元件中，HTL檔案也可與JSP和ESP搭配使用。 以下範例說明&#x200B;**第1行**&#x200B;如何從JSP檔案納入HTL檔案，以及如何從HTL檔案納入JSP檔案&#x200B;**第2行**:
+即便是在相同元件中，HTL 檔案也可以與 JSP 和 ESP 一起使用。 以下範例在&#x200B;**第 1 行**&#x200B;顯示如何加入 JSP 檔案中的 HTL 檔案，並在&#x200B;**第 2 行**&#x200B;顯示如何加入 HTL 檔案中的 JSP 檔案：
 
 ```xml
 <cq:include script="template.html"/>
 <sly data-sly-include="template.jsp"/>
 ```
 
-### 常見問題{#frequently-asked-questions}
+### 常見問答{#frequently-asked-questions}
 
-開始使用HTML範本語言之前，請先回答與JSP與HTL主題相關的幾個問題。
+在開始使用 HTML 範本語言之前，讓我們先來回答幾個與 JSP 和 HTL 主題有關的問題。
 
-**HTL是否有JSP沒有的限制？** - HTL與JSP相比並無其他限制，因為使用JSP可執行的操作也應可透過HTL達成。然而，HTL的設計在幾個方面比JSP更嚴格，而所有可在單一JSP檔案中達成的目標，可能需要分成Java類別或JavaScript檔案，才能在HTL中實現。 但這通常是為了確保邏輯與標籤之間的關注之間良好地分離。
+**HTL 是否有任何 JSP 沒有的限制？** - 相較於 JSP，HTL 沒有什麼真正的限制，因為可以使用 JSP 完成的事情應該也可以使用 HTL 達成。 不過有幾個方面，HTL 在設計上比 JSP 嚴格，可以在單一 JSP 檔案中完成的所有事情，可能需要分散到 Java 類別或 JavaScript 檔案中才能在 HTL 中達成。 但這通常需要確保邏輯與標記之間有良好的關注點分離。
 
-**HTL是否支援JSP標籤程式庫？**  — 否，但如載入用戶端程 [式庫區](getting-started.md#loading-client-libraries) 段所示，範本 [和callstatement](block-statements.md#template-call) 提供類似的模式。
+**HTL 是否支援 JSP 標記庫？** - 否，但如同[載入用戶端程式庫](getting-started.md#loading-client-libraries)一節中所述，[template 和 call](block-statements.md#template-call) 陳述式可提供類似的模式。
 
-**HTL功能可在AEM專案上擴充嗎？**  — 不，他們不能。HTL具有強大的擴充功能機制，可重複使用邏輯 — [Use-API](getting-started.md#use-api-for-accessing-logic) — 和標籤（[範本和呼叫](block-statements.md#template-call)陳述式），這些陳述式可用來模組化專案的程式碼。
+**可以在 AEM 專案上擴充 HTL 功能嗎？** - 不行。 HTL 具有強大的擴充機制可重複使用邏輯 - [Use-API](getting-started.md#use-api-for-accessing-logic) - 和標記 ([template 和 call](block-statements.md#template-call) 陳述式)，這些可用來將專案的程式碼模組化。
 
-**HTL優於JSP的主要優點為何？**  — 安全性和項目效率是主要優勢，詳見 [概述](overview.md)。
+**HTL 主要有哪些優點勝過 JSP？** - 安全性和專案效率是主要優點，這些在[概覽](overview.md)中有詳述。
 
-**JSP最終會消失嗎？**  — 在當前日期，沒有按這些方式計畫。
+**JSP 最終會消失嗎？** - 目前沒有這方面的計劃。
 
-## HTL {#fundamental-concepts-of-htl}的基本概念
+## HTL 的基本概念 {#fundamental-concepts-of-htl}
 
-HTML模板語言使用表達式語言將內容片段插入到呈現的標籤中，而HTML5資料屬性用於定義標籤塊（如條件或迭代）上的語句。 當HTL編譯到Java Servlet中時，運算式和HTL資料屬性都會在伺服器端進行評估，因此產生的HTML中不會有任何項目顯示。
+HTML 範本語言會使用運算式語言將內容片段插入呈現的標記中，並使用 HTML5 資料屬性來定義標記區塊上的陳述式 (例如條件或反覆運算)。 當 HTL 被編譯到 Java Servlet 中時，運算式和 HTL 資料屬性全都會在伺服器端進行評估，產生的 HTML 中看不到任何內容。
 
-### 塊和表達式{#blocks-and-expressions}
+### 區塊和運算式 {#blocks-and-expressions}
 
-以下是第一個範例，可如&#x200B;**`template.html`**&#x200B;檔案中所述包含：
+以下是第一個範例，此範例可以依原樣納入 **`template.html`** 檔案中：
 
 ```xml
 <h1 data-sly-test="${properties.jcr:title}">
@@ -60,19 +60,19 @@ HTML模板語言使用表達式語言將內容片段插入到呈現的標籤中�
 
 可以區分兩種不同的語法：
 
-* **[塊語句](block-statements.md)**  — 要有條件地顯示  **&lt;h1>** 元素，則 [`data-sly-test`](block-statements.md#test) 會使用HTML5資料屬性。HTL提供多個此類屬性，可將行為附加至任何HTML元素，且所有屬性都會加上前置詞`data-sly`。
+* **[區塊陳述式](block-statements.md)** - 若要有條件地顯示 **&lt;h1>** 元素，則會使用 [`data-sly-test`](block-statements.md#test) HTML5 資料屬性。 HTL 提供多個這類屬性，可讓您在任何 HTML 元素中附加行為，而且全都有 `data-sly` 前置詞。
 
-* **[運算式語言](expression-language.md)**  - HTL運算式由字元和 `${` 分隔 `}`。在執行階段中，會評估這些運算式，並將其值插入傳出的HTML資料流中。
+* **[運算式語言](expression-language.md)** - HTL 運算式會以 `${` 和 `}` 字元分隔。 在執行階段會評估這些運算式，並將其值插入傳出的 HTML 資料流中。
 
-以上連結的兩個頁面提供可用於語法的詳細功能清單。
+上面連結的兩個頁面提供了可用於語法的功能的詳細清單。
 
-### SLY元素{#the-sly-element}
+### SLY 元素 {#the-sly-element}
 
-HTL的核心概念是可重複使用現有的HTML元素來定義區塊陳述式，如此可避免插入其他分隔字元來定義陳述式的開始和結束位置。 此標籤的不明確註解可將靜態HTML轉換為正常運作的動態範本，可讓您不破壞HTML程式碼的有效性，因此即使是靜態檔案，仍可正常顯示。
+HTL 的一個核心概念是提供重複使用現有 HTML 元素以定義區塊陳述式的可能性，這樣就不需要插入額外的分隔符號來定義陳述式的開頭和結尾處。 這種將靜態 HTML 轉換為正常的動態範本的低調標記註解提供了不破壞 HTML 程式碼有效性的優點，所以即使當作靜態檔案也能正確顯示。
 
-但有時候，必須插入block語句的確切位置可能沒有現有元素。 對於這種情況，可以插入將自動從輸出中移除的特殊SLY元素，同時執行附加的塊語句並相應地顯示其內容。
+不過，有時在必須插入區塊陳述式的確切位置可能沒有現有元素。 在這種情況下，可以插入特殊 SLY 元素，系統將會自動從輸出中移除該元素，同時執行附加的區塊陳述式，並適當地顯示其內容。
 
-下面的例子：
+所以下列範例：
 
 ```xml
 <sly data-sly-test="${properties.jcr:title && properties.jcr:description}">
@@ -81,16 +81,16 @@ HTL的核心概念是可重複使用現有的HTML元素來定義區塊陳述式�
 </sly>
 ```
 
-會輸出類似下列HTML的內容，但僅限於已定義&#x200B;**`jcr:title`**&#x200B;和&#x200B;**`jcr:description`**&#x200B;屬性，且兩者皆非空白時：
+將會輸出類似以下 HTML 的內容，但前提是同時定義了 **`jcr:title`** 和 **`jcr:description`** 屬性，而且兩者都不是空的：
 
 ```xml
 <h1>MY TITLE</h1>
 <p>MY DESCRIPTION</p>
 ```
 
-請記住，只有當沒有任何現有元素可以以block陳述式加上註解時，才使用SLY元素，因為SLY元素會抑制語言提供的值，使其動態時不會變更靜態HTML。
+請牢記一件事，僅在沒有可加註區塊陳述式的現有元素時才使用 SLY 元素，因為 SLY 元素會制止語言提供的值，在靜態 HTML 變成動態時不改變靜態 HTML。
 
-例如，如果先前的範例已包裝在DIV元素內，則新增的SLY元素將具有辱罵性：
+例如，如果上述範例已經包在 DIV 元素內，則新增的 SLY 元素會是誤用的：
 
 ```xml
 <div>
@@ -101,7 +101,7 @@ HTL的核心概念是可重複使用現有的HTML元素來定義區塊陳述式�
 </div>
 ```
 
-而DIV元素本可以用條件加上註解：
+而且 DIV 元素可能會使用加註以下條件：
 
 ```xml
 <div data-sly-test="${properties.jcr:title && properties.jcr:description}">
@@ -110,46 +110,46 @@ HTL的核心概念是可重複使用現有的HTML元素來定義區塊陳述式�
 </div>
 ```
 
-### HTL註解{#htl-comments}
+### HTL 註解 {#htl-comments}
 
-下列範例顯示在&#x200B;**第1**&#x200B;行的HTL註解，以及在&#x200B;**第2**&#x200B;行的HTML註解：
+以下範例在&#x200B;**第 1 行**&#x200B;顯示 HTL 註解，並在&#x200B;**第 2 行**&#x200B;顯示 HTML 註解：
 
 ```xml
 <!--/* An HTL Comment */-->
 <!-- An HTML Comment -->
 ```
 
-HTL註解是HTML註解，其語法與JavaScript類似。 處理器會完全忽略整個HTL註解，並從輸出中移除。
+HTL 註解是有其他類似 JavaScript 語法的 HTML 註解。 處理器將會完全忽略整個 HTL 註解及其中的所有內容，並從輸出中將其移除。
 
-不過，標準HTML註解的內容會傳遞，且會評估註解中的運算式。
+不過，標準 HTML 註解的內容將會被傳遞，而且註解內的運算式將會受到評估。
 
-HTML註解不能包含HTL註解，反之亦然。
+HTML 註解不可包含 HTL 註解，反之亦然。
 
-### 特殊內容{#special-contexts}
+### 特殊上下文 {#special-contexts}
 
-為了能充分運用HTL，請務必充分了解其以HTML語法為基礎的後果。
+為了能夠充分利用 HTL，一定要了解根據 HTML 語法使用它的結果。
 
-### 元素和屬性名稱{#element-and-attribute-names}
+### 元素和屬性名稱 {#element-and-attribute-names}
 
-運算式只能放入HTML文字或屬性值中，但不能放在元素名稱或屬性名稱內，否則將不再是有效的HTML。 為了動態設定元素名稱，[`data-sly-element`](block-statements.md#element)語句可用於所需元素，並且用於動態設定屬性名稱，即使一次設定多個屬性，[`data-sly-attribute`](block-statements.md#attribute)語句也可以使用。
+運算式只能置於 HTML 文字或屬性值中，但不能置於元素名稱或屬性名稱中，否則將不再是有效的 HTML。 若要以動態方式設定元素名稱，可以在所要的元素上使用 [`data-sly-element`](block-statements.md#element) 陳述式；若要以動態方式設定屬性名稱，甚至是一次設定多個屬性，可以使用 [`data-sly-attribute`](block-statements.md#attribute) 陳述式。
 
 ```xml
 <h1 data-sly-element="${myElementName}" data-sly-attribute="${myAttributeMap}">...</h1>
 ```
 
-### 沒有塊語句的上下文{#contexts-without-block-statements}
+### 沒有區塊陳述式的上下文 {#contexts-without-block-statements}
 
-由於HTL使用資料屬性來定義區塊陳述式，因此無法在下列內容中定義這類區塊陳述式，因此只能在該處使用運算式：
+由於 HTL 會使用資料屬性來定義區塊陳述式，所以無法在以下上下文中定義這類區塊陳述式，只能使用運算式：
 
-* HTML註解
+* HTML 註解
 * 指令碼元素
 * 樣式元素
 
-原因是這些內容的內容是文字，而非HTML，而且包含的HTML元素會視為簡單的字元資料。 因此，若沒有真正的HTML元素，也無法執行&#x200B;**`data-sly`**&#x200B;屬性。
+原因是因為這些上下文的內容是文字，而不是 HTML，而且包含的 HTML 元素會被視為簡單的字元資料。 所以如果沒有真正的 HTML 元素，也無法執行 **`data-sly`** 屬性。
 
-這聽起來可能像是大限制，不過這是需要的限制，因為不應濫用HTML範本語言來產生非HTML的輸出。 以下[存取邏輯的Use-API](getting-started.md#use-api-for-accessing-logic)一節介紹如何從範本呼叫其他邏輯，以便在需要準備這些內容的複雜輸出時使用。 例如，從後端傳送資料至前端指令碼的簡單方式，是要有元件的邏輯以產生JSON字串，接著再以簡單的HTL運算式將字串放在資料屬性中。
+這可能聽起來像是很大的限制，但其實是理想的限制，因為不該濫用 HTML 範本語言來產生不是 HTML 的輸出。 底下[用於存取邏輯的 Use-API](getting-started.md#use-api-for-accessing-logic) 一節會介紹如何從範本呼叫其他邏輯，可以在需要為這些上下文準備複雜輸出時使用它。 例如，從後端將資料傳送到前端指令碼的一個簡單方法是讓元件的邏輯產生 JSON 字串，然後可以使用簡單 HTL 運算式將該字串置於資料屬性中。
 
-以下範例說明HTML註解的行為，但在指令碼或樣式元素中，會觀察到相同的行為：
+以下範例說明 HTML 註解的行為，但在指令碼或樣式元素中，將觀察到相同的行為：
 
 ```xml
 <!--
@@ -158,7 +158,7 @@ HTML註解不能包含HTL註解，反之亦然。
 -->
 ```
 
-會輸出類似下列HTML的內容：
+將會輸出類似以下 HTML 的內容：
 
 ```xml
 <!--
@@ -167,44 +167,44 @@ HTML註解不能包含HTL註解，反之亦然。
 -->
 ```
 
-### 需要的顯式上下文{#explicit-contexts-required}
+### 需要明確的上下文 {#explicit-contexts-required}
 
-如下方的[自動內容感知逸出](getting-started.md#automatic-context-aware-escaping)一節所述，HTL的一個目標是透過自動將內容感知逸出套用至所有運算式，以降低引入跨網站指令碼(XSS)漏洞的風險。 雖然HTL可自動偵測放置於HTML標籤內的運算式內容，但不會分析內嵌JavaScript或CSS的語法，因此需仰賴開發人員明確指定必須套用至這類運算式的確切內容。
+如同底下[自動上下文感知逸出](getting-started.md#automatic-context-aware-escaping)一節中所述，HTL 的一個目的是藉由自動套用上下文感知逸出到所有運算式來減少引進跨網站指令碼 (XSS) 安全漏洞的風險。 雖然 HTL 可以自動偵測置於 HTML 標記內的運算式的上下文，但是它無法分析內嵌 JavaScript 或 CSS 的語法，所以有賴開發人員明確指定必須套用到這類運算式的確切上下文。
 
-由於未套用正確的逸出結果會導致XSS弱點，因此當內容未宣告時，HTL會移除指令碼和樣式內容中所有運算式的輸出。
+由於未套用正確的逸出會導致 XSS 安全漏洞，所以 HTL 會在未宣告上下文時移除指令碼和樣式上下文中的所有運算式輸出。
 
-以下是如何為置於指令碼和樣式內的運算式設定內容的範例：
+以下範例說明如何為置於指令碼和樣式內的運算式設定上下文：
 
 ```xml
 <script> var trackingID = "${myTrackingID @ context='scriptString'}"; </script>
 <style> a { font-family: "${myFont @ context='styleString'}"; } </style>
 ```
 
-如需如何控制逸出的詳細資訊，請參閱[運算式語言顯示內容](expression-language.md#display-context)區段。
+如需有關如何控制逸出的詳細資訊，請參閱[運算式語言顯示上下文](expression-language.md#display-context)一節。
 
-### 特殊上下文的提升限制{#lifting-limitations-of-special-contexts}
+### 解除特殊上下文的限制 {#lifting-limitations-of-special-contexts}
 
-在需要略過指令碼、樣式和註解內容限制的特殊情況下，可將其內容隔離在個別的HTL檔案中。 位於其專屬檔案中的所有項目，都會被HTL解譯為一般HTML片段，而忘記可能已納入的限制內容。
+在需要略過指令碼、樣式和註解上下文限制的特殊情況下，可以將其內容隔離在個別 HTL 檔案中。 位於自身檔案中的所有內容都將由 HTL 解譯為一般 HTML 片段，而忘記了可能包含該內容的限制性上下文。
 
-如需範例，請參閱深入下文的[使用用戶端範本](getting-started.md#working-with-client-side-templates)區段。
+如需範例，請參閱下面的[使用用戶端範本](getting-started.md#working-with-client-side-templates)一節。
 
 >[!CAUTION]
 >
->此技術可能會引入跨網站指令碼(XSS)漏洞，若使用此漏洞，應謹慎研究安全性。 通常有比依賴這種做法更好的方法來實施相同的事物。
+>此技巧可能會帶來跨網站指令碼 (XSS) 安全漏洞，所以在使用此技巧時，應該對安全性方面仔細研究。 通常有比依賴此做法更好的方式可實作相同的事。
 
-## HTL {#general-capabilities-of-htl}的一般功能
+## HTL 的一般功能 {#general-capabilities-of-htl}
 
-本節會快速說明HTML範本語言的一般功能。
+本節將快速介紹 HTML 範本語言的一般功能。
 
-### 用於訪問邏輯{#use-api-for-accessing-logic}的Use-API
+### 用於存取邏輯的 Use-API {#use-api-for-accessing-logic}
 
-請考量下列範例：
+考量下列範例：
 
 ```xml
 <p data-sly-use.logic="logic.js">${logic.title}</p>
 ```
 
-並依照放在旁邊的`logic.js`伺服器端執行的JavaScript檔案：
+以及放置在它旁邊的下列 `logic.js` 伺服器端執行的 JavaScript 檔案：
 
 ```javascript
 use(function () {
@@ -214,19 +214,19 @@ use(function () {
 });
 ```
 
-由於HTML範本語言不允許在標籤內混用程式碼，因此它提供Use-API擴充功能機制，以便從範本輕鬆執行程式碼。
+由於 HTML 範本語言不允許將程式碼混合在標記中，所以它提供 Use-API 延伸模組機制，以便從範本輕鬆地執行程式碼。
 
-上述範例使用伺服器端執行的JavaScript來將標題縮短為10個字元，但透過提供完全限定的Java類別名稱，也可能使用Java程式碼來執行相同操作。 一般而言，商業邏輯應該建置在Java中，但若元件需要從Java API提供的內容進行某些檢視專屬變更，則使用某些伺服器端執行的JavaScript來執行這項作業會相當方便。
+上述範例使用伺服器端執行的 JavaScript 將標題縮短為 10 個字元，但它原本也可藉由提供完整 Java 類別名稱來使用 Java 程式碼做相同的事。 一般來說，商業邏輯應該使用 Java 來建立，但是當元件需要從 Java API 提供的內容中進行一些檢視特有的變更時，使用某個伺服器端執行的 JavaScript 來做這件事會很方便。
 
-以下各節將詳細說明此事項：
+下列章節會提供更多相關資訊：
 
-* [`data-sly-use`語句](block-statements.md#use)上的部分說明了可以使用該語句完成的所有操作。
-* [Use-API頁面](use-api.md)提供一些資訊，以協助您在以Java或JavaScript撰寫邏輯之間進行選擇。
-* 若要詳細說明如何撰寫邏輯，[JavaScript Use-API](use-api-javascript.md)和[Java Use-API](use-api-java.md)頁面應該會有所幫助。
+* 有關 [`data-sly-use` 陳述式](block-statements.md#use)的章節說明了可使用該陳述式執行的所有工作。
+* [Use-API 頁面](use-api.md)提供一些資訊來幫助您選擇使用 Java 或 JavaScript 撰寫邏輯。
+* 若要取得如何撰寫邏輯的詳細資訊，[JavaScript Use-API](use-api-javascript.md) 和 [Java Use-API](use-api-java.md) 頁面應該會有幫助。
 
-### 自動內容感知逸出{#automatic-context-aware-escaping}
+### 自動上下文感知逸出 {#automatic-context-aware-escaping}
 
-請考量下列範例：
+考量下列範例：
 
 ```xml
 <p data-sly-use.logic="logic.js">
@@ -236,11 +236,11 @@ use(function () {
 </p>
 ```
 
-在大多數範本語言中，此範例可能會造成跨網站指令碼(XSS)漏洞，因為即使所有變數都自動以HTML逸出，`href`屬性仍必須明確以URL逸出。 這種遺漏是最常見的錯誤之一，因為很容易被遺忘，而且很難以自動的方式識別。
+在大多數的範本語言中，此範例可能會產生跨網站指令碼 (XSS) 安全漏洞，因為即便所有變數都自動進行 HTML 逸出，`href` 屬性還是必須專門進行 URL 逸出。 這種遺漏是最常見的錯誤之一，因為很容易被忘記，而且很難以自動化方式被發現。
 
-為了提供這些協助，HTML範本語言會自動將每個變數逸出至放置變數的內容。 這要歸功於HTL了解HTML的語法。
+為了協助解決此問題，HTML 範本語言會根據每個變數所在的上下文自動逸出該變數。 這是可行的，因為 HTL 了解 HTML 的語法。
 
-假設如下`logic.js`檔案：
+假設有以下 `logic.js` 檔案：
 
 ```javascript
 use(function () {
@@ -252,7 +252,7 @@ use(function () {
 });
 ```
 
-初始範例將產生下列輸出：
+然後最初範例會產生以下輸出：
 
 ```xml
 <p>
@@ -262,11 +262,11 @@ use(function () {
 </p>
 ```
 
-請注意，兩個屬性的逸出方式不同，因為HTL知道`href`和`src`屬性必須針對URI內容逸出。 此外，如果URI以&#x200B;**`javascript:`**&#x200B;開頭，則該屬性將被完全刪除，除非上下文被顯式更改為其他內容。
+請注意這兩個屬性如何以不同方式逸出，因為 HTL 知道必須為 URI 上下文逸出 `href` 和 `src` 屬性。 此外，如果 URI 的開頭為 **`javascript:`**，則屬性將被完全移除，除非明確地將上下文變更為其他內容。
 
-如需如何控制逸出的詳細資訊，請參閱[運算式語言顯示內容](expression-language.md#display-context)區段。
+如需有關如何控制逸出的詳細資訊，請參閱[運算式語言顯示上下文](expression-language.md#display-context)一節。
 
-### 自動刪除空屬性{#automatic-removal-of-empty-attributes}
+### 自動移除空屬性 {#automatic-removal-of-empty-attributes}
 
 請考量下列範例：
 
@@ -274,54 +274,54 @@ use(function () {
 <p class="${properties.class}">some text</p>
 ```
 
-如果`class`屬性的值恰好為空，則HTML模板語言將自動從輸出中刪除整個`class`屬性。
+如果 `class` 屬性 (Property) 的值剛好是空的，則 HTML 範本語言會自動從輸出中移除整個 `class` 屬性 (Attribute)。
 
-同樣地，這也是可能的，因為HTL了解HTML語法，因此只有在屬性值不為空時，才能有條件地顯示具有動態值的屬性。 這非常方便，因為它避免在屬性周圍添加條件塊，這會導致標籤無效且不可讀。
+這也是可行的，因為 HTL 了解 HTML 語法，因此可以有條件地顯示具有動態值的屬性，但前提是屬性值不是空的。 這樣會非常方便，因為可避免在屬性周圍加入條件區塊，這種區塊會讓標記變得無效且無法讀取。
 
-此外，運算式中放置的變數類型也很重要：
+此外，放在運算式中的變數類型很重要：
 
-* **String:**
-   * **非空白：** 將字串設為屬性值。
-   * **empty:** 完全移除屬性。
+* **字串：**
+   * **不是空的：**&#x200B;將字串設為屬性值。
+   * **空的：**&#x200B;完全移除屬性。
 
-* **數字：** 將值設為屬性值。
+* **數字：**&#x200B;將值設為屬性值。
 
-* **布林函數:**
-   * **true:** 顯示不含值的屬性（作為布林HTML屬性）
-   * **false:** 完全移除屬性。
+* **布林值：**
+   * **true：**&#x200B;顯示不含值的屬性 (當作布林值 HTML 屬性)
+   * **false：**&#x200B;完全移除屬性。
 
-以下是布林運算式如何允許控制布林HTML屬性的範例：
+以下範例說明布林值運算式如何允許控制布林值 HTML 屬性：
 
 ```xml
 <input type="checkbox" checked="${properties.isChecked}"/>
 ```
 
-對於設定屬性，[`data-sly-attribute`](block-statements.md#attribute)語句可能也很有用。
+若要設定屬性，[`data-sly-attribute`](block-statements.md#attribute) 陳述式可能也很實用。
 
-## 具有HTL {#common-patterns-with-htl}的常見模式
+## HTL 的常見模式 {#common-patterns-with-htl}
 
-本節介紹一些常見案例，以及如何以HTML範本語言最佳解決這些案例。
+本節會介紹一些常見情境，以及如何透過 HTML 範本語言以最佳方式解決其中的問題。
 
-### 載入客戶端庫{#loading-client-libraries}
+### 載入用戶端程式庫 {#loading-client-libraries}
 
-在HTL中，用戶端程式庫是透過AEM提供的協助範本載入，可透過[`data-sly-use`](block-statements.md#use)存取。 此檔案中有三個模板，可通過[`data-sly-call`](block-statements.md#template-call)調用：
+在 HTL 中，用戶端程式庫是透過 AEM 提供的 Helper 範本來載入，該範本可透過 [`data-sly-use`](block-statements.md#use) 進行存取。 此檔案中有三個範本可用，這些範本可透過 [`data-sly-call`](block-statements.md#template-call) 來呼叫：
 
-* **`css`**  — 僅載入所參考用戶端程式庫的CSS檔案。
-* **`js`**  — 僅載入所參考用戶端程式庫的JavaScript檔案。
-* **`all`**  — 載入所引用客戶端庫的所有檔案（包括CSS和JavaScript）。
+* **`css`** - 僅載入參照的用戶端程式庫的 CSS 檔案。
+* **`js`** - 僅載入參照的用戶端程式庫的 JavaScript 檔案。
+* **`all`** - 載入參照的用戶端程式庫的所有檔案 (CSS 和 JavaScript)。
 
-每個幫助程式模板都需要一個&#x200B;**`categories`**&#x200B;選項來引用所需的客戶端庫。 該選項可以是字串值的陣列，或包含逗號分隔值清單的字串。
+每個 helper 範本都需要 **`categories`** 選項來參照所需的用戶端程式庫。 這個選項可以是字串值陣列，或是包含逗號分隔值清單的字串。
 
 以下是兩個簡短範例：
 
-### 一次完全載入多個客戶端庫{#loading-multiple-client-libraries-fully-at-once}
+### 一次完整載入多個用戶端程式庫 {#loading-multiple-client-libraries-fully-at-once}
 
 ```xml
 <sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"
      data-sly-call="${clientlib.all @ categories=['myCategory1', 'myCategory2']}"/>
 ```
 
-### 在頁面{#referencing-a-client-library-in-different-sections-of-a-page}的不同區段中參考用戶端程式庫
+### 參照頁面的不同區段中的用戶端程式庫 {#referencing-a-client-library-in-different-sections-of-a-page}
 
 ```xml
 <!doctype html>
@@ -337,15 +337,15 @@ use(function () {
 </html>
 ```
 
-在上述第二個範例中，若將HTML **`head`**&#x200B;和&#x200B;**`body`**&#x200B;元素放置到不同的檔案中，則必須在需要的每個檔案中載入&#x200B;**`clientlib.html`**&#x200B;範本。
+在上面的第二個範例中，如果 HTML **`head`** 和 **`body`** 元素被放置在不同檔案中，就必須在需要 **`clientlib.html`** 範本的每個檔案中載入它。
 
-[template &amp; call](block-statements.md#template-call)語句上的部分提供了有關聲明和調用此類模板如何工作的更多詳細資訊。
+有關 [template 和 call](block-statements.md#template-call) 陳述式的章節提供了宣告及呼叫這類範本的運作方式的相關細節。
 
-### 將資料傳遞到客戶端{#passing-data-to-the-client}
+### 傳遞資料給用戶端 {#passing-data-to-the-client}
 
-一般而言，將資料傳遞至用戶端（但透過HTL，更是如此）的最佳且最優雅的方式，是使用資料屬性。
+一般來說，傳遞資料給用戶端的最優雅也是最好的方式是使用資料屬性，對 HTL 來說更是如此。
 
-以下範例說明如何使用邏輯（也可以以Java寫入）來非常方便地將要傳遞至用戶端的物件序列化為JSON，接著便可輕鬆將物件放入資料屬性中：
+以下範例說明如何使用邏輯 (也可以使用 Java 撰寫邏輯) 方便地將傳遞給用戶端的物件序列化為 JSON，然後就可以非常輕鬆地將其置於資料屬性中：
 
 ```xml
 <!--/* template.html file: */-->
@@ -366,7 +366,7 @@ use(function () {
 });
 ```
 
-從這裡，您可以輕鬆想像用戶端JavaScript如何存取該屬性並再次剖析JSON。 例如，這會是要放入用戶端程式庫的對應JavaScript:
+從那裡，就可以輕鬆地想像用戶端 JavaScript 如何存取該屬性，然後再次剖析 JSON。 例如，這會是將對應的 JavaScript 置於用戶端程式庫中：
 
 ```javascript
 var elements = document.querySelectorAll("[data-json]");
@@ -376,9 +376,9 @@ for (var i = 0; i < elements.length; i++) {
 }
 ```
 
-### 使用用戶端範本{#working-with-client-side-templates}
+### 使用用戶端範本 {#working-with-client-side-templates}
 
-在&#x200B;**指令碼**&#x200B;元素中，[特殊內容提升限制](getting-started.md#lifting-limitations-of-special-contexts)一節中解釋的技術可以合法使用的一個特殊情況是寫入客戶端模板（例如Handlebars）。 在這種情況下，此技術可以安全地使用的原因是，**script**&#x200B;元素接著不包含假設的JavaScript，而是其他HTML元素。 以下是運作方式的範例：
+有一個特殊情況可以合法地使用[解除特殊上下文的限制](getting-started.md#lifting-limitations-of-special-contexts)一節中所述的技巧，那就是編寫位於 **script** 元素中的用戶端範本 (例如 Handlebars) 時。 在此情況下可以安全地使用這個技巧的原因是，**script** 元素沒有像假設情況那樣包含 JavaScript，而是包含更多 HTML 元素。 以下是其運作方式的範例：
 
 ```xml
 <!--/* template.html file: */-->
@@ -394,11 +394,11 @@ for (var i = 0; i < elements.length; i++) {
 </div>
 ```
 
-如上所示，將包含在&#x200B;**`script`**&#x200B;元素中的標籤可以包含HTL區塊陳述式，且運算式不需要提供明確內容，因為Handlebars範本的內容已隔離在其自己的檔案中。 此外，此範例說明如何將伺服器端執行的HTL（如&#x200B;**`h2`**&#x200B;元素上）與用戶端執行的範本語言（如Handlebars）混合（如&#x200B;**`h3`**&#x200B;元素上所示）。
+如上所示，將包含在 **`script`** 元素中的標記可以包含 HTL 區塊陳述式，而且運算式不需要提供明確上下文，因為 Handlebars 範本的內容已被隔離在自己的檔案中。 此外，這個範例也說明如何將伺服器端執行的 HTL (例如在 **`h2`** 元素上) 與用戶端執行的範本語言 (例如顯示在 **`h3`** 元素上的 Handlebars) 混合在一起。
 
-不過，更現代的技術將是改用HTML **`template`**&#x200B;元素，因為這樣的好處就是不需要將範本的內容隔離為個別檔案。
+不過，一種更新型的技巧是改用 HTML **`template`** 元素，因為這樣做有個好處：不需要將範本的內容隔離到個別檔案中。
 
-**閱讀下一節內容:**
+**閱讀後續章節：**
 
-* [運算式語言](expression-language.md)  — 詳細了解HTL運算式中可執行的操作。
-* [區塊陳述式](block-statements.md)  — 探索HTL中可用的所有區塊陳述式，以及如何使用這些陳述式。
+* [運算式語言](expression-language.md) - 詳細了解在 HTL 運算式中可以做哪些事。
+* [區塊陳述式](block-statements.md) - 探索 HTL 中提供的所有區塊陳述式以及如何加以使用。
