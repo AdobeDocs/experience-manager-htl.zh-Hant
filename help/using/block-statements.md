@@ -1,11 +1,11 @@
 ---
-title: 什麼是HTL塊語句？
-description: 瞭解HTL塊語句或HTML模板語言(HTL)。 塊語句是直接添加到現有HTML的自定義資料屬性。
+title: HTL 區塊陳述為何？
+description: 了解 HTL 區塊陳述或 HTML 範本語言 (HTL)。區塊陳述是直接新增至現有 HTML 的自訂資料屬性。
 exl-id: a517dcef-ab7a-4d4c-a1a9-2e57aad034f7
 source-git-commit: 79d299766da07dae001708b396b05c73cd70d4cc
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '1563'
-ht-degree: 98%
+ht-degree: 100%
 
 ---
 
@@ -59,7 +59,7 @@ HTL 區塊外掛程式是由 HTML 元素上設定的 `data-sly-*` 屬性所定�
 1. `data-sly-set`, `data-sly-test`, `data-sly-use`
 1. `data-sly-call`
 1. `data-sly-text`
-1. `data-sly-element`。 `data-sly-include`。 `data-sly-resource`
+1. `data-sly-element`, `data-sly-include`, `data-sly-resource`
 1. `data-sly-unwrap`
 1. `data-sly-list`, `data-sly-repeat`
 1. `data-sly-attribute`
@@ -462,7 +462,7 @@ cssClassName='className'}"></article>
 
 >[!NOTE]
 >
->AEM 提供簡單清晰的邏輯，可控制包住所含元素的裝飾標記。 如需詳細資訊，請參閱開發元件文件中的[裝飾標記](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/implementing/developing/full-stack/components-templates/decoration-tag.html?lang=zh-Hant)。
+>AEM 提供簡單清晰的邏輯，可控制包住所含元素的裝飾標記。 如需詳細資訊，請參閱開發元件文件中的[裝飾標記](https://experienceleague.adobe.com/docs/experience-manager-cloud-service/implementing/developing/full-stack/components-templates/decoration-tag.html)。
 
 ### include {#include}
 
