@@ -1,11 +1,11 @@
 ---
 title: HTL JavaScript Use-API
-description: HTML 範本語言 (HTL) JavaScript Use-API 讓 HTL 檔案能夠存取以 JavaScript 撰寫的 helper 程式碼。
+description: 瞭解HTML模板語言(HTL)JavaScript use-API如何使HTL檔案能夠訪問用JavaScript編寫的幫助程式碼。
 exl-id: e98bfbd5-fa64-48c7-bd14-477d4c5e1788
-source-git-commit: 8e70ee4921a7ea071ab7e06947824c371f4013d8
-workflow-type: ht
-source-wordcount: '324'
-ht-degree: 100%
+source-git-commit: 7b53eff0652f650ffb8caae0e69aa349b5c548eb
+workflow-type: tm+mt
+source-wordcount: '326'
+ht-degree: 93%
 
 ---
 

@@ -1,11 +1,11 @@
 ---
-title: HTL 運算式語言
-description: HTML 範本語言會使用運算式語言來存取資料結構，以提供 HTML 輸出的動態元素。
+title: HTL表達語言
+description: 瞭解在中使用HTL表達式語言AEM。 HTML 範本語言會使用運算式語言來存取資料結構，以提供 HTML 輸出的動態元素。
 exl-id: 57e3961b-8c84-4d56-a049-597c7b277448
-source-git-commit: 89b9e89254f341e74f1a5a7b99735d2e69c8a91e
-workflow-type: ht
-source-wordcount: '1852'
-ht-degree: 100%
+source-git-commit: 7b53eff0652f650ffb8caae0e69aa349b5c548eb
+workflow-type: tm+mt
+source-wordcount: '1860'
+ht-degree: 99%
 
 ---
 
