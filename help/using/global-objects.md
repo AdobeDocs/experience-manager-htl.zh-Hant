@@ -1,11 +1,11 @@
 ---
-title: HTL全局對象
-description: 瞭解可枚舉對象、Java支援的對象和JavaScript支援的對象。 查找中使用的這些HTL全局對象的變數名稱和說AEM明。
+title: HTL 全域物件
+description: 了解可列舉物件、Java 支援的物件和 JavaScript 支援的物件。 尋找 AEM 中使用的這些 HTL 全域物件的變數名稱和描述。
 exl-id: ca590b92-f1b3-4e44-a04a-a2c10dff256f
 source-git-commit: 7b53eff0652f650ffb8caae0e69aa349b5c548eb
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '223'
-ht-degree: 88%
+ht-degree: 100%
 
 ---
 
@@ -20,8 +20,8 @@ HTL 讓您不需要指定任何內容，在加入 `global.jsp` 後即可讓您�
 | 變數名稱 | 說明 |
 |--- |--- |
 | `properties` | 目前資源的屬性清單。 由 [org.apache.sling.api.resource.ValueMap](https://helpx.adobe.com/tw/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) 提供支援 |
-| `pageProperties` | 目前頁面的頁面屬性清單。 由 [org.apache.sling.api.resource.ValueMap](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) 提供支援 |
-| `inheritedPageProperties` | 目前頁面的繼承頁面屬性清單。 由 [org.apache.sling.api.resource.ValueMap](https://helpx.adobe.com/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) 提供支援 |
+| `pageProperties` | 目前頁面的頁面屬性清單。 由 [org.apache.sling.api.resource.ValueMap](https://helpx.adobe.com/tw/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) 提供支援 |
+| `inheritedPageProperties` | 目前頁面的繼承頁面屬性清單。 由 [org.apache.sling.api.resource.ValueMap](https://helpx.adobe.com/tw/experience-manager/6-5/sites/developing/using/reference-materials/javadoc/org/apache/sling/api/resource/ValueMap.html) 提供支援 |
 
 ## Java 支援的物件 {#java-backed-objects}
 
