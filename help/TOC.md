@@ -7,21 +7,21 @@ feature-set: Experience Manager
 feature: Developer Tools
 role: Developer
 source-git-commit: f9b59d5fcc380413f2727b06f41ecacca6518227
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '46'
-ht-degree: 78%
+ht-degree: 100%
 
 ---
 
 
-# Adobe Experience ManagerHTL幫助 {#content}
+# Adobe Experience Manager HTL 說明 {#content}
 
-+ [概觀](overview.md)
++ [總覽](overview.md)
 + [HTL 快速入門](getting-started.md)
 + [HTL 規格](specification.md)
 + [HTL 全域物件](global-objects.md)
 + [HTL Java Use-API](java-use-api.md)
-+ [擴AEM展](aem-extensions.md)
++ [AEM 擴充功能](aem-extensions.md)
 + [開發人員工具](developer-tools.md)
 + [程式碼範例](code-samples.md)
-+ [HTL歷史](history.md)
++ [HTL 歷史記錄](history.md)
