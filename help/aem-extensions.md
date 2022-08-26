@@ -1,37 +1,37 @@
 ---
-title: 擴AEM展
-description: AEM為了方便您作為開AEM發人員，提供HTL規範的擴展。
+title: AEM 擴充功能
+description: AEM 提供 AEM 之 HTL 規格擴充功能，方便作為開發人員的您使用。
 source-git-commit: 6d97bc5d0ab89dffaf56a54c73c94d069bb31ca6
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '308'
-ht-degree: 0%
+ht-degree: 100%
 
 ---
 
 
-# 擴AEM展 {#aem-extensions}
+# AEM 擴充功能 {#aem-extensions}
 
-與 [HTL規範的Apache Sling擴展，](https://sling.apache.org/documentation/bundles/scripting/scripting-htl.html#extensions-of-the-htl-specification-1) 提AEM供了一些附加表達式選項，AEM使直接在HTL指令碼中處理概念更簡單。
+與 HTL 規格的 [Apache Sling 擴充功能](https://sling.apache.org/documentation/bundles/scripting/scripting-htl.html#extensions-of-the-htl-specification-1)相似，AEM 提供其他的運算式選項，使得直接在 HTL 指令碼內使用 AEM 概念運作更容易。
 
 ## i18n {#i18n}
 
-相同 [三個附加選項](https://sling.apache.org/documentation/bundles/scripting/scripting-htl.html#i18n) 與Apache Sling一樣， `i18n`:
+與 Apache Sling 相同的[三個其他選項](https://sling.apache.org/documentation/bundles/scripting/scripting-htl.html#i18n)可以搭配 `i18n` 一起使用：
 
 * `locale`
 * `hint`
 * `basename`
 
-然而AEM, [國際化支援](https://experienceleague.adobe.com/docs/experience-manager-65/developing/components/internationalization/i18n-dev.html) HTL是在API的幫助下從 `com.day.cq.i18n` 檔案。
+不過，在 AEM 中，要實施 HTL 的[國際化支援](https://experienceleague.adobe.com/docs/experience-manager-65/developing/components/internationalization/i18n-dev.html)，需要 `com.day.cq.i18n` 套件的 API 提供協助。
 
-## 資料漏包 {#data-sly-include}
+## data-sly-include {#data-sly-include}
 
-在AEM, `data-sly-include` 可以另外 `wcmmode` 選項 [WCM模式](https://developer.adobe.com/experience-manager/reference-materials/cloud-service/javadoc/com/day/cq/wcm/api/WCMMode.html) 的下界。 允許的值是可用枚舉常數的名稱。
+在 AEM，`data-sly-include` 可以選擇一個其他`wcmmode`選項，用來控制所包含指令碼的 [WCM 模式](https://developer.adobe.com/experience-manager/reference-materials/cloud-service/javadoc/com/day/cq/wcm/api/WCMMode.html)。 允許的值包括可用列舉常數的名稱。
 
-## 資料機密資源 {#data-sly-resource}
+## data-sly-resource {#data-sly-resource}
 
-除了路徑和 `Resources`，也請參見Wiki頁。 `data-sly-resource` 塊元素也可以 [`Maps`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html) 或 [`Records`。](https://github.com/apache/sling-org-apache-sling-scripting-sightly-runtime/blob/master/src/main/java/org/apache/sling/scripting/sightly/Record.java) 在兩種方法下， `resourceName` 必須提供字串屬性。 其值用於建立 [合成資源](https://www.javadoc.io/doc/org.apache.sling/org.apache.sling.api/latest/org/apache/sling/api/resource/SyntheticResource.html) 將包含在呈現上下文中。 其餘屬性 `Record` 或 `Map` 被傳到 `data-sly-resource` 將被用作正常 `Resource` 屬性。 如果 `sling:resourceType` 此映射中缺少屬性，將假定資源類型為 `resourceType` [表達式選項](https://github.com/adobe/htl-spec/blob/1.4/SPECIFICATION.md#229-resource) 或驅動呈現的當前資源的資源類型。
+除了路徑和 `Resources` 以外，`data-sly-resource` 區塊元素也可以搭配 [`Maps`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html) 或 [`Records` 運作。](https://github.com/apache/sling-org-apache-sling-scripting-sightly-runtime/blob/master/src/main/java/org/apache/sling/scripting/sightly/Record.java) 使用兩種方法都必須提供 `resourceName` 字串屬性。 我們使用它的值來建立一個 [Synthetic Resource](https://www.javadoc.io/doc/org.apache.sling/org.apache.sling.api/latest/org/apache/sling/api/resource/SyntheticResource.html) 並把它包含到演算格式文法中。 其餘來自 `Record` 或 `Map` 的屬性若已傳到 `data-sly-resource`，則會當作正常的 `Resource` 屬性使用。 如果地圖上缺少 `sling:resourceType` 屬性，我們會假設資源類型是 `resourceType` [運算式選項](https://github.com/adobe/htl-spec/blob/1.4/SPECIFICATION.md#229-resource)的值，或是驅動演算的目前資源的資源類型。
 
-在指令碼作用域中提供以下映射/記錄屬性，如 `map`:
+假定下列指令碼範圍內可用的地圖/記錄屬性是 `map`：
 
 ```javascript
 {
@@ -41,13 +41,13 @@ ht-degree: 0%
 }
 ```
 
-給出以下標籤：
+假定使用下列標記：
 
 ```html
 <div class="outer" data-sly-resource="${map}"></div>
 ```
 
-需要以下輸出：
+預期會顯示下列輸出：
 
 ```html
 <div class="outer">
