@@ -1,11 +1,11 @@
 ---
-title: HTL 概覽
-description: 瞭解如AEM何支援HTML模板語言(HTL)，以提供高效的企業級Web框架，從而提高安全性，並允許沒有Java知識的HTML開發人員更好地參與AEM項目。
+title: HTL 總覽
+description: 了解 AEM 如何透過支援 HTML 範本語言 (HTL) 來提供高生產力的企業級網頁架構，不但安全性更高，也能讓不具備 Java 知識的 HTML 開發人員能夠參與 AEM 專案。
 exl-id: 5d06ff25-d681-4b95-8375-c28a8364eb7e
 source-git-commit: 5ab1275c984135fe946f36905bbc979cf19edd80
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '711'
-ht-degree: 69%
+ht-degree: 100%
 
 ---
 
@@ -14,11 +14,11 @@ ht-degree: 69%
 
 Adobe Experience Manager (AEM) 支援的 HTML 範本語言 (HTL) 旨在提供高生產力的企業級網頁架構，除了提升安全性，也讓不具備 Java 知識的 HTML 開發人員更能參與 AEM 專案。
 
-[6.AEM0版，](history.md) HTML模板語言是中HTML的首選和推薦的伺服器端模板系AEM統。 對需要建立強大企業網站的網頁開發人員而言，HTML 範本語言有助於提升安全性和開發效率。
+[在 AEM 6.0 引進的](history.md) HTML 範本語言是 AEM 中首選且推薦使用的 HTML 伺服器端範本系統。對需要建立強大企業網站的網頁開發人員而言，HTML 範本語言有助於提升安全性和開發效率。
 
 ## 提升安全性 {#increased-security}
 
-與大多數其他模板系統相比，HTML模板語言提高了在實現中使用該語言的站點的安全性，因為HTL能夠自動將適當的上下文感知轉義應用於輸出到演示層的所有變數。 HTL 之所以能做到這點，是因為其了解 HTML 語法，並運用相關知識，根據運算式在標記中的位置調整其必要逸出。例如，這將導致將表達式放在 `href` 或 `src` 要轉義的屬性與放置在其他屬性或其他地方的表達式不同。
+網站在實施時使用 HTML 範本語言，可提高網站的安全性，成效比大多數其他範本系統更好，因為 HTL 能夠針對輸出到表現層的變數，自動套用正確的格式文法感知跳脫處理。HTL 之所以能做到這點，是因為其了解 HTML 語法，並運用相關知識，根據運算式在標記中的位置調整其所需的跳脫處理。例如，這樣會造成放在 `href` 或 `src` 屬性中的運算式之跳脫處理方式，與放在其他屬性或其他地方的運算式不同。
 
 雖然使用 JSP 等範本語言可以達到相同結果，但開發人員必須手動操作，才能確保適當的逸出套用至每個變數。由於套用的逸出只要一有遺漏或錯誤，就可能足以造成跨網站指令碼 (XSS) 出現弱點，因此我們決定使用 HTL 將此工作自動化。如有必要，開發人員仍可在運算式上指定其他逸出，但使用 HTL 的話，預設行為更可能對應到希望的行為，減少發生錯誤的機率。
 
@@ -30,11 +30,11 @@ HTML 範本語言簡單易學，其功能刻意有所限制，以確保其簡單
 
 ## 降低成本 {#reduced-costs}
 
-提高安全性、簡化開發和改進團隊協作，AEM從而減少工作量、加快產品上市時間(TTM)和降低總擁有成本(TCO)。
+提高安全性、簡化開發過程更以及改進團隊共同作業，促使執行 AEM 專案可以事半功倍，上市時間更短，而且降低了總體擁有成本 (TCO)。
 
-具體而言，使用 HTML 範本語言重新實作 Adobe.com 網站，可發現成本和專案所需時間減少約 25%。
+具體而言，在使用 HTML 範本語言重新實施 Adobe.com 網站的過程中，我們發現成本和專案所需時間可減少約 25%。
 
-![有效地增加和降低成本](assets/chlimage_1.png)
+![提高效率並降低成本](assets/chlimage_1.png)
 
 上圖說明 HTL 提升效率的下列成效:
 
@@ -42,14 +42,14 @@ HTML 範本語言簡單易學，其功能刻意有所限制，以確保其簡單
 * **JSP/HTL:** HTL 本身不需搭配任何 Java 知識，且容易撰寫，因此所有具備 HTML 專業的開發人員都能編輯這類範本。
 * **Java:** HTL 提供清楚且易於使用的 Use-API，讓具商業邏輯的介面更清晰明瞭，同時有助於整體 Java 開發。
 
-## 視頻簡介 {#video}
+## 影片介紹 {#video}
 
-以下視頻來自 [AEM寶石會議，](https://experienceleague.adobe.com/docs/experience-manager-gems-events/gems/gems2014/aem-introduction-to-htl.html) 概述了HTL的目的和實施示例。
+以下影片取自 [AEM Gems 研討會](https://experienceleague.adobe.com/docs/experience-manager-gems-events/gems/gems2014/aem-introduction-to-htl.html)，概要說明 HTL 的用途以及實施範例。
 
 >[!VIDEO](https://video.tv.adobe.com/v/19504/?quality=9)
 
-請注意，視頻是指HTL [叫艾特利。](history.md)
+請注意，影片中提到 HTL 時，均是使用[其以前的名稱 Sightly。](history.md)
 
 ## 後續步驟 {#next-steps}
 
-現在您瞭解了HTL的目標和優勢，通過查看文檔開始使用語言 [HTML模板語言入門。](getting-started.md)
+您現在已經了解 HTL 的目的和優點，開始使用此語言時，請仔細閱讀文件[「開始使用 HTML 範本語言」。](getting-started.md)
