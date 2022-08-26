@@ -1,32 +1,32 @@
 ---
 title: HTL 全域物件
-description: 瞭解HTL中可枚舉的對象、Java支援的對象和JavaScript支援的對象。
+description: 了解 HTL 中的可列舉物件、Java 支援的物件和 JavaScript 支援的物件。
 exl-id: ca590b92-f1b3-4e44-a04a-a2c10dff256f
 source-git-commit: 5ab1275c984135fe946f36905bbc979cf19edd80
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '200'
-ht-degree: 32%
+ht-degree: 100%
 
 ---
 
 
 # HTL 全域物件 {#htl-global-objects}
 
-無需指定任何內容，HTL便可訪問對開發人員有用的許多對象。 這些對象除了通過 [使用 — API。](java-use-api.md)
+HTL 允許開發人員存取許多實用的物件，且不必指定任何事。這些物件是透過 [Use-API](java-use-api.md) 引進的物件以外的物件。
 
 >[!NOTE]
 >
->對於熟悉JSP開發的開發人員AEM,HTL提供了對JSP中通常可用的所有對象的訪問 `global.jsp`。
+>對於熟悉 AEM 中 JSP 開發的開發人員而言，在包含 `global.jsp` 之後，HTL 允許他們存取 JSP 中提供的所有常用物件。
 
 ## 可列舉的物件 {#enumerable-objects}
 
-這些物件可讓您方便地存取常用資訊。 它們的內容可以用點標籤法訪問，並且可以使用 `data-sly-list` 或 `data-sly-repeat`。
+這些物件可讓您方便地存取常用資訊。 您可以使用點標記法存取這些物件的內容，也可以使用 `data-sly-list` 或 `data-sly-repeat` 逐一查看這些物件。
 
-| 變數名稱 | 說明 | 支援者 |
+| 變數名稱 | 說明 | 提供支援 |
 |--- |--- |--- |
-| `properties` | 當前資源的屬性清單 | [`org.apache.sling.api.resource.ValueMap`](https://developer.adobe.com/experience-manager/reference-materials/6-5/javadoc/org/apache/sling/api/resource/ValueMap.html) |
-| `pageProperties` | 當前頁的頁屬性清單 | [`org.apache.sling.api.resource.ValueMap`](https://developer.adobe.com/experience-manager/reference-materials/6-5/javadoc/org/apache/sling/api/resource/ValueMap.html) |
-| `inheritedPageProperties` | 當前頁繼承的頁屬性清單 | [`org.apache.sling.api.resource.ValueMap`](https://developer.adobe.com/experience-manager/reference-materials/6-5/javadoc/org/apache/sling/api/resource/ValueMap.html) |
+| `properties` | 目前資源的屬性清單 | [`org.apache.sling.api.resource.ValueMap`](https://developer.adobe.com/experience-manager/reference-materials/6-5/javadoc/org/apache/sling/api/resource/ValueMap.html) |
+| `pageProperties` | 目前頁面的頁面屬性清單 | [`org.apache.sling.api.resource.ValueMap`](https://developer.adobe.com/experience-manager/reference-materials/6-5/javadoc/org/apache/sling/api/resource/ValueMap.html) |
+| `inheritedPageProperties` | 目前頁面所繼承的頁面屬性清單 | [`org.apache.sling.api.resource.ValueMap`](https://developer.adobe.com/experience-manager/reference-materials/6-5/javadoc/org/apache/sling/api/resource/ValueMap.html) |
 
 ## Java 支援的物件 {#java-backed-objects}
 
