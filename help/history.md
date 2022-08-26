@@ -1,22 +1,22 @@
 ---
-title: HTL歷史
-description: 對於長時間的用戶AEM，本文給出了HTL的背景、JSP的替換方式，以及從Atley更改名稱。
+title: HTL 歷史記錄
+description: 對於 AEM 的長期使用者，本文件說明 HTL 的背景、它如何取代 JSP 以及將名稱更改為 Sightly。
 exl-id: 00985b35-2130-4946-959a-0a09a34a0f05
 source-git-commit: 5ab1275c984135fe946f36905bbc979cf19edd80
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '542'
-ht-degree: 45%
+ht-degree: 100%
 
 ---
 
 
-# HTL歷史 {#history-of-htl}
+# HTL 歷史記錄 {#history-of-htl}
 
-對於長時間的用戶AEM，本文給出了HTL的背景、JSP的替換方式，以及從Atley更改名稱。
+對於 AEM 的長期使用者，本文件說明 HTL 的背景、它如何取代 JSP 以及將名稱更改為 Sightly。
 
 ## 先前稱為 Sightly {#sightly}
 
-HTML模板語言(HTL)是Adobe Experience ManagerHTML的首選和推薦的伺服器端模板系統。 它取代了舊版 AEM 中所使用的 JSP (JavaServer Pages)。
+HTML 範本語言 (HTL) 是 Adobe Experience Manager 中首選且推薦使用的 HTML 伺服器端範本系統。 它取代了舊版 AEM 中所使用的 JSP (JavaServer Pages)。
 
 ## HTL 優於 JSP {#htl-over-jsp}
 
@@ -33,34 +33,34 @@ HTML模板語言(HTL)是Adobe Experience ManagerHTML的首選和推薦的伺服�
 
 ## 常見問答 {#frequently-asked-questions}
 
-這些是HTL的新經驗豐富的開AEM發人員經常問的問題。
+這些是經驗豐富的 AEM 開發人員首次接觸 HTL 時最常提出的問題。
 
 ### HTL 是否有任何 JSP 沒有的限制？ {#limitations}
 
-HTL與JSP相比並沒有任何限制，因為使用JSP可以做的事也應該通過HTL實現。 但是，HTL在設計上比JSP要嚴格。可以在單個JSP檔案中實現的所有內容，可能需要分離為Java類或JavaScript檔案，以便在HTL中實現。 但這通常需要確保邏輯與標記之間有良好的關注點分離。
+相較於 JSP，HTL 並沒有真正的限制，因為可以使用 JSP 完成的事情應該也可以使用 HTL 達成。 不過，從若干方面而言，HTL 的設計比 JSP 更加嚴格。只使用單一 JSP 檔案便可以完成的事情，可能需要分散到 Java 類別或 JavaScript 檔案中，才能在 HTL 中達成。 但這通常需要確保邏輯與標記之間有良好的關注點分離。
 
 ### HTL 是否支援 JSP 標記庫？ {#tag-libraries}
 
-否，但如 [正在載入客戶端庫](getting-started.md#loading-client-libraries) 「入門」文檔的「模板」和「呼叫」語句提供類似的模式。
+否，但如同「快速入門」文件的「[載入用戶端資料庫](getting-started.md#loading-client-libraries)」一節所述，範本和呼叫陳述式可提供類似的模式。
 
 ### 可以在 AEM 專案上擴充 HTL 功能嗎？ {#extended}
 
-不，他們不能。 HTL具有強大的邏輯復用擴展機制(REU) [使用 — API](#use-api-for-accessing-logic))和標籤（模板和調用語句），這些語句可用於模組化項目代碼。
+不行。HTL 具有可重複使用邏輯的強大擴充機制，利用這些邏輯 ([Use-API](#use-api-for-accessing-logic) 和標記 (範本和呼叫陳述式)) 可將專案的程式碼模組化。
 
 ### HTL 主要有哪些優點勝過 JSP？ {#benefits}
 
-安全性和項目效率是主要的效益，詳細介紹了 [概述。](overview.md)
+安全性和專案效率是主要優點，在[總覽](overview.md)中均有詳細說明。
 
 ### JSP 最終會消失嗎？ {#go-away}
 
-沒有這樣的計畫。
+目前沒有這方面的計劃。
 
-## 名字裡有什麼？ {#what-is-in-a-name}
+## 名稱的含意為何？ {#what-is-in-a-name}
 
-在AEM6.0和6.1中，HTL稱為 **美麗**。 Adobe將其更名為 **HTML模板語言** 或 **HTL** 闡明規範的用途，並一般與Adobe的命名准則一致。 此命名變更自 2016 年 8 月起生效，適用於 AEM 6.0 和更高版本。
+先前在 AEM 6.0 和 6.1 中，HTL 稱為 **Sightly**。 Adobe 將其重新命名為「**HTML 範本語言**」，或 **HTL**，以釐清此規格的用途，而且大體上符合 Adobe 的命名準則。此命名變更自 2016 年 8 月起生效，適用於 AEM 6.0 和更高版本。
 
 >[!NOTE]
 >
->此命名變更不會影響程式碼或 API，所以相容性不受影響。 如需更多資訊，請 [請參閱此發佈視頻。](https://helpx.adobe.com/tw/experience-manager/how-to/announce-htl.html)
+>此命名變更不會影響程式碼或 API，所以相容性不受影響。 如需詳細資訊，請[參考這段公告影片。](https://helpx.adobe.com/tw/experience-manager/how-to/announce-htl.html)
 
-要瞭解HTL的更多資訊，我們的官員將提供一個理想的起點 [《HTML模板語言(HTL)入門指南》。](overview.md)
+若要進一步了解 HTL，我們官方的「[HTML 範本語言 (HTL) 快速入門手冊](overview.md)」是很好的起點。
