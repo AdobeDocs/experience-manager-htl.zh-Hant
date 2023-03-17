@@ -3,7 +3,7 @@ title: HTL Java Use-API
 description: HTL Java Use-API 讓 HTL 檔案能夠存取自訂 Java 類別中的 helper 方法。
 exl-id: 9a9a2bf8-d178-4460-a3ec-cbefcfc09959
 source-git-commit: f295fe81062f87d4f3f46705fb1e3d706d2a9d49
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '1510'
 ht-degree: 100%
 
@@ -310,7 +310,7 @@ public class Info extends WCMUsePojo {
 
 ### 傳遞參數 {#passing-parameters}
 
-在初始化之後，可以將參數傳遞給 use 類別。 
+在初始化之後，可以將參數傳遞給 use 類別。
 
 如需詳細資訊，請參閱 Sling [HTL Scripting Engine 文件](https://sling.apache.org/documentation/bundles/scripting/scripting-htl.html#passing-parameters-to-java-use-objects)。
 
