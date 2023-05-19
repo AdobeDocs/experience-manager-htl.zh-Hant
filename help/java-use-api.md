@@ -3,7 +3,7 @@ title: HTL Java Use-API
 description: HTL Java Use-API 讓 HTL 檔案能夠存取自訂 Java 類別中的 helper 方法。
 exl-id: 9a9a2bf8-d178-4460-a3ec-cbefcfc09959
 source-git-commit: f295fe81062f87d4f3f46705fb1e3d706d2a9d49
-workflow-type: ht
+workflow-type: tm+mt
 source-wordcount: '1510'
 ht-degree: 100%
 

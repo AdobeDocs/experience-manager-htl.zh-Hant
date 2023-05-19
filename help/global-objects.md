@@ -3,7 +3,7 @@ title: HTL 全域物件
 description: 了解 HTL 中的可列舉物件、Java 支援的物件和 JavaScript 支援的物件。
 exl-id: ca590b92-f1b3-4e44-a04a-a2c10dff256f
 source-git-commit: 5ab1275c984135fe946f36905bbc979cf19edd80
-workflow-type: ht
+workflow-type: tm+mt
 source-wordcount: '200'
 ht-degree: 100%
 
