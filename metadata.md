@@ -6,7 +6,7 @@ git-repo: https://github.com/AdobeDocs/experience-manager-htl.zh-Hant
 index: y
 recommendations: noDisplay
 source-git-commit: f891460cc7f247723c3e78031aba385faca6acd7
-workflow-type: ht
+workflow-type: tm+mt
 source-wordcount: '96'
 ht-degree: 100%
 
