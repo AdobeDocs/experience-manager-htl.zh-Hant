@@ -3,8 +3,8 @@ title: 程式碼範例
 description: 透過程式碼範例探索 HTL，包括 WKND 參考實施以及核心元件等範例。
 exl-id: cdc0a525-e5d1-4d7f-97ae-b9192163caee
 source-git-commit: 88edbd2fd66de960460df5928a3b42846d32066b
-workflow-type: tm+mt
-source-wordcount: '123'
+workflow-type: ht
+source-wordcount: '110'
 ht-degree: 100%
 
 ---

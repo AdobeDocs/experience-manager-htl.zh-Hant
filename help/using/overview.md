@@ -4,7 +4,7 @@ description: 了解 AEM 如何透過支援 HTML 範本語言 (HTL) 來提供高�
 exl-id: 5d06ff25-d681-4b95-8375-c28a8364eb7e
 source-git-commit: 88edbd2fd66de960460df5928a3b42846d32066b
 workflow-type: ht
-source-wordcount: '711'
+source-wordcount: '707'
 ht-degree: 100%
 
 ---
