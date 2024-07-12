@@ -3,7 +3,7 @@ title: 開發人員工具
 description: 了解這些工具，協助您使用 HTL 進行開發。
 exl-id: c5683ee4-a052-4a6f-8ad1-e18a4201414e
 source-git-commit: 88edbd2fd66de960460df5928a3b42846d32066b
-workflow-type: ht
+workflow-type: tm+mt
 source-wordcount: '78'
 ht-degree: 100%
 
