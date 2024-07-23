@@ -1,8 +1,8 @@
 ---
-source-git-commit: 22f62868df0fcfc558e5d62434dde843a9f3ca83
+source-git-commit: c6bb6f0954ada866cec574d480b6ea5ac0b51a3f
 workflow-type: tm+mt
 source-wordcount: '502'
-ht-degree: 96%
+ht-degree: 94%
 
 ---
 # 協助撰寫 Adobe Experience Manager 說明文件
@@ -30,7 +30,7 @@ Adobe 希望為您提供易於協助撰寫的方式。您可以透過兩種方�
 
 >[!NOTE]
 >
->您提交的內容均受限於 [Adobe 使用條款](https://www.adobe.com/tw/legal/terms.html)。
+>您提交的貢獻內容屬於[Adobe使用條款](https://www.adobe.com/tw/legal/terms.html)的範圍。
 
 ### 建立問題 {#create-an-issue}
 

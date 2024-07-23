@@ -2,10 +2,10 @@
 title: HTL Java Use-API
 description: HTL Java Use-API 讓 HTL 檔案能夠存取自訂 Java 類別中的 helper 方法。
 exl-id: 9a9a2bf8-d178-4460-a3ec-cbefcfc09959
-source-git-commit: ebeac25c38b81c92011c163c7860688f43547a7d
+source-git-commit: c6bb6f0954ada866cec574d480b6ea5ac0b51a3f
 workflow-type: tm+mt
 source-wordcount: '1137'
-ht-degree: 69%
+ht-degree: 66%
 
 ---
 
@@ -194,7 +194,7 @@ public class Info extends WCMUsePojo {
 
 通常 [activate](https://developer.adobe.com/experience-manager/reference-materials/6-5/javadoc/com/adobe/cq/sightly/WCMUsePojo.html) 方法是用來根據目前上下文 (例如目前的請求和資源) 預先計算及儲存 (在成員變數中) HTL 程式碼中所需的值。
 
-`WCMUsePojo` 類別允許存取 HTL 檔案中可用的同一組設定語法物件 (請參閱文件「[全域物件](global-objects.md)」)。
+`WCMUsePojo`類別可讓您存取HTL檔案中可用的同一組上下文物件（請參閱檔案[全域物件](global-objects.md)）。
 
 在延伸`WCMUsePojo`的類別中，您可以使用內容物件的名稱來存取內容物件：
 
@@ -312,7 +312,7 @@ public class Info extends WCMUsePojo {
 
 在初始化之後，可以將參數傳遞給 use 類別。
 
-如需詳細資訊，請參閱 Sling [HTL Scripting Engine 文件](https://sling.apache.org/documentation/bundles/scripting/scripting-htl.html#passing-parameters-to-java-use-objects)。
+如需詳細資訊，請參閱Sling [HTL Scripting Engine檔案](https://sling.apache.org/documentation/bundles/scripting/scripting-htl.html#passing-parameters-to-java-use-objects)。
 
 ### 套件式 Java 類別 {#bundled-java-class}
 
