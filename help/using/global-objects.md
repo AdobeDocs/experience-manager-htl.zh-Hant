@@ -3,9 +3,9 @@ title: HTL 全域物件
 description: 了解 HTL 中的可列舉物件、Java 支援的物件和 JavaScript 支援的物件。
 exl-id: ca590b92-f1b3-4e44-a04a-a2c10dff256f
 source-git-commit: c6bb6f0954ada866cec574d480b6ea5ac0b51a3f
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '164'
-ht-degree: 87%
+ht-degree: 100%
 
 ---
 
@@ -30,7 +30,7 @@ HTL 允許開發人員存取許多實用的物件，且不必指定任何事。�
 
 ## Java 支援的物件 {#java-backed-objects}
 
-對應的Java物件會支援下列每一個物件。
+相對應的 Java 物件可支援以下每個物件。
 
 | 變數名稱 | 說明 |
 |---|---|
@@ -62,4 +62,4 @@ HTL 允許開發人員存取許多實用的物件，且不必指定任何事。�
 
 ## JavaScript 支援的物件 {#javascript-backed-objects}
 
-使用 JavaScript 支援 HTL 邏輯是可行的。 不過，首選或推薦的方法是使用[Sling模型](https://sling.apache.org/documentation/bundles/models.html)。
+使用 JavaScript 支援 HTL 邏輯是可行的。 不過，首選或推薦的方法是使用 [Sling 模型](https://sling.apache.org/documentation/bundles/models.html)。

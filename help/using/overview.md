@@ -1,55 +1,55 @@
 ---
 title: HTL 總覽
-description: 瞭解AEM如何支援HTL (HTML範本語言)，以提供可增強安全性的有效企業級網頁架構。 此架構可讓不具備Java知識的HTML開發人員更好地參與AEM專案。
+description: 了解 AEM 如何支援 HTL (HTML 範本語言) 以提供可增強安全性的高效企業級 Web 框架。對於不具備 Java 知識的 HTML 開發人員，該框架能讓他們更輕鬆參與 AEM 專案。
 exl-id: 5d06ff25-d681-4b95-8375-c28a8364eb7e
 source-git-commit: c6bb6f0954ada866cec574d480b6ea5ac0b51a3f
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '645'
-ht-degree: 26%
+ht-degree: 100%
 
 ---
 
 
 # 概觀 {#overview}
 
-Adobe Experience Manager (AEM)支援的HTML範本語言(HTL)旨在提供高生產力的企業級網頁架構，進而增強安全性。 此外，也讓不具備Java知識的HTML開發人員更能參與AEM專案。
+HTML 範本語言 (HTL) 是由 Adob&#x200B;&#x200B;e Experience Manager (AEM) 支援，旨在提供高效的企業級 Web 框架來增強安全性。對於不具備 Java 知識的 HTML 開發人員，此語言還可讓他們更輕鬆參與 AEM 專案。
 
-[在AEM 6.0](history.md)中引入了HTML範本語言，這是AEM中首選且推薦使用的HTML伺服器端範本系統。 對需要建立強大企業網站的網頁開發人員而言，HTML 範本語言有助於提升安全性和開發效率。
+[在 AEM 6.0 引進的](history.md) HTML 範本語言是 AEM 中首選且推薦使用的 HTML 伺服器端範本系統。對需要建立強大企業網站的網頁開發人員而言，HTML 範本語言有助於提升安全性和開發效率。
 
 ## 提升安全性 {#increased-security}
 
-HTML範本語言(HTL)藉由自動套用上下文感知逸出到所有輸出變數來增強網站安全性，使其比大多數其他範本系統更安全。 HTL之所以能做到這點，是因為其瞭解HTML語法，並運用相關知識，根據運算式在標籤中的位置調整其必要逸出。 此方法可能會造成置於`href`或`src`屬性中的運算式，與其他屬性或其他位置的運算式產生不同逸出。
+HTML 範本語言 (HTL) 會自動將內容感知轉義套用於所有輸出變數來加強網站安全性，使其比大多數其他範本系統更安全。HTL 之所以能讓這個方法更安全，是因為其了解 HTML 語法，並運用相關知識，根據運算式在標記中的位置調整其所需的跳脫處理。這個方法會造成放在 `href` 或 `src` 屬性中的運算式之跳脫處理方式，與放在其他屬性或其他地方的運算式不同。
 
-雖然使用 JSP 等範本語言可以達到相同結果，但開發人員必須手動操作，才能確保適當的逸出套用至每個變數。由於套用的逸出只要一有遺漏或錯誤，就可能足以造成跨網站指令碼(XSS)出現弱點，Adobe決定使用HTL將此工作自動化。 如有必要，開發人員仍可在運算式上指定其他逸出，但使用 HTL 的話，預設行為更可能對應到希望的行為，減少發生錯誤的機率。
+雖然使用 JSP 等範本語言可以達到相同結果，但開發人員必須手動操作，才能確保適當的逸出套用至每個變數。由於套用的逸出只要一有遺漏或錯誤，就可能足以造成跨網站指令碼 (XSS) 出現弱點，因此 Adobe 決定使用 HTL 將此工作自動化。如有必要，開發人員仍可在運算式上指定其他逸出，但使用 HTL 的話，預設行為更可能對應到希望的行為，減少發生錯誤的機率。
 
 ## 簡化開發工作 {#simplified-development}
 
-HTML 範本語言簡單易學，其功能刻意有所限制，以確保其簡單明瞭。此外，這種範本語言也有強大機制足以建立標記架構及叫用邏輯，同時一律強制分割標記和邏輯面向。HTL是標準HTML5，使用運算式和資料屬性來註解具有動態行為的標籤。 此方法可維持標籤的有效性和可讀性。 運算式和資料屬性的評估完全在伺服器端進行，使用者端看不到，因此使用者端可以不受干擾地使用想要的JavaScript架構。
+HTML 範本語言簡單易學，其功能刻意有所限制，以確保其簡單明瞭。此外，這種範本語言也有強大機制足以建立標記架構及叫用邏輯，同時一律強制分割標記和邏輯面向。HTL 是標準的 HTML5，使用表達式和資料屬性來註解具有動態行為的標記。這種方法保持了標記的有效性和可讀性。評估運算式和資料屬性的工作完全在伺服器端進行，用戶端看不見，因此用戶端可以不受干擾地使用想要的 JavaScript 框架。
 
-這些功能可讓不具備Java知識的HTML開發人員編輯HTL範本、整合到開發團隊中，並簡化與全端Java開發人員的協同合作。 反之亦然，它可讓Java開發人員專注於後端程式碼，而不需擔心HTML。
+對於不具備 Java 知識的 HTML 開發人員，這些功能可讓他們編輯 HTL 範本、整合至開發團隊，並簡化與全端 Java 開發人員的協作。換個角度來說，這能讓 Java 開發人員專注於後端程式碼，不必擔心 HTML。
 
 ## 降低成本 {#reduced-costs}
 
-提升安全性、簡化開發工作並改善團隊共同作業，都能讓AEM專案事半功倍、縮短上市時間(TTM)，並降低總體擁有成本(TCO)。
+提高安全性、簡化開發過程更以及改進團隊共同作業，促使執行 AEM 專案可以事半功倍，上市時間更短，而且降低了總體擁有成本 (TCO)。
 
-使用HTML範本語言重新實作Adobe.com網站顯示，專案成本和持續時間最多可減少約25%。
+使用 HTML 範本語言重新實現 Adob&#x200B;&#x200B;e.com 網站表示，專案成本和期限最多可減少 25% 左右。
 
 ![提高效率並降低成本](assets/chlimage_1.png)
 
-上圖顯示HTL提升效率的下列成效：
+上圖說明 HTL 提升效率的下列成效:
 
-* **HTML/CSS/JS：** HTML開發人員可直接編輯HTL範本，允許前端設計直接在AEM元件上實作，而不需要個別實作。 此方法可減少痛苦的迭代作業，裨益全端Java開發人員。
-* **JSP / HTL：**&#x200B;由於HTL本身不需搭配任何Java知識，且容易撰寫，因此所有具備HTML專業的開發人員都能編輯這類範本。
+* **HTML / CSS / JS：** HTML 開發人員可以直接編輯 HTL 範本，讓前端設計直接在 AEM 元件上實施，而無需單獨實施。這個方法可減少痛苦的迭代作業，裨益全端 Java 開發人員。
+* **JSP/HTL:** HTL 本身不需搭配任何 Java 知識，且容易撰寫，因此所有具備 HTML 專業的開發人員都能編輯這類範本。
 * **Java:** HTL 提供清楚且易於使用的 Use-API，讓具商業邏輯的介面更清晰明瞭，同時有助於整體 Java 開發。
 
 ## 影片介紹 {#video}
 
-以下影片取自[AEM Gems研討會](https://experienceleague.adobe.com/en/docs/events/experience-manager-gems-recordings/gems2014/aem-introduction-to-htl)，概要說明HTL的用途以及實施範例。
+以下影片取自 [AEM Gems 研討會](https://experienceleague.adobe.com/zh-hant/docs/events/experience-manager-gems-recordings/gems2014/aem-introduction-to-htl)，概要說明 HTL 的用途以及實施範例。
 
 >[!VIDEO](https://video.tv.adobe.com/v/19504/?quality=9)
 
-請注意，影片中提到HTL時，[是指HTL先前的名稱Sightly](history.md)。
+請注意，影片中提到 HTL 時，均是使用[其以前的名稱 Sightly](history.md)。
 
 ## 後續步驟 {#next-steps}
 
-現在您已經瞭解HTL的目的和優點，您可以開始使用語言了。 請參閱[開始使用HTML範本語言](getting-started.md)。
+現在您已經了解了 HTL 的目標和優勢，因此可以開始使用此語言。請參閱[開始使用 HTML 範本語言](getting-started.md)。

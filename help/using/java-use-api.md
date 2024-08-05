@@ -3,9 +3,9 @@ title: HTL Java Use-API
 description: HTL Java Use-API 讓 HTL 檔案能夠存取自訂 Java 類別中的 helper 方法。
 exl-id: 9a9a2bf8-d178-4460-a3ec-cbefcfc09959
 source-git-commit: c6bb6f0954ada866cec574d480b6ea5ac0b51a3f
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '1140'
-ht-degree: 65%
+ht-degree: 100%
 
 ---
 
@@ -16,7 +16,7 @@ HTL Java Use-API 讓 HTL 檔案能夠存取自訂 Java 類別中的 helper 方�
 
 ## 使用案例 {#use-case}
 
-HTL Java Use-API 讓 HTL 檔案能夠透過 `data-sly-use` 存取自訂 Java 類別中的 helper 方法。 此方法可讓所有複雜的商業邏輯都封裝在Java程式碼中，而HTL程式碼只需處理直接標籤的產生。
+HTL Java Use-API 讓 HTL 檔案能夠透過 `data-sly-use` 存取自訂 Java 類別中的 helper 方法。 這個方法可讓所有複雜的商業邏輯都封裝在 Java 程式碼中，而 HTL 程式碼只需處理直接標記的生產。
 
 Java Use-API 物件可以是簡單 POJO，由特定實作透過 POJO 的預設建構函式具現化。
 
@@ -31,7 +31,7 @@ Use-API POJO 也可以透過以下簽章公開 public 方法 (稱為 init)：
     public void init(javax.script.Bindings bindings);
 ```
 
-`bindings`對應可以包含一些物件，這些物件為目前執行的HTL指令碼提供上下文，以供Use-API物件處理之用。
+`bindings` 對應可以包含一些物件，這些物件為目前執行的 HTL 指令碼提供上下文，以供 Use-API 物件處理之用。
 
 ## 簡單範例 {#a-simple-example}
 
@@ -39,9 +39,9 @@ Use-API POJO 也可以透過以下簽章公開 public 方法 (稱為 init)：
 
 >[!NOTE]
 >
->此範例經過簡化，僅說明其用途。 在生產環境中，Adobe建議您使用[Sling模型](https://sling.apache.org/documentation/bundles/models.html)。
+>這個範例經過簡化，以利說明其用途。在生產環境中，Adobe 建議您使用 [Sling 模型](https://sling.apache.org/documentation/bundles/models.html)。
 
-從稱為`info,`且沒有use類別的HTL元件開始。 它是由單一檔案 `/apps/my-example/components/info.html` 所組成
+從稱為 `info,` 且沒有 use 類別的 HTL 元件開始。它是由單一檔案 `/apps/my-example/components/info.html` 所組成
 
 ```xml
 <div>
@@ -50,7 +50,7 @@ Use-API POJO 也可以透過以下簽章公開 public 方法 (稱為 init)：
 </div>
 ```
 
-新增此元件的一些內容，以便在`/content/my-example/`上呈現：
+新增此元件的一些內容，以便在 `/content/my-example/` 中呈現：
 
 ```xml
 {
@@ -60,7 +60,7 @@ Use-API POJO 也可以透過以下簽章公開 public 方法 (稱為 init)：
 }
 ```
 
-存取此內容時，會執行HTL檔案。 在HTL程式碼中，內容物件`properties`是用來存取目前資源的`title`和`description`並顯示它們。 輸出檔案`/content/my-example.html`如下：
+當存取此內容時，就會執行 HTL 檔案。在 HTL 程式碼中，使用設定語法物件 `properties` 來存取目前資源的 `title` 和 `description` 並顯示出來。輸出檔 `/content/my-example.html` 如下：
 
 ```html
 <div>
@@ -77,7 +77,7 @@ Use-API POJO 也可以透過以下簽章公開 public 方法 (稱為 init)：
 >
 >只有當某件事無法單獨在 HTL 中完成時，才應該使用 use 類別。
 
-例如，假設您希望 `info` 元件能顯示資源的 `title` 和 `description` 屬性，但全都以小寫字母顯示。 由於HTL沒有將字串轉換為小寫的方法，因此您可以新增Java use類別並變更`/apps/my-example/component/info/info.html`，如下所示：
+例如，假設您希望 `info` 元件能顯示資源的 `title` 和 `description` 屬性，但全都以小寫字母顯示。 由於 HTL 沒有用於小寫字串的方法，因此您可新增 Java 的 use 類別，並變更 `/apps/my-example/component/info/info.html`，如下所示：
 
 ```xml
 <div data-sly-use.info="Info">
@@ -86,7 +86,7 @@ Use-API POJO 也可以透過以下簽章公開 public 方法 (稱為 init)：
 </div>
 ```
 
-此外，`/apps/my-example/component/info/Info.java`已建立。
+此外，會建立 `/apps/my-example/component/info/Info.java`。
 
 ```java
 package apps.my_example.components.info;
@@ -113,9 +113,9 @@ public class Info extends WCMUsePojo {
 }
 ```
 
-如需詳細資訊，請參閱`com.adobe.cq.sightly.WCMUsePojo`](https://developer.adobe.com/experience-manager/reference-materials/6-5/javadoc/com/adobe/cq/sightly/WCMUsePojo.html)的[Java檔案。
+如需詳細資訊，請參閱 [`com.adobe.cq.sightly.WCMUsePojo` 的 Java 文件](https://developer.adobe.com/experience-manager/reference-materials/6-5/javadoc/com/adobe/cq/sightly/WCMUsePojo.html)。
 
-現在來看看程式碼的不同部分。
+現在，我們來看看程式碼各個部分。
 
 ### 本機與套件 Java 類別 {#local-vs-bundle-java-class}
 
@@ -133,7 +133,7 @@ Java 的 use 類別有兩種安裝方法：
 
 ### Java 套件是存放庫路徑 {#java-package-is-repository-path}
 
-使用本機安裝時，use類別的套件名稱必須符合存放庫資料夾位置。 套件名稱中的底線會取代路徑中的任何連字型大小。
+使用本機安裝時，use 類別的套件名稱必須與存放庫資料夾位置相符。套件名稱中的底線會取代路徑中的任何連字號。
 
 在此情況下，`Info.java` 位於 `/apps/my-example/components/info`，所以封裝為 `apps.my_example.components.info`：
 
@@ -155,7 +155,7 @@ public class Info extends WCMUsePojo {
 
 ### 擴充 `WCMUsePojo` {#extending-wcmusepojo}
 
-雖然有許多方法可以將 Java 類別與 HTL 合併 (請參閱「[`WCMUsePojo`](#alternatives-to-wcmusepojo) 的替代方案」小節)，最簡單的方法卻是擴充 `WCMUsePojo` 類別。在此範例`/apps/my-example/component/info/Info.java`中：
+雖然有許多方法可以將 Java 類別與 HTL 合併 (請參閱「[`WCMUsePojo`](#alternatives-to-wcmusepojo) 的替代方案」小節)，最簡單的方法卻是擴充 `WCMUsePojo` 類別。例如 `/apps/my-example/component/info/Info.java`：
 
 ```java
 package apps.my_example.components.info;
@@ -194,13 +194,13 @@ public class Info extends WCMUsePojo {
 
 通常 [activate](https://developer.adobe.com/experience-manager/reference-materials/6-5/javadoc/com/adobe/cq/sightly/WCMUsePojo.html) 方法是用來根據目前上下文 (例如目前的請求和資源) 預先計算及儲存 (在成員變數中) HTL 程式碼中所需的值。
 
-`WCMUsePojo`類別可讓您存取HTL檔案中可用的同一組上下文物件（請參閱檔案[全域物件](global-objects.md)）。
+`WCMUsePojo` 類別允許存取 HTL 檔案中可用的同一組設定語法物件 (請參閱文件「[全域物件](global-objects.md)」)。
 
-在延伸`WCMUsePojo`的類別中，您可以使用內容物件的名稱來存取內容物件：
+在擴充 `WCMUsePojo` 的類別中，您可以使用設定語法物件的名稱來存取它們：
 
 [`<T> T get(String name, Class<T> type)`](https://developer.adobe.com/experience-manager/reference-materials/6-5/javadoc/com/adobe/cq/sightly/WCMUsePojo.html)
 
-或者，您可以使用本表格中列出的適當便利方法，直接存取常用的前後關聯物件。
+或者，您可以使用本表格所列的適當的便利方法，直接存取常用的設定語法物件。
 
 | 物件 | 便利方法 |
 |---|---|
@@ -222,11 +222,11 @@ public class Info extends WCMUsePojo {
 
 ### Getter 方法 {#getter-methods}
 
-在初始化 use 類別後，就會執行 HTL 檔案。 在這個階段中，HTL通常會拉入use類別的各種成員變數的狀態，並轉譯它們以便呈現。
+在 use 類別初始化後，HTL 檔案就會執行。 在這個階段中，HTL 通常會拉入 use 類別的各種成員變數的狀態，並加以呈現。
 
 若要允許從 HTL 檔案內部存取這些值，您必須根據以下命名慣例在 use 類別中定義自訂 getter 方法：
 
-* 形式為`getXyz`的方法會在HTL檔案中公開名稱為`xyz`的物件屬性。
+* 一個採用 `getXyz` 形式的方法，會在 HTL 檔案中公開一個稱為 `xyz` 的物件屬性。
 
 在以下範例檔案 `/apps/my-example/component/info/Info.java` 中，形成物件屬性 `title` 和 `description` 的 `getTitle` 和 `getDescription` 方法，變成可以在 HTL 檔案的設定語法中存取。
 
@@ -247,9 +247,9 @@ public class Info extends WCMUsePojo {
 }
 ```
 
-### `data-sly-use`屬性 {#data-sly-use-attribute}
+### `data-sly-use` 屬性 {#data-sly-use-attribute}
 
-`data-sly-use` 屬性是用來初始化 HTL 程式碼中的 use 類別。 在範例中，`data-sly-use`屬性宣告使用類別`Info`。 您可以只使用類別的本機名稱，因為您使用的是本機安裝（已將Java來源檔案放在與HTL檔案相同的資料夾中）。 如果您使用套件安裝，則必須指定完整類別名稱。
+`data-sly-use` 屬性是用來初始化 HTL 程式碼中的 use 類別。在範例中，`data-sly-use` 屬性會宣告使用的 `Info` 類別。您可以僅使用類別的本機名稱，因為您正在使用本機安裝 (已將 Java 來源檔案放在與 HTL 檔案相同的資料夾中)。 如果您之前是使用套件安裝，就必須指定完整類別名稱。
 
 請注意這個 `/apps/my-example/component/info/info.html` 範例的使用情況。
 
@@ -288,7 +288,7 @@ public class Info extends WCMUsePojo {
 
 ### 輸出 {#output}
 
-現在，當存取`/content/my-example.html`時，它會傳回以下`/content/my-example.html`檔案。
+現在，存取 `/content/my-example.html` 時，它會傳回以下 `/content/my-example.html` 檔案。
 
 ```xml
 <div>
@@ -299,11 +299,11 @@ public class Info extends WCMUsePojo {
 
 >[!NOTE]
 >
->這個範例經過簡化，僅為了說明其用途。 在生產環境中，Adobe建議您使用[Sling模型](https://sling.apache.org/documentation/bundles/models.html)。
+>這個範例經過簡化，以利說明其用途。在生產環境中，Adobe 建議您使用 [Sling 模型](https://sling.apache.org/documentation/bundles/models.html)。
 
 ## 超越基本知識 {#beyond-the-basics}
 
-本節介紹一些超出前述範例的其他功能。
+本節進一步介紹更多功能，比之前敘述的範例更加深入。
 
 * 傳遞參數給 use 類別
 * 套件式 Java use 類別
@@ -312,7 +312,7 @@ public class Info extends WCMUsePojo {
 
 在初始化之後，可以將參數傳遞給 use 類別。
 
-如需詳細資訊，請參閱Sling [HTL Scripting Engine檔案](https://sling.apache.org/documentation/bundles/scripting/scripting-htl.html#passing-parameters-to-java-use-objects)。
+如需詳細資訊，請參閱 Sling [HTL Scripting Engine 文件](https://sling.apache.org/documentation/bundles/scripting/scripting-htl.html#passing-parameters-to-java-use-objects)。
 
 ### 套件式 Java 類別 {#bundled-java-class}
 
