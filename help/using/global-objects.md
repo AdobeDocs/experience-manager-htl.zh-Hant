@@ -1,11 +1,11 @@
 ---
 title: HTL 全域物件
-description: 了解 HTL 中的可列舉物件、Java 支援的物件和 JavaScript 支援的物件。
+description: 瞭解HTL中的可列舉物件和Java支援的物件。
 exl-id: ca590b92-f1b3-4e44-a04a-a2c10dff256f
-source-git-commit: c6bb6f0954ada866cec574d480b6ea5ac0b51a3f
-workflow-type: ht
-source-wordcount: '164'
-ht-degree: 100%
+source-git-commit: b585f03d600319414b92a95f98cf9293d91538b6
+workflow-type: tm+mt
+source-wordcount: '205'
+ht-degree: 74%
 
 ---
 
@@ -63,3 +63,9 @@ HTL 允許開發人員存取許多實用的物件，且不必指定任何事。�
 ## JavaScript 支援的物件 {#javascript-backed-objects}
 
 使用 JavaScript 支援 HTL 邏輯是可行的。 不過，首選或推薦的方法是使用 [Sling 模型](https://sling.apache.org/documentation/bundles/models.html)。
+
+>[!NOTE]
+>
+>[JavaScript Use API](https://github.com/adobe/htl-spec/blob/master/SPECIFICATION.md#42-javascript-use-api)已棄用以搭配AEM as a Cloud Service使用。 請改用[Java Use API。](https://experienceleague.adobe.com/en/docs/experience-manager-htl/content/java-use-ap)
+>
+>[請參閱AEM as a Cloud Service發行說明](https://experienceleague.adobe.com/en/docs/experience-manager-cloud-service/content/release-notes/deprecated-removed-features)，以取得已過時和已移除功能的詳細資訊。
