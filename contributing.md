@@ -58,4 +58,4 @@ Adobe 十分樂見以任何形式協助撰寫，並且將審查您提交至公�
 
 ## 更多資訊
 
-如需 GitHub 製作平台使用方式的詳細資訊，請參閱 [Adobe 文件貢獻者指南](https://experienceleague.adobe.com/en/docs/contributor/contributor-guide/introduction)。
+如需 GitHub 製作平台使用方式的詳細資訊，請參閱 [Adobe 文件貢獻者指南](https://experienceleague.adobe.com/zh-hant/docs/contributor/contributor-guide/introduction)。
