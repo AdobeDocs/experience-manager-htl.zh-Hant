@@ -1,16 +1,22 @@
 ---
-title: HTL 總覽
+title: HTL 概觀
 description: 了解 AEM 如何支援 HTL (HTML 範本語言) 以提供可增強安全性的高效企業級 Web 框架。對於不具備 Java 知識的 HTML 開發人員，該框架能讓他們更輕鬆參與 AEM 專案。
 exl-id: 5d06ff25-d681-4b95-8375-c28a8364eb7e
-source-git-commit: c6bb6f0954ada866cec574d480b6ea5ac0b51a3f
-workflow-type: ht
-source-wordcount: '645'
-ht-degree: 100%
+source-git-commit: 9735ca6ae09ca899c69edd9b63d2e85ad5d6f904
+workflow-type: tm+mt
+source-wordcount: '677'
+ht-degree: 95%
 
 ---
 
 
 # 概觀 {#overview}
+
+>[!TIP]
+>
+>**您是否考慮過為AEM使用Edge Delivery Services？**
+>
+>您可以繼續使用本檔案所述的方法處理現有專案。 不過，若是新專案，Adobe建議使用[Edge Delivery Services.](https://experienceleague.adobe.com/zh-hant/docs/experience-manager-cloud-service/content/edge-delivery/overview)
 
 HTML 範本語言 (HTL) 是由 Adob&#x200B;&#x200B;e Experience Manager (AEM) 支援，旨在提供高效的企業級 Web 框架來增強安全性。對於不具備 Java 知識的 HTML 開發人員，此語言還可讓他們更輕鬆參與 AEM 專案。
 
