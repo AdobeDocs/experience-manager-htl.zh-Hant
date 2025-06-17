@@ -3,9 +3,9 @@ title: HTL 概觀
 description: 了解 AEM 如何支援 HTL (HTML 範本語言) 以提供可增強安全性的高效企業級 Web 框架。對於不具備 Java 知識的 HTML 開發人員，該框架能讓他們更輕鬆參與 AEM 專案。
 exl-id: 5d06ff25-d681-4b95-8375-c28a8364eb7e
 source-git-commit: 9735ca6ae09ca899c69edd9b63d2e85ad5d6f904
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '677'
-ht-degree: 95%
+ht-degree: 100%
 
 ---
 
@@ -14,11 +14,11 @@ ht-degree: 95%
 
 >[!TIP]
 >
->**您是否考慮過為AEM使用Edge Delivery Services？**
+>**您是否考慮過適用於 AEM 的 Edge Delivery Services？**
 >
->您可以繼續使用本檔案所述的方法處理現有專案。 不過，若是新專案，Adobe建議使用[Edge Delivery Services.](https://experienceleague.adobe.com/zh-hant/docs/experience-manager-cloud-service/content/edge-delivery/overview)
+>現有的專案可以繼續使用本文件中所述的方法。然而，對於新專案，Adobe 建議採用 [Edge Delivery Services。](https://experienceleague.adobe.com/zh-hant/docs/experience-manager-cloud-service/content/edge-delivery/overview)
 
-HTML 範本語言 (HTL) 是由 Adob&#x200B;&#x200B;e Experience Manager (AEM) 支援，旨在提供高效的企業級 Web 框架來增強安全性。對於不具備 Java 知識的 HTML 開發人員，此語言還可讓他們更輕鬆參與 AEM 專案。
+HTML Template Language (HTL) 由 Adobe Experience Manager (AEM) 支援，旨在提供高生產力的企業級網頁框架，同時提升安全性。對於不具備 Java 知識的 HTML 開發人員，此語言還可讓他們更輕鬆參與 AEM 專案。
 
 [在 AEM 6.0 引進的](history.md) HTML 範本語言是 AEM 中首選且推薦使用的 HTML 伺服器端範本系統。對需要建立強大企業網站的網頁開發人員而言，HTML 範本語言有助於提升安全性和開發效率。
 
@@ -38,7 +38,7 @@ HTML 範本語言簡單易學，其功能刻意有所限制，以確保其簡單
 
 提高安全性、簡化開發過程更以及改進團隊共同作業，促使執行 AEM 專案可以事半功倍，上市時間更短，而且降低了總體擁有成本 (TCO)。
 
-使用 HTML 範本語言重新實現 Adob&#x200B;&#x200B;e.com 網站表示，專案成本和期限最多可減少 25% 左右。
+以 HTML 樣板語言重新建置 Adobe.com 網站後顯示，專案成本與時程最多可降低約 25%。
 
 ![提高效率並降低成本](assets/chlimage_1.png)
 
