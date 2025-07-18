@@ -2,10 +2,10 @@
 title: HTL 快速入門
 description: 來認識 HTL，這是在 AEM 環境中使用 HTML 時首選且推薦使用的伺服器端範本系統，並了解此語言的主要概念及其基本結構。
 exl-id: c95eb1b3-3b96-4727-8f4f-d54e7136a8f9
-source-git-commit: c6bb6f0954ada866cec574d480b6ea5ac0b51a3f
-workflow-type: ht
-source-wordcount: '2050'
-ht-degree: 100%
+source-git-commit: addc69e4b4e56a9b1c5f91ce9af26fa2d326d981
+workflow-type: tm+mt
+source-wordcount: '2045'
+ht-degree: 97%
 
 ---
 
@@ -14,19 +14,19 @@ ht-degree: 100%
 
 HTML 範本語言 (HTL) 是 Adobe Experience Manager 中首選且推薦使用的 HTML 伺服器端範本系統。 因為在所有 HTML 伺服器端範本系統中，HTL 檔案會指定 HTML 本身的內容、一些基本的表現邏輯，以及要在執行階段運算的變數，藉此定義傳送給瀏覽器的輸出。
 
-本文件概述 HTL 的用途，並介紹其基本概念和語言結構。
+本文件概觀 HTL 的用途，並介紹其基本概念和語言結構。
 
 >[!TIP]
 >
->本文件說明 HTL 的用途，並概述其基本結構和概念。 若您對於特定語法有任何疑問，請參閱 [HTL 規格](specification.md)。
+>本文件說明 HTL 的用途，並概觀其基本結構和概念。 如果您對特定語法有任何疑問，請參閱[HTL規格](specification.md)。
 
 ## HTL 層 {#layers}
 
 在 AEM 中，會由許多層來定義 HTL。
 
 1. **[HTL 規格](specification.md)** - HTL 的規格是開放原始碼且不受平台限制，任何人均可自由實施。
-1. **[Sling HTL Scripting Engine](specification.md)** - Sling 專案已建立 HTL 實施參考，由 AEM 使用。
-1. **[AEM 擴充功能](specification.md)** - AEM 以 Sling HTL Scripting Engine 為基礎進行擴充，為開發人員提供 AEM 專用的便利功能。
+1. **[`Sling`HTL Scripting Engine](specification.md)** - `Sling`專案已建立HTL的參考實作，由AEM使用。
+1. **[AEM擴充功能](specification.md)** - AEM以`Sling` HTL Scripting Engine為基礎進行擴充，為開發人員提供AEM專用的便利功能。
 
 此 HTL 文件的重點是如何使用 HTL 開發 AEM 解決方案。 因此，它會提及所有三個層，必要時會連結外部資源。
 

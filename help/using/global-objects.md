@@ -2,10 +2,10 @@
 title: HTL 全域物件
 description: 了解 HTL 中的可列舉物件和 Java 支援的物件。
 exl-id: ca590b92-f1b3-4e44-a04a-a2c10dff256f
-source-git-commit: b585f03d600319414b92a95f98cf9293d91538b6
-workflow-type: ht
-source-wordcount: '205'
-ht-degree: 100%
+source-git-commit: addc69e4b4e56a9b1c5f91ce9af26fa2d326d981
+workflow-type: tm+mt
+source-wordcount: '203'
+ht-degree: 81%
 
 ---
 
@@ -66,6 +66,6 @@ HTL 允許開發人員存取許多實用的物件，且不必指定任何事。�
 
 >[!NOTE]
 >
->[JavaScript Use API](https://github.com/adobe/htl-spec/blob/master/SPECIFICATION.md#42-javascript-use-api) 已汰除，無法與 AEM as a Cloud Service 搭配使用。請[改用 Java Use API](https://experienceleague.adobe.com/zh-hant/docs/experience-manager-htl/content/java-use-ap)。
+>[JavaScript Use API](https://github.com/adobe/htl-spec/blob/master/SPECIFICATION.md#42-javascript-use-api)現已棄用，不與AEM as a Cloud Service搭配使用。 請改用[Java Use API](https://experienceleague.adobe.com/zh-hant/docs/experience-manager-htl/content/java-use-api)。
 >
->如需已汰除和刪除的功能的詳細資訊，[請參閱 AEM as a Cloud Service 發行說明](https://experienceleague.adobe.com/zh-hant/docs/experience-manager-cloud-service/content/release-notes/deprecated-removed-features)。
+>如需已過時和已移除功能的詳細資訊，請參閱[AEM as a Cloud Service發行說明](https://experienceleague.adobe.com/zh-hant/docs/experience-manager-cloud-service/content/release-notes/deprecated-removed-features)。
