@@ -2,8 +2,9 @@
 title: HTL 規格
 description: 有關語法的詳細資訊請參閱 HTL 規格。
 exl-id: c0657476-4db6-4fad-ad87-9252b5003237
-source-git-commit: addc69e4b4e56a9b1c5f91ce9af26fa2d326d981
-workflow-type: ht
+index: false
+source-git-commit: a496d23277902a5cd573a6a8af770f27b0269f05
+workflow-type: tm+mt
 source-wordcount: '134'
 ht-degree: 100%
 
