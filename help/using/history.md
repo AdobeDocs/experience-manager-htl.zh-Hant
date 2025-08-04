@@ -4,7 +4,7 @@ description: 對於 AEM 的長期使用者，本文件說明 HTL 的背景、它
 exl-id: 00985b35-2130-4946-959a-0a09a34a0f05
 index: false
 source-git-commit: 3a416e337337d31f7a7fdb2c78efac46ecf64096
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '530'
 ht-degree: 100%
 

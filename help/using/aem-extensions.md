@@ -4,7 +4,7 @@ description: AEM 提供 AEM 之 HTL 規格擴充功能，方便作為開發人�
 exl-id: d78cb84d-f958-45e2-9c6c-df86a68277d5
 index: false
 source-git-commit: a496d23277902a5cd573a6a8af770f27b0269f05
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '228'
 ht-degree: 100%
 

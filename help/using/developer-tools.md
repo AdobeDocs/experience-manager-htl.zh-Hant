@@ -4,7 +4,7 @@ description: 了解這些工具，協助您使用 HTL 進行開發。
 exl-id: c5683ee4-a052-4a6f-8ad1-e18a4201414e
 index: false
 source-git-commit: a496d23277902a5cd573a6a8af770f27b0269f05
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '78'
 ht-degree: 100%
 

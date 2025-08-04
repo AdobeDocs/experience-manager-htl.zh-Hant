@@ -4,7 +4,7 @@ description: 了解 HTL 中的可列舉物件和 Java 支援的物件。
 exl-id: ca590b92-f1b3-4e44-a04a-a2c10dff256f
 index: false
 source-git-commit: a496d23277902a5cd573a6a8af770f27b0269f05
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '203'
 ht-degree: 100%
 

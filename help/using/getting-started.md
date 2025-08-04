@@ -3,7 +3,7 @@ title: HTL 快速入門
 description: 來認識 HTL，這是在 AEM 環境中使用 HTML 時首選且推薦使用的伺服器端範本系統，並了解此語言的主要概念及其基本結構。
 exl-id: c95eb1b3-3b96-4727-8f4f-d54e7136a8f9
 source-git-commit: a496d23277902a5cd573a6a8af770f27b0269f05
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: '2077'
 ht-degree: 100%
 
