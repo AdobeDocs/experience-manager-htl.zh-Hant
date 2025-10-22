@@ -2,7 +2,7 @@
 title: HTL 概觀
 description: 了解 AEM 如何支援 HTL (HTML 範本語言) 以提供可增強安全性的高效企業級 Web 框架。對於不具備 Java 知識的 HTML 開發人員，該框架能讓他們更輕鬆參與 AEM 專案。
 exl-id: 5d06ff25-d681-4b95-8375-c28a8364eb7e
-source-git-commit: 350d4836d7d950b87c073f349241d16090aa3011
+source-git-commit: 3c7afd180151f35db74e105b23ae7e0ed50c7e4e
 workflow-type: tm+mt
 source-wordcount: '677'
 ht-degree: 100%
