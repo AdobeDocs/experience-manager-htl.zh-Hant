@@ -21,6 +21,6 @@ HTML 範本語言是首選且推薦使用的 HTML 伺服器端範本系統。
 
 1. **[HTL 規格](https://github.com/adobe/htl-spec)** - HTL 的規格是開放原始碼且不受平台限制，任何人均可自由實施。其規格由其 GitHub 存放庫維護。
 1. **[Sling HTL Scripting Engine](https://sling.apache.org/documentation/bundles/scripting/scripting-htl.html)** - `Sling` 專案已建立 HTL 實施參考，由 AEM 使用。`Sling` 專案會維護其文件。
-1. **[AEM擴充功能](https://experienceleague.adobe.com/en/docs/experience-manager-htl/content/aem-extensions)** - AEM以`Sling` HTL Scripting Engine為基礎進行建置，為開發人員提供AEM專用的便利功能。 本文件集也包含這些擴充功能。
+1. **[AEM擴充功能](https://experienceleague.adobe.com/zh-hant/docs/experience-manager-htl/content/aem-extensions)** - AEM以`Sling` HTL Scripting Engine為基礎進行建置，為開發人員提供AEM專用的便利功能。 本文件集也包含這些擴充功能。
 
 瀏覽上述連結，前往 AEM 使用的所有 HTL 層的專屬文件。

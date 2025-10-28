@@ -195,7 +195,7 @@ public class Info extends WCMUsePojo {
 
 通常 [activate](https://developer.adobe.com/experience-manager/reference-materials/6-5/javadoc/com/adobe/cq/sightly/WCMUsePojo.html) 方法是用來根據目前上下文 (例如目前的請求和資源) 預先計算及儲存 (在成員變數中) HTL 程式碼中所需的值。
 
-`WCMUsePojo` 類別允許存取 HTL 檔案中可用的同一組設定語法物件 (請參閱文件「[全域物件](https://experienceleague.adobe.com/en/docs/experience-manager-htl/content/global-objects)」)。
+`WCMUsePojo` 類別允許存取 HTL 檔案中可用的同一組設定語法物件 (請參閱文件「[全域物件](https://experienceleague.adobe.com/zh-hant/docs/experience-manager-htl/content/global-objects)」)。
 
 在擴充 `WCMUsePojo` 的類別中，您可以使用設定語法物件的名稱來存取它們：
 

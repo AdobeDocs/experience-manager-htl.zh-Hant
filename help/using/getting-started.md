@@ -24,7 +24,7 @@ HTML 範本語言 (HTL) 是 Adobe Experience Manager 中首選且推薦使用的
 
 >[!TIP]
 >
->本文件說明 HTL 的用途，並概觀其基本結構和概念。 若您對於特定語法有任何疑問，請參閱 [HTL 規格](https://experienceleague.adobe.com/en/docs/experience-manager-htl/content/specification)。
+>本文件說明 HTL 的用途，並概觀其基本結構和概念。 若您對於特定語法有任何疑問，請參閱 [HTL 規格](https://experienceleague.adobe.com/zh-hant/docs/experience-manager-htl/content/specification)。
 
 <!--
 specification.md
@@ -34,9 +34,9 @@ specification.md
 
 在 AEM 中，會由許多層來定義 HTL。
 
-1. **[HTL規格](https://experienceleague.adobe.com/en/docs/experience-manager-htl/content/specification)** - HTL的規格是開放原始碼且不受平台限制，任何人均可自由實施。
-1. **[`Sling`HTL Scripting Engine](https://experienceleague.adobe.com/en/docs/experience-manager-htl/content/specification)** - `Sling`專案已建立HTL的參考實作，由AEM使用。
-1. **[AEM擴充功能](https://experienceleague.adobe.com/en/docs/experience-manager-htl/content/specification)** - AEM以`Sling` HTL Scripting Engine為基礎進行建置，為開發人員提供AEM專用的便利功能。
+1. **[HTL規格](https://experienceleague.adobe.com/zh-hant/docs/experience-manager-htl/content/specification)** - HTL的規格是開放原始碼且不受平台限制，任何人均可自由實施。
+1. **[`Sling`HTL Scripting Engine](https://experienceleague.adobe.com/zh-hant/docs/experience-manager-htl/content/specification)** - `Sling`專案已建立HTL的參考實作，由AEM使用。
+1. **[AEM擴充功能](https://experienceleague.adobe.com/zh-hant/docs/experience-manager-htl/content/specification)** - AEM以`Sling` HTL Scripting Engine為基礎進行建置，為開發人員提供AEM專用的便利功能。
 
 此 HTL 文件的重點是如何使用 HTL 開發 AEM 解決方案。 因此，它會提及所有三個層，必要時會連結外部資源。
 
@@ -63,7 +63,7 @@ HTML 範本語言會使用運算式語言將內容片段插入呈現的標記中
 * **區塊陳述式** - 如果您想有條件地顯示元素 `<h1>` 元素，則使用 `data-sly-test` HTML5 資料屬性。HTL 提供多個這類屬性，允許對任何 HTML 元素附加行為，而且全都有 `data-sly` 前置詞。
 * **運算式語言** - `${` 和 `}` 字元分隔 HTL 運算式。在執行階段，這些運算式會進行運算，並將其值插入傳出的 HTML 資料流中。
 
-有關兩種語法的詳細資訊，請參閱 [HTL 規格](https://experienceleague.adobe.com/en/docs/experience-manager-htl/content/specification)。
+有關兩種語法的詳細資訊，請參閱 [HTL 規格](https://experienceleague.adobe.com/zh-hant/docs/experience-manager-htl/content/specification)。
 
 ### SLY 元素 {#the-sly-element}
 
@@ -308,7 +308,7 @@ use(function () {
 
 在此範例中，如果 HTML `head` 和 `body` 元素位於不同的檔案，則需要將 `clientlib.html` 範本載入到需要它的各個檔案中。
 
-在 [HTL 規格](https://experienceleague.adobe.com/en/docs/experience-manager-htl/content/specification) 中有關範本和呼叫陳述式的小節，詳細說明宣告及呼叫這類範本的運作方式。
+在 [HTL 規格](https://experienceleague.adobe.com/zh-hant/docs/experience-manager-htl/content/specification) 中有關範本和呼叫陳述式的小節，詳細說明宣告及呼叫這類範本的運作方式。
 
 ### 傳遞資料給用戶端 {#passing-data-to-the-client}
 
