@@ -3,9 +3,9 @@ title: HTL 全域物件
 description: 了解 HTL 中的可列舉物件和 Java 支援的物件。
 exl-id: ca590b92-f1b3-4e44-a04a-a2c10dff256f
 index: false
-source-git-commit: a496d23277902a5cd573a6a8af770f27b0269f05
-workflow-type: ht
-source-wordcount: '203'
+source-git-commit: 391c5279f0021dbedaffb0c63e67e037d6c782e1
+workflow-type: tm+mt
+source-wordcount: '204'
 ht-degree: 100%
 
 ---
@@ -13,7 +13,7 @@ ht-degree: 100%
 
 # HTL 全域物件 {#htl-global-objects}
 
-HTL 允許開發人員存取許多實用的物件，且不必指定任何事。這些物件是可能透過 [Use-API](java-use-api.md) 引進的任何物件的補充。
+HTL 允許開發人員存取許多實用的物件，且不必指定任何事。這些物件是可能透過 [Use-API](https://experienceleague.adobe.com/zh-hant/docs/experience-manager-htl/content/java-use-api) 引進的任何物件的補充。
 
 >[!NOTE]
 >

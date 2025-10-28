@@ -3,10 +3,10 @@ title: HTL Java Use-API
 description: HTL Java Use-API 讓 HTL 檔案能夠存取自訂 Java 類別中的 helper 方法。
 exl-id: 9a9a2bf8-d178-4460-a3ec-cbefcfc09959
 index: false
-source-git-commit: a496d23277902a5cd573a6a8af770f27b0269f05
-workflow-type: ht
-source-wordcount: '1132'
-ht-degree: 100%
+source-git-commit: 391c5279f0021dbedaffb0c63e67e037d6c782e1
+workflow-type: tm+mt
+source-wordcount: '1133'
+ht-degree: 99%
 
 ---
 
@@ -195,7 +195,7 @@ public class Info extends WCMUsePojo {
 
 通常 [activate](https://developer.adobe.com/experience-manager/reference-materials/6-5/javadoc/com/adobe/cq/sightly/WCMUsePojo.html) 方法是用來根據目前上下文 (例如目前的請求和資源) 預先計算及儲存 (在成員變數中) HTL 程式碼中所需的值。
 
-`WCMUsePojo` 類別允許存取 HTL 檔案中可用的同一組設定語法物件 (請參閱文件「[全域物件](global-objects.md)」)。
+`WCMUsePojo` 類別允許存取 HTL 檔案中可用的同一組設定語法物件 (請參閱文件「[全域物件](https://experienceleague.adobe.com/en/docs/experience-manager-htl/content/global-objects)」)。
 
 在擴充 `WCMUsePojo` 的類別中，您可以使用設定語法物件的名稱來存取它們：
 
