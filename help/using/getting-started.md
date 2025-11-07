@@ -2,10 +2,10 @@
 title: HTL 快速入門
 description: 來認識 HTL，這是在 AEM 環境中使用 HTML 時首選且推薦使用的伺服器端範本系統，並了解此語言的主要概念及其基本結構。
 exl-id: c95eb1b3-3b96-4727-8f4f-d54e7136a8f9
-source-git-commit: 391c5279f0021dbedaffb0c63e67e037d6c782e1
+source-git-commit: 84db446b019d74070ce4af64091dd0674dab9d33
 workflow-type: tm+mt
-source-wordcount: '2084'
-ht-degree: 97%
+source-wordcount: '2077'
+ht-degree: 100%
 
 ---
 
@@ -24,19 +24,15 @@ HTML 範本語言 (HTL) 是 Adobe Experience Manager 中首選且推薦使用的
 
 >[!TIP]
 >
->本文件說明 HTL 的用途，並概觀其基本結構和概念。 若您對於特定語法有任何疑問，請參閱 [HTL 規格](https://experienceleague.adobe.com/zh-hant/docs/experience-manager-htl/content/specification)。
-
-<!--
-specification.md
--->
+>本文件說明 HTL 的用途，並概觀其基本結構和概念。 若您對於特定語法有任何疑問，請參閱 [HTL 規格](specification.md)。
 
 ## HTL 層 {#layers}
 
 在 AEM 中，會由許多層來定義 HTL。
 
-1. **[HTL規格](https://experienceleague.adobe.com/zh-hant/docs/experience-manager-htl/content/specification)** - HTL的規格是開放原始碼且不受平台限制，任何人均可自由實施。
-1. **[`Sling`HTL Scripting Engine](https://experienceleague.adobe.com/zh-hant/docs/experience-manager-htl/content/specification)** - `Sling`專案已建立HTL的參考實作，由AEM使用。
-1. **[AEM擴充功能](https://experienceleague.adobe.com/zh-hant/docs/experience-manager-htl/content/specification)** - AEM以`Sling` HTL Scripting Engine為基礎進行建置，為開發人員提供AEM專用的便利功能。
+1. **[HTL 規格](specification.md)** - HTL 是開放原始碼且不限平台使用的規格，任何人都可以自由實施。
+1. **[`Sling`HTL Scripting Engine](specification.md)** - `Sling` 專案已建立 HTL 實施參考，由 AEM 使用。
+1. **[AEM 擴充功能](specification.md)** - AEM 以 `Sling` HTL Scripting Engine 為基礎進行擴充，為開發人員提供 AEM 專用的便利功能。
 
 此 HTL 文件的重點是如何使用 HTL 開發 AEM 解決方案。 因此，它會提及所有三個層，必要時會連結外部資源。
 
@@ -63,7 +59,7 @@ HTML 範本語言會使用運算式語言將內容片段插入呈現的標記中
 * **區塊陳述式** - 如果您想有條件地顯示元素 `<h1>` 元素，則使用 `data-sly-test` HTML5 資料屬性。HTL 提供多個這類屬性，允許對任何 HTML 元素附加行為，而且全都有 `data-sly` 前置詞。
 * **運算式語言** - `${` 和 `}` 字元分隔 HTL 運算式。在執行階段，這些運算式會進行運算，並將其值插入傳出的 HTML 資料流中。
 
-有關兩種語法的詳細資訊，請參閱 [HTL 規格](https://experienceleague.adobe.com/zh-hant/docs/experience-manager-htl/content/specification)。
+有關兩種語法的詳細資訊，請參閱 [HTL 規格](specification.md)。
 
 ### SLY 元素 {#the-sly-element}
 
@@ -191,7 +187,7 @@ HTML 註解不可包含 HTL 註解，反之亦然。
 
 HTML 範本語言 (HTL) Java Use-API 讓 HTL 檔案能夠透過 `data-sly-use` 存取自訂 Java 類別中的 helper 方法。此方法可讓所有複雜的商業邏輯都封裝在 Java 程式碼中，而 HTL 程式碼只需處理直接標記的生產。
 
-如需詳細資訊，請參閱文件「[HTL Java Use-API](https://experienceleague.adobe.com/zh-hant/docs/experience-manager-htl/content/java-use-api)」。
+如需詳細資訊，請參閱文件「[HTL Java Use-API](java-use-api.md)」。
 
 ### 自動上下文感知逸出 {#automatic-context-aware-escaping}
 
@@ -308,7 +304,7 @@ use(function () {
 
 在此範例中，如果 HTML `head` 和 `body` 元素位於不同的檔案，則需要將 `clientlib.html` 範本載入到需要它的各個檔案中。
 
-在 [HTL 規格](https://experienceleague.adobe.com/zh-hant/docs/experience-manager-htl/content/specification) 中有關範本和呼叫陳述式的小節，詳細說明宣告及呼叫這類範本的運作方式。
+在 [HTL 規格](specification.md) 中有關範本和呼叫陳述式的小節，詳細說明宣告及呼叫這類範本的運作方式。
 
 ### 傳遞資料給用戶端 {#passing-data-to-the-client}
 

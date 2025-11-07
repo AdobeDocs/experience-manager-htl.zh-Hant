@@ -2,10 +2,10 @@
 title: HTL 概觀
 description: 了解 AEM 如何支援 HTL (HTML 範本語言) 以提供可增強安全性的高效企業級 Web 框架。對於不具備 Java 知識的 HTML 開發人員，該框架能讓他們更輕鬆參與 AEM 專案。
 exl-id: 5d06ff25-d681-4b95-8375-c28a8364eb7e
-source-git-commit: 391c5279f0021dbedaffb0c63e67e037d6c782e1
+source-git-commit: 84db446b019d74070ce4af64091dd0674dab9d33
 workflow-type: tm+mt
-source-wordcount: '680'
-ht-degree: 99%
+source-wordcount: '677'
+ht-degree: 100%
 
 ---
 
@@ -20,7 +20,7 @@ ht-degree: 99%
 
 HTML Template Language (HTL) 由 Adobe Experience Manager (AEM) 支援，旨在提供高生產力的企業級網頁框架，同時提升安全性。對於不具備 Java 知識的 HTML 開發人員，此語言還可讓他們更輕鬆參與 AEM 專案。
 
-[在 AEM 6.0 引進的](https://experienceleague.adobe.com/zh-hant/docs/experience-manager-htl/content/history) HTML 範本語言是 AEM 中首選且推薦使用的 HTML 伺服器端範本系統。對需要建立強大企業網站的網頁開發人員而言，HTML 範本語言有助於提升安全性和開發效率。
+[在 AEM 6.0 引進的](history.md) HTML 範本語言是 AEM 中首選且推薦使用的 HTML 伺服器端範本系統。對需要建立強大企業網站的網頁開發人員而言，HTML 範本語言有助於提升安全性和開發效率。
 
 <!--
 history.md
@@ -58,16 +58,8 @@ HTML 範本語言簡單易學，其功能刻意有所限制，以確保其簡單
 
 >[!VIDEO](https://video.tv.adobe.com/v/19504/?quality=9)
 
-請注意，影片中提到 HTL 時，均是使用[其以前的名稱 Sightly](https://experienceleague.adobe.com/zh-hant/docs/experience-manager-htl/content/history)。
-
-<!--
-history.md
--->
+請注意，影片中提到 HTL 時，均是使用[其以前的名稱 Sightly](history.md)。
 
 ## 後續步驟 {#next-steps}
 
-現在您已經了解了 HTL 的目標和優勢，因此可以開始使用此語言。請參閱[開始使用 HTML 範本語言](https://experienceleague.adobe.com/zh-hant/docs/experience-manager-htl/content/getting-started)。
-
-<!--
-getting-started.md
--->
+現在您已經了解了 HTL 的目標和優勢，因此可以開始使用此語言。請參閱[開始使用 HTML 範本語言](getting-started.md)。
