@@ -5,9 +5,9 @@ product: adobe experience manager
 git-repo: https://github.com/AdobeDocs/experience-manager-htl.zh-Hant
 index: y
 landing-page-name: experience-manager
-landing-page-breadcrumb-title: Experience Manager
+landing-page-breadcrumb-title: AEM
 recommendations: noDisplay
-source-git-commit: 50bd3425ac316adf8b4b2560d4782cd1d2efa9c2
+source-git-commit: 5c7a0f5795bcbb3b4a5fb34f2d49aad6aa31122f
 workflow-type: tm+mt
 source-wordcount: '81'
 ht-degree: 40%
