@@ -2,14 +2,16 @@
 title: 開發人員工具
 description: 了解這些工具，協助您使用 HTL 進行開發。
 exl-id: c5683ee4-a052-4a6f-8ad1-e18a4201414e
-index: false
-source-git-commit: a496d23277902a5cd573a6a8af770f27b0269f05
-workflow-type: ht
-source-wordcount: '78'
+index: no
+TQID: https://experienceleague.adobe.com/ip-WYHSwpvxvdvKMYXDFxXQwuTZjd9Hz1jBeybfmvmI
+product_v2: id: fd1f54a9-f50c-467d-8956-cebbaf4f3eb8
+role_v2: id: ff6a42d2-313e-452e-93a6-792e4fad9ff8
+source-git-commit: a9c0f2ea176e8226d8f3eb30ecff63ebafd3e2ae
+workflow-type: tm+mt
+source-wordcount: 78
 ht-degree: 100%
 
 ---
-
 
 # 開發人員工具 {#developer-tools}
 

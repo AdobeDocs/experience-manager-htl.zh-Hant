@@ -2,14 +2,16 @@
 title: HTL 規格
 description: 有關語法的詳細資訊請參閱 HTL 規格。
 exl-id: c0657476-4db6-4fad-ad87-9252b5003237
-index: false
-source-git-commit: 84db446b019d74070ce4af64091dd0674dab9d33
+index: no
+TQID: https://experienceleague.adobe.com/2SNWq2C9a1awkjaGhBmx7I3LgwcyhuSdcG26rodtHqU
+product_v2: id: fd1f54a9-f50c-467d-8956-cebbaf4f3eb8
+role_v2: id: ff6a42d2-313e-452e-93a6-792e4fad9ff8
+source-git-commit: a9c0f2ea176e8226d8f3eb30ecff63ebafd3e2ae
 workflow-type: tm+mt
-source-wordcount: '134'
+source-wordcount: 134
 ht-degree: 100%
 
 ---
-
 
 # HTL 規格 {#htl-specification}
 

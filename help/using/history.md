@@ -2,14 +2,16 @@
 title: HTL 歷史記錄
 description: 對於 AEM 的長期使用者，本文件說明 HTL 的背景、它如何取代 JSP 以及將名稱更改為 Sightly。
 exl-id: 00985b35-2130-4946-959a-0a09a34a0f05
-index: false
-source-git-commit: 84db446b019d74070ce4af64091dd0674dab9d33
+index: no
+TQID: https://experienceleague.adobe.com/GKmIxjLoe0Dv0-fU0z4cX62b8R2HqCPccATWfwhxPGI
+product_v2: id: fd1f54a9-f50c-467d-8956-cebbaf4f3eb8
+role_v2: id: ff6a42d2-313e-452e-93a6-792e4fad9ff8
+source-git-commit: a9c0f2ea176e8226d8f3eb30ecff63ebafd3e2ae
 workflow-type: tm+mt
-source-wordcount: '530'
+source-wordcount: 530
 ht-degree: 100%
 
 ---
-
 
 # HTL 歷史記錄 {#history-of-htl}
 
