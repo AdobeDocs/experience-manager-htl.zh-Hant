@@ -4,8 +4,10 @@ description: 對於 AEM 的長期使用者，本文件說明 HTL 的背景、它
 exl-id: 00985b35-2130-4946-959a-0a09a34a0f05
 index: no
 TQID: https://experienceleague.adobe.com/GKmIxjLoe0Dv0-fU0z4cX62b8R2HqCPccATWfwhxPGI
-product_v2: id: fd1f54a9-f50c-467d-8956-cebbaf4f3eb8
-role_v2: id: ff6a42d2-313e-452e-93a6-792e4fad9ff8
+product_v2:
+  - id: fd1f54a9-f50c-467d-8956-cebbaf4f3eb8
+role_v2:
+  - id: ff6a42d2-313e-452e-93a6-792e4fad9ff8
 source-git-commit: db51ea5e045d0666bb5cb749577791abfcda5226
 workflow-type: tm+mt
 source-wordcount: 530
