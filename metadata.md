@@ -2,7 +2,7 @@
 solution: Experience Manager
 type: Documentation
 product: adobe experience manager
-git-repo: https://github.com/AdobeDocs/experience-manager-htl.en
+git-repo: https://github.com/AdobeDocs/experience-manager-htl.zh-Hant
 index: true
 landing-page-name: experience-manager
 landing-page-breadcrumb-title: AEM
