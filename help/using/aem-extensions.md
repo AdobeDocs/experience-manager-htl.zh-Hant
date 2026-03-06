@@ -2,15 +2,13 @@
 title: AEM 擴充功能
 description: AEM 提供 AEM 之 HTL 規格擴充功能，方便作為開發人員的您使用。
 exl-id: d78cb84d-f958-45e2-9c6c-df86a68277d5
-index: no
+index: false
 TQID: https://experienceleague.adobe.com/DstGHNLbStXG1SHZgLhmMz2tYVV056CvxWOsl4tuGW4
-product_v2:
-  - id: fd1f54a9-f50c-467d-8956-cebbaf4f3eb8
-role_v2:
-  - id: ff6a42d2-313e-452e-93a6-792e4fad9ff8
-source-git-commit: a9c0f2ea176e8226d8f3eb30ecff63ebafd3e2ae
+product_v2: id: fd1f54a9-f50c-467d-8956-cebbaf4f3eb8
+role_v2: id: ff6a42d2-313e-452e-93a6-792e4fad9ff8
+source-git-commit: 944fa924e7ccba0a195b2c92584ab75df86b1f83
 workflow-type: tm+mt
-source-wordcount: 228
+source-wordcount: 325
 ht-degree: 100%
 
 ---
@@ -35,7 +33,7 @@ ht-degree: 100%
 
 ## `data-sly-resource` {#data-sly-resource}
 
-除了路徑和 `Resources` 以外，`data-sly-resource` 區塊元素也可以搭配 [`Maps`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html) 或 [`Records`](https://github.com/apache/sling-org-apache-sling-scripting-sightly-runtime/blob/master/src/main/java/org/apache/sling/scripting/sightly/Record.java) 運作。使用兩種方法都必須提供 `resourceName` 字串屬性。 我們使用它的值來建立一個 [Synthetic Resource](https://www.javadoc.io/doc/org.apache.sling/org.apache.sling.api/latest/org/apache/sling/api/resource/SyntheticResource.html) 並把它包含到演算格式文法中。其餘來自 `Record` 或 `Map` 的屬性若已傳到 `data-sly-resource`，則會當作正常的 `Resource` 屬性使用。如果地圖上缺少 `sling:resourceType` 屬性，我們會假設資源類型是 `resourceType` [運算式選項](https://github.com/adobe/htl-spec/blob/1.4/SPECIFICATION.md#229-resource)的值，或是驅動演算的目前資源的資源類型。
+除了路徑和 `Resources` 以外，`data-sly-resource` 區塊元素也可以搭配 [`Maps`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html) 或 [`Records`](https://github.com/apache/sling-org-apache-sling-scripting-sightly-runtime/blob/master/src/main/java/org/apache/sling/scripting/sightly/Record.java) 運作。 使用兩種方法都必須提供 `resourceName` 字串屬性。 我們使用它的值來建立一個 [Synthetic Resource](https://www.javadoc.io/doc/org.apache.sling/org.apache.sling.api/latest/org/apache/sling/api/resource/SyntheticResource.html) 並把它包含到演算格式文法中。 其餘來自 `Record` 或 `Map` 的屬性若已傳到 `data-sly-resource`，則會當作正常的 `Resource` 屬性使用。 如果地圖上缺少 `sling:resourceType` 屬性，我們會假設資源類型是 `resourceType` [運算式選項](https://github.com/adobe/htl-spec/blob/1.4/SPECIFICATION.md#229-resource)的值，或是驅動演算的目前資源的資源類型。
 
 假定下列指令碼範圍內可用的地圖/記錄屬性是 `map`：
 

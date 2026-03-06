@@ -2,22 +2,20 @@
 title: HTL 全域物件
 description: 了解 HTL 中的可列舉物件和 Java 支援的物件。
 exl-id: ca590b92-f1b3-4e44-a04a-a2c10dff256f
-index: no
+index: false
 TQID: https://experienceleague.adobe.com/zhQ4NTPQXgqIUNL9TeYk7sHqVQ5x-xWjps3OylhPJL4
-product_v2:
-  - id: fd1f54a9-f50c-467d-8956-cebbaf4f3eb8
-role_v2:
-  - id: ff6a42d2-313e-452e-93a6-792e4fad9ff8
-source-git-commit: a9c0f2ea176e8226d8f3eb30ecff63ebafd3e2ae
+product_v2: id: fd1f54a9-f50c-467d-8956-cebbaf4f3eb8
+role_v2: id: ff6a42d2-313e-452e-93a6-792e4fad9ff8
+source-git-commit: 944fa924e7ccba0a195b2c92584ab75df86b1f83
 workflow-type: tm+mt
-source-wordcount: 202
+source-wordcount: 277
 ht-degree: 100%
 
 ---
 
 # HTL 全域物件 {#htl-global-objects}
 
-HTL 允許開發人員存取許多實用的物件，且不必指定任何事。這些物件是可能透過 [Use-API](java-use-api.md) 引進的任何物件的補充。
+HTL 允許開發人員存取許多實用的物件，且不必指定任何事。 這些物件是可能透過 [Use-API](java-use-api.md) 引進的任何物件的補充。
 
 >[!NOTE]
 >
@@ -71,6 +69,6 @@ HTL 允許開發人員存取許多實用的物件，且不必指定任何事。�
 
 >[!NOTE]
 >
->[JavaScript Use API](https://github.com/adobe/htl-spec/blob/master/SPECIFICATION.md#42-javascript-use-api) 現已棄用，無法與 AEM as a Cloud Service 搭配使用。請改用 [Java Use API](java-use-api.md)。
+>[JavaScript Use API](https://github.com/adobe/htl-spec/blob/master/SPECIFICATION.md#42-javascript-use-api) 現已棄用，無法與 AEM as a Cloud Service 搭配使用。 請改用 [Java Use API](java-use-api.md)。
 >
 >如需有關已棄用和移除之功能的詳細資訊，請參閱 [AEM as a Cloud Service 發行說明](https://experienceleague.adobe.com/zh-hant/docs/experience-manager-cloud-service/content/release-notes/deprecated-removed-features)。

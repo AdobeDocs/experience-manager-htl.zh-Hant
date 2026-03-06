@@ -2,15 +2,13 @@
 title: HTL 歷史記錄
 description: 對於 AEM 的長期使用者，本文件說明 HTL 的背景、它如何取代 JSP 以及將名稱更改為 Sightly。
 exl-id: 00985b35-2130-4946-959a-0a09a34a0f05
-index: no
+index: false
 TQID: https://experienceleague.adobe.com/GKmIxjLoe0Dv0-fU0z4cX62b8R2HqCPccATWfwhxPGI
-product_v2:
-  - id: fd1f54a9-f50c-467d-8956-cebbaf4f3eb8
-role_v2:
-  - id: ff6a42d2-313e-452e-93a6-792e4fad9ff8
-source-git-commit: db51ea5e045d0666bb5cb749577791abfcda5226
+product_v2: id: fd1f54a9-f50c-467d-8956-cebbaf4f3eb8
+role_v2: id: ff6a42d2-313e-452e-93a6-792e4fad9ff8
+source-git-commit: 944fa924e7ccba0a195b2c92584ab75df86b1f83
 workflow-type: tm+mt
-source-wordcount: 530
+source-wordcount: 534
 ht-degree: 100%
 
 ---
@@ -25,7 +23,7 @@ HTML 範本語言 (HTL) 是 Adobe Experience Manager 中首選且推薦使用的
 
 ## HTL 優於 JSP {#htl-over-jsp}
 
-Adobe 建議，全新的 AEM 專案要使用 HTML 範本語言。原因是與 JSP 相比，此語言具有多種優勢。但如果是現有專案，只有在預估遷移比未來幾年維護現有 JSP 的工作量少時，遷移才有意義。
+Adobe 建議，全新的 AEM 專案要使用 HTML 範本語言。 原因是與 JSP 相比，此語言具有多種優勢。 但如果是現有專案，只有在預估遷移比未來幾年維護現有 JSP 的工作量少時，遷移才有意義。
 
 移至 HTL 不見得是全有或全無的選擇，因為使用 HTL 撰寫的元件與使用 JSP 或 ESP 撰寫的元件相容。 此方式表示現有專案可以為新元件使用 HTL，但同時可繼續為現有元件使用 JSP。
 
@@ -42,7 +40,7 @@ Adobe 建議，全新的 AEM 專案要使用 HTML 範本語言。原因是與 JS
 
 ### HTL 是否有任何 JSP 沒有的限制？ {#limitations}
 
-相較於 JSP，HTL 並沒有真正的限制，因為可使用 JSP 可以完成的事情應該也可以使用 HTL 達成。然而，HTL 的設計在許多方面上比 JSP 更嚴格。在單一 JSP 檔案中可以做到的內容可能需要分成 Java 類別或 JavaScript 檔案，這樣才能在 HTL 中做到。但這個方法通常需要確保邏輯與標記之間有良好的分離關注點。
+相較於 JSP，HTL 並沒有真正的限制，因為可使用 JSP 可以完成的事情應該也可以使用 HTL 達成。 然而，HTL 的設計在許多方面上比 JSP 更嚴格。 在單一 JSP 檔案中可以做到的內容可能需要分成 Java 類別或 JavaScript 檔案，這樣才能在 HTL 中做到。 但這個方法通常需要確保邏輯與標記之間有良好的分離關注點。
 
 ### HTL 是否支援 JSP 標記庫？ {#tag-libraries}
 
@@ -50,7 +48,7 @@ Adobe 建議，全新的 AEM 專案要使用 HTML 範本語言。原因是與 JS
 
 ### 是否可以在 AEM 專案上擴充 HTL 功能？ {#extended}
 
-否。HTL 具有可重複使用邏輯的強大擴充機制，利用這些邏輯 ([Use-API](#use-api-for-accessing-logic) 和標記 (範本和呼叫陳述式)) 可將專案的程式碼模組化。
+否。 HTL 具有可重複使用邏輯的強大擴充機制，利用這些邏輯 ([Use-API](#use-api-for-accessing-logic) 和標記 (範本和呼叫陳述式)) 可將專案的程式碼模組化。
 
 ### HTL 主要有哪些優點勝過 JSP？ {#benefits}
 
@@ -62,7 +60,7 @@ Adobe 建議，全新的 AEM 專案要使用 HTML 範本語言。原因是與 JS
 
 ## 名稱的含意為何？ {#what-is-in-a-name}
 
-在 AEM 6.0 和 6.1 中，HTL 稱為 **Sightly**。Adobe 將其重新命名為「**HTML 範本語言**」，或 **HTL**，以釐清此規格的用途，而且大體上符合 Adobe 的命名準則。此命名變更自 2016 年 8 月起生效，適用於 AEM 6.0 和更高版本。
+在 AEM 6.0 和 6.1 中，HTL 稱為 **Sightly**。 Adobe 將其重新命名為「**HTML 範本語言**」，或 **HTL**，以釐清此規格的用途，而且大體上符合 Adobe 的命名準則。 此命名變更自 2016 年 8 月起生效，適用於 AEM 6.0 和更高版本。
 
 >[!NOTE]
 >

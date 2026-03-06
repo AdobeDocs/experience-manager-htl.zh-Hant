@@ -2,18 +2,14 @@
 title: HTL Java Use-API
 description: HTL Java Use-API 讓 HTL 檔案能夠存取自訂 Java 類別中的 helper 方法。
 exl-id: 9a9a2bf8-d178-4460-a3ec-cbefcfc09959
-index: no
+index: false
 TQID: https://experienceleague.adobe.com/lCMIs0khRwcDzk97TQcNMMl4h7OZNf3KlK2YA4ANbZQ
-product_v2:
-  - id: fd1f54a9-f50c-467d-8956-cebbaf4f3eb8
-role_v2:
-  - id: ff6a42d2-313e-452e-93a6-792e4fad9ff8
-topic_v2:
-  - id: a732f735-539c-44c2-ad33-4aa4f7480b3a
-  - id: ea99d093-20a6-45a0-99ac-a82e7018eb37
-source-git-commit: a9c0f2ea176e8226d8f3eb30ecff63ebafd3e2ae
+product_v2: id: fd1f54a9-f50c-467d-8956-cebbaf4f3eb8
+role_v2: id: ff6a42d2-313e-452e-93a6-792e4fad9ff8
+topic_v2: id: a732f735-539c-44c2-ad33-4aa4f7480b3aid: ea99d093-20a6-45a0-99ac-a82e7018eb37
+source-git-commit: 944fa924e7ccba0a195b2c92584ab75df86b1f83
 workflow-type: tm+mt
-source-wordcount: 1132
+source-wordcount: 1643
 ht-degree: 100%
 
 ---
@@ -47,9 +43,9 @@ Use-API POJO 也可以透過以下簽章公開 public 方法 (稱為 init)：
 
 >[!NOTE]
 >
->這個範例經過簡化，以利說明其用途。在生產環境中，Adobe 建議您使用 [Sling 模型](https://sling.apache.org/documentation/bundles/models.html)。
+>這個範例經過簡化，以利說明其用途。 在生產環境中，Adobe 建議您使用 [Sling 模型](https://sling.apache.org/documentation/bundles/models.html)。
 
-從稱為 `info,` 且沒有 use 類別的 HTL 元件開始。它是由單一檔案 `/apps/my-example/components/info.html` 所組成
+從稱為 `info,` 且沒有 use 類別的 HTL 元件開始。 它是由單一檔案 `/apps/my-example/components/info.html` 所組成
 
 ```xml
 <div>
@@ -68,7 +64,7 @@ Use-API POJO 也可以透過以下簽章公開 public 方法 (稱為 init)：
 }
 ```
 
-當存取此內容時，就會執行 HTL 檔案。在 HTL 程式碼中，使用設定語法物件 `properties` 來存取目前資源的 `title` 和 `description` 並顯示出來。輸出檔 `/content/my-example.html` 如下：
+當存取此內容時，就會執行 HTL 檔案。 在 HTL 程式碼中，使用設定語法物件 `properties` 來存取目前資源的 `title` 和 `description` 並顯示出來。 輸出檔 `/content/my-example.html` 如下：
 
 ```html
 <div>
@@ -79,7 +75,7 @@ Use-API POJO 也可以透過以下簽章公開 public 方法 (稱為 init)：
 
 ### 新增 Use 類別 {#adding-a-use-class}
 
-`info` 元件目前不需要 use 類別來執行其簡單的函數。但在某些情況下，您需要做一些在 HTL 中無法完成的事，所以需要 use 類別。 但請牢記以下事項：
+`info` 元件目前不需要 use 類別來執行其簡單的函數。 但在某些情況下，您需要做一些在 HTL 中無法完成的事，所以需要 use 類別。 但請牢記以下事項：
 
 >[!NOTE]
 >
@@ -129,7 +125,7 @@ public class Info extends WCMUsePojo {
 
 Java 的 use 類別有兩種安裝方法：
 
-* **本機** - 在本機安裝中，Java 來源檔案與 HTL 檔案一起放在相同的存放庫資料夾中。來源會自動隨需編譯。 不需要個別的編譯或封裝步驟。
+* **本機** - 在本機安裝中，Java 來源檔案與 HTL 檔案一起放在相同的存放庫資料夾中。 來源會自動隨需編譯。 不需要個別的編譯或封裝步驟。
 * **套件** - 在套件安裝中，您必須使用標準 AEM 套件部署機制在 OSGi 套件中編譯及部署 Java 類別 (請參閱「[套件式 Java 類別](#bundled-java-class)」小節)。
 
 要知道什麼時候使用哪種方法，請記得以下兩個重點：
@@ -141,7 +137,7 @@ Java 的 use 類別有兩種安裝方法：
 
 ### Java 套件是存放庫路徑 {#java-package-is-repository-path}
 
-使用本機安裝時，use 類別的套件名稱必須與存放庫資料夾位置相符。套件名稱中的底線會取代路徑中的任何連字號。
+使用本機安裝時，use 類別的套件名稱必須與存放庫資料夾位置相符。 套件名稱中的底線會取代路徑中的任何連字號。
 
 在此情況下，`Info.java` 位於 `/apps/my-example/components/info`，所以封裝為 `apps.my_example.components.info`：
 
@@ -163,7 +159,7 @@ public class Info extends WCMUsePojo {
 
 ### 擴充 `WCMUsePojo` {#extending-wcmusepojo}
 
-雖然有許多方法可以將 Java 類別與 HTL 合併，最簡單的方法是擴充 `WCMUsePojo` 類別。例如 `/apps/my-example/component/info/Info.java`：
+雖然有許多方法可以將 Java 類別與 HTL 合併，最簡單的方法是擴充 `WCMUsePojo` 類別。 例如 `/apps/my-example/component/info/Info.java`：
 
 ```java
 package apps.my_example.components.info;
@@ -257,7 +253,7 @@ public class Info extends WCMUsePojo {
 
 ### `data-sly-use` 屬性 {#data-sly-use-attribute}
 
-`data-sly-use` 屬性是用來初始化 HTL 程式碼中的 use 類別。在範例中，`data-sly-use` 屬性會宣告使用的 `Info` 類別。您可以僅使用類別的本機名稱，因為您正在使用本機安裝 (已將 Java 來源檔案放在與 HTL 檔案相同的資料夾中)。 如果您之前是使用套件安裝，就必須指定完整類別名稱。
+`data-sly-use` 屬性是用來初始化 HTL 程式碼中的 use 類別。 在範例中，`data-sly-use` 屬性會宣告使用的 `Info` 類別。 您可以僅使用類別的本機名稱，因為您正在使用本機安裝 (已將 Java 來源檔案放在與 HTL 檔案相同的資料夾中)。 如果您之前是使用套件安裝，就必須指定完整類別名稱。
 
 請注意這個 `/apps/my-example/component/info/info.html` 範例的使用情況。
 
@@ -307,7 +303,7 @@ public class Info extends WCMUsePojo {
 
 >[!NOTE]
 >
->這個範例經過簡化，以利說明其用途。在生產環境中，Adobe 建議您使用 [Sling 模型](https://sling.apache.org/documentation/bundles/models.html)。
+>這個範例經過簡化，以利說明其用途。 在生產環境中，Adobe 建議您使用 [Sling 模型](https://sling.apache.org/documentation/bundles/models.html)。
 
 ## 超越基本知識 {#beyond-the-basics}
 
@@ -324,7 +320,7 @@ public class Info extends WCMUsePojo {
 
 ### 套件式 Java 類別 {#bundled-java-class}
 
-使用套件式 use 類別時，必須使用標準 OSGi 套件部署機制在 AEM 中編譯、封裝及部署該類別。與本機安裝不同，use 類別套件宣告應該以一般方式命名，如同此 `/apps/my-example/component/info/Info.java` 範例。
+使用套件式 use 類別時，必須使用標準 OSGi 套件部署機制在 AEM 中編譯、封裝及部署該類別。 與本機安裝不同，use 類別套件宣告應該以一般方式命名，如同此 `/apps/my-example/component/info/Info.java` 範例。
 
 ```java
 package org.example.app.components;
