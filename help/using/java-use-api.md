@@ -4,9 +4,13 @@ description: HTL Java Use-API 讓 HTL 檔案能夠存取自訂 Java 類別中的
 exl-id: 9a9a2bf8-d178-4460-a3ec-cbefcfc09959
 index: false
 TQID: https://experienceleague.adobe.com/lCMIs0khRwcDzk97TQcNMMl4h7OZNf3KlK2YA4ANbZQ
-product_v2: id: fd1f54a9-f50c-467d-8956-cebbaf4f3eb8
-role_v2: id: ff6a42d2-313e-452e-93a6-792e4fad9ff8
-topic_v2: id: a732f735-539c-44c2-ad33-4aa4f7480b3aid: ea99d093-20a6-45a0-99ac-a82e7018eb37
+product_v2:
+  - id: fd1f54a9-f50c-467d-8956-cebbaf4f3eb8
+role_v2:
+  - id: ff6a42d2-313e-452e-93a6-792e4fad9ff8
+topic_v2:
+  - id: a732f735-539c-44c2-ad33-4aa4f7480b3a
+  - id: ea99d093-20a6-45a0-99ac-a82e7018eb37
 source-git-commit: 944fa924e7ccba0a195b2c92584ab75df86b1f83
 workflow-type: tm+mt
 source-wordcount: 1643
