@@ -12,7 +12,7 @@ topic_v2:
   - id: a732f735-539c-44c2-ad33-4aa4f7480b3a
   - id: ea99d093-20a6-45a0-99ac-a82e7018eb37
 source-git-commit: 944fa924e7ccba0a195b2c92584ab75df86b1f83
-workflow-type: tm+mt
+workflow-type: ht
 source-wordcount: 1643
 ht-degree: 100%
 
