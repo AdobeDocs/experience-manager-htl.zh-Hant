@@ -4,9 +4,13 @@ description: 透過程式碼範例探索 HTL，包括 WKND 參考實施以及核
 exl-id: cdc0a525-e5d1-4d7f-97ae-b9192163caee
 index: false
 TQID: https://experienceleague.adobe.com/foH8KtBMNd7NcXvlb72iKqZoBbQEjgkW3CeNdxv-rzI
-product_v2: id: fd1f54a9-f50c-467d-8956-cebbaf4f3eb8
-role_v2: id: ff6a42d2-313e-452e-93a6-792e4fad9ff8
-topic_v2: id: c2bbb569-80c1-46a4-bbe4-60b91be32780id: f1155164-f021-47c9-b8ee-5319200aa334
+product_v2:
+  - id: fd1f54a9-f50c-467d-8956-cebbaf4f3eb8
+role_v2:
+  - id: ff6a42d2-313e-452e-93a6-792e4fad9ff8
+topic_v2:
+  - id: c2bbb569-80c1-46a4-bbe4-60b91be32780
+  - id: f1155164-f021-47c9-b8ee-5319200aa334
 source-git-commit: 944fa924e7ccba0a195b2c92584ab75df86b1f83
 workflow-type: ht
 source-wordcount: 143
