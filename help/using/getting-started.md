@@ -11,7 +11,7 @@ topic_v2:
   - id: a732f735-539c-44c2-ad33-4aa4f7480b3a
   - id: ea99d093-20a6-45a0-99ac-a82e7018eb37
 source-git-commit: f487047a68e98d1b089e0e7124ab91f3281d51ad
-workflow-type: ht
+workflow-type: tm+mt
 source-wordcount: 2153
 ht-degree: 100%
 
@@ -19,7 +19,7 @@ ht-degree: 100%
 
 # HTL 快速入門 {#getting-started-with-htl}
 
-HTML 範本語言 (HTL) 是 Adobe Experience Manager 中首選且推薦使用的 HTML 伺服器端範本系統。因為在所有 HTML 伺服器端範本系統中，HTL 檔案會指定 HTML 本身的內容、一些基本的表現邏輯，以及要在執行階段運算的變數，藉此定義傳送給瀏覽器的輸出。
+HTML 範本語言 (HTL) 是 Adobe Experience Manager 中首選且推薦使用的 HTML 伺服器端範本系統。 因為在所有 HTML 伺服器端範本系統中，HTL 檔案會指定 HTML 本身的內容、一些基本的表現邏輯，以及要在執行階段運算的變數，藉此定義傳送給瀏覽器的輸出。
 
 本文件概觀 HTL 的用途，並介紹其基本概念和語言結構。
 
