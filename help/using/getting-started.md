@@ -3,15 +3,11 @@ title: HTL 快速入門
 description: 來認識 HTL，這是在 AEM 環境中使用 HTML 時首選且推薦使用的伺服器端範本系統，並了解此語言的主要概念及其基本結構。
 exl-id: c95eb1b3-3b96-4727-8f4f-d54e7136a8f9
 TQID: https://experienceleague.adobe.com/6IcNpWu2-PLGresZ1H-HM9HAFL-dY5eF0OyIdXJbJ4s
-product_v2:
-  - id: fd1f54a9-f50c-467d-8956-cebbaf4f3eb8
-role_v2:
-  - id: ff6a42d2-313e-452e-93a6-792e4fad9ff8
-topic_v2:
-  - id: a732f735-539c-44c2-ad33-4aa4f7480b3a
-  - id: ea99d093-20a6-45a0-99ac-a82e7018eb37
+product_v2: id: fd1f54a9-f50c-467d-8956-cebbaf4f3eb8
+role_v2: id: ff6a42d2-313e-452e-93a6-792e4fad9ff8
+topic_v2: id: a732f735-539c-44c2-ad33-4aa4f7480b3aid: ea99d093-20a6-45a0-99ac-a82e7018eb37
 source-git-commit: f487047a68e98d1b089e0e7124ab91f3281d51ad
-workflow-type: ht
+workflow-type: tm+mt
 source-wordcount: 2153
 ht-degree: 100%
 
@@ -19,7 +15,7 @@ ht-degree: 100%
 
 # HTL 快速入門 {#getting-started-with-htl}
 
-HTML 範本語言 (HTL) 是 Adobe Experience Manager 中首選且推薦使用的 HTML 伺服器端範本系統。因為在所有 HTML 伺服器端範本系統中，HTL 檔案會指定 HTML 本身的內容、一些基本的表現邏輯，以及要在執行階段運算的變數，藉此定義傳送給瀏覽器的輸出。
+HTML 範本語言 (HTL) 是 Adobe Experience Manager 中首選且推薦使用的 HTML 伺服器端範本系統。 因為在所有 HTML 伺服器端範本系統中，HTL 檔案會指定 HTML 本身的內容、一些基本的表現邏輯，以及要在執行階段運算的變數，藉此定義傳送給瀏覽器的輸出。
 
 本文件概觀 HTL 的用途，並介紹其基本概念和語言結構。
 
