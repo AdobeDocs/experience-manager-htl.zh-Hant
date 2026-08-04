@@ -6,7 +6,8 @@ index: true
 landing-page-name: experience-manager
 landing-page-breadcrumb-title: AEM
 recommendations: noDisplay
-product_v2: id: fd1f54a9-f50c-467d-8956-cebbaf4f3eb8
+product_v2:
+  - id: fd1f54a9-f50c-467d-8956-cebbaf4f3eb8
 usetq: true
 source-git-commit: d9500886a302eafb90cb5ece6dec09849acd7ae2
 workflow-type: tm+mt
