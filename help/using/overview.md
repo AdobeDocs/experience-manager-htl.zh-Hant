@@ -2,20 +2,18 @@
 title: HTL 概觀
 description: 了解 AEM 如何支援 HTL (HTML 範本語言) 以提供可增強安全性的高效企業級 Web 框架。 對於不具備 Java 知識的 HTML 開發人員，該框架能讓他們更輕鬆參與 AEM 專案。
 exl-id: 5d06ff25-d681-4b95-8375-c28a8364eb7e
-TQID: https://experienceleague.adobe.com/aJOvBYeraXDv104qRJqUlp7d0as9YW1lSIg0EKaAUD0
+TQID: 'https://experienceleague.adobe.com/aJOvBYeraXDv104qRJqUlp7d0as9YW1lSIg0EKaAUD0'
 product_v2:
   - id: fd1f54a9-f50c-467d-8956-cebbaf4f3eb8
+    internal-label: Experience Manager
 role_v2:
   - id: ff6a42d2-313e-452e-93a6-792e4fad9ff8
-topic_v2:
-  - id: a732f735-539c-44c2-ad33-4aa4f7480b3a
-source-git-commit: a9c0f2ea176e8226d8f3eb30ecff63ebafd3e2ae
-workflow-type: ht
-source-wordcount: 716
+    internal-label: Developer
+source-git-commit: ad1e15465b8b969663842d4946a1fa182821bcc1
+workflow-type: tm+mt
+source-wordcount: '716'
 ht-degree: 100%
-
 ---
-
 # 概觀 {#overview}
 
 >[!TIP]
@@ -32,7 +30,7 @@ HTML Template Language (HTL) 由 Adobe Experience Manager (AEM) 支援，旨在�
 
 HTML 範本語言 (HTL) 會自動將內容感知轉義套用於所有輸出變數來加強網站安全性，使其比大多數其他範本系統更安全。 HTL 之所以能讓這個方法更安全，是因為其了解 HTML 語法，並運用相關知識，根據運算式在標記中的位置調整其所需的跳脫處理。 這個方法會造成放在 `href` 或 `src` 屬性中的運算式之跳脫處理方式，與放在其他屬性或其他地方的運算式不同。
 
-雖然使用 JSP 等範本語言可以達到相同結果，但開發人員必須手動操作，才能確保適當的逸出套用至每個變數。 由於套用的逸出只要一有遺漏或錯誤，就可能足以造成跨網站指令碼 (XSS) 出現弱點，因此 Adobe 決定使用 HTL 將此工作自動化。 如有必要，開發人員仍可在運算式上指定其他逸出，但使用 HTL 的話，預設行為更可能對應到希望的行為，減少發生錯誤的機率。
+雖然使用 JSP 等範本語言可以達到相同結果，但開發人員必須手動確保適當的逸出套用至每個變數。 由於套用的逸出只要一有遺漏或錯誤，就可能足以造成跨網站指令碼 (XSS) 漏洞，因此 Adobe 決定使用 HTL 將此工作自動化。 如有必要，開發人員仍可在運算式上指定其他逸出，但使用 HTL 的話，預設行為更可能對應到希望的行為，減少發生錯誤的機率。
 
 ## 簡化開發工作 {#simplified-development}
 
@@ -48,7 +46,7 @@ HTML 範本語言簡單易學，其功能刻意有所限制，以確保其簡單
 
 ![提高效率並降低成本](assets/chlimage_1.png)
 
-上圖說明 HTL 提升效率的下列成效:
+上圖說明 HTL 提升效率的下列成效：
 
 * **HTML / CSS / JS：** HTML 開發人員可以直接編輯 HTL 範本，讓前端設計直接在 AEM 元件上實施，而無需單獨實施。 這個方法可減少痛苦的迭代作業，裨益全端 Java 開發人員。
 * **JSP/HTL:** HTL 本身不需搭配任何 Java 知識，且容易撰寫，因此所有具備 HTML 專業的開發人員都能編輯這類範本。

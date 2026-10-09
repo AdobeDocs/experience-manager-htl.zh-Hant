@@ -2,21 +2,18 @@
 title: HTL 快速入門
 description: 來認識 HTL，這是在 AEM 環境中使用 HTML 時首選且推薦使用的伺服器端範本系統，並了解此語言的主要概念及其基本結構。
 exl-id: c95eb1b3-3b96-4727-8f4f-d54e7136a8f9
-TQID: https://experienceleague.adobe.com/6IcNpWu2-PLGresZ1H-HM9HAFL-dY5eF0OyIdXJbJ4s
+TQID: 'https://experienceleague.adobe.com/6IcNpWu2-PLGresZ1H-HM9HAFL-dY5eF0OyIdXJbJ4s'
 product_v2:
   - id: fd1f54a9-f50c-467d-8956-cebbaf4f3eb8
+    internal-label: Experience Manager
 role_v2:
   - id: ff6a42d2-313e-452e-93a6-792e4fad9ff8
-topic_v2:
-  - id: a732f735-539c-44c2-ad33-4aa4f7480b3a
-  - id: ea99d093-20a6-45a0-99ac-a82e7018eb37
-source-git-commit: f487047a68e98d1b089e0e7124ab91f3281d51ad
+    internal-label: Developer
+source-git-commit: ad1e15465b8b969663842d4946a1fa182821bcc1
 workflow-type: tm+mt
-source-wordcount: 2153
+source-wordcount: '2153'
 ht-degree: 100%
-
 ---
-
 # HTL 快速入門 {#getting-started-with-htl}
 
 HTML 範本語言 (HTL) 是 Adobe Experience Manager 中首選且推薦使用的 HTML 伺服器端範本系統。 因為在所有 HTML 伺服器端範本系統中，HTL 檔案會指定 HTML 本身的內容、一些基本的表現邏輯，以及要在執行階段運算的變數，藉此定義傳送給瀏覽器的輸出。
@@ -45,7 +42,7 @@ HTML 範本語言 (HTL) 是 Adobe Experience Manager 中首選且推薦使用的
 
 ## HTL 的基本概念 {#fundamental-concepts-of-htl}
 
-HTML 範本語言會使用運算式語言將內容片段插入呈現的標記中，並使用 HTML5 資料屬性來定義標記區塊上的陳述式 (例如條件或反覆運算)。 當 HTL 被編譯到 Java Servlet 中時，運算式和 HTL 資料屬性全都會在伺服器端進行評估，產生的 HTML 中看不到任何內容。
+HTML 範本語言會使用運算式語言將內容片段插入呈現的標記中，並使用 HTML5 資料屬性來定義標記區塊上的陳述式 (例如條件或反覆運算)。 當 HTL 被編譯到 Java Servlet 中時，運算式和 HTL 資料屬性全都會在伺服器端進行評估，因此在產生的 HTML 中不會留下任何可見的痕跡。
 
 >[!TIP]
 >
@@ -121,7 +118,7 @@ HTL 的核心概念是提供重複使用現有 HTML 元素，來定義區塊陳�
 <!-- An HTML Comment -->
 ```
 
-HTL 註解是有其他類似 JavaScript 語法的 HTML 註解。 處理器會完全忽略整個 HTL 註解及其中的所有內容，並從輸出中將其移除。
+HTL 註解是具有額外類似 JavaScript 語法的 HTML 註解。 處理器會完全忽略整個 HTL 註解及其中的所有內容，並從輸出中將其移除。
 
 不過，系統會傳遞標準 HTML 註解的內容，而且註解內的運算式會受到評估。
 
@@ -129,7 +126,7 @@ HTML 註解不可包含 HTL 註解，反之亦然。
 
 ### 特殊上下文 {#special-contexts}
 
-為了能夠充分利用 HTL，一定要了解根據 HTML 語法使用它的結果。
+為了能夠充分利用 HTL，務必要充分了解它以 HTML 語法為基礎所帶來的影響。
 
 如需詳細資訊，請參閱 HTL 規格的「[顯示格式文法](https://github.com/adobe/htl-spec/blob/1.4/SPECIFICATION.md#121-display-context)」一節。
 
@@ -149,7 +146,7 @@ HTML 註解不可包含 HTL 註解，反之亦然。
 * 指令碼元素
 * 樣式元素
 
-原因是因為這些上下文的內容是文字，而不是 HTML，而且包含的 HTML 元素會被視為簡單的字元資料。 所以如果沒有真正的 HTML 元素，也無法執行 `data-sly` 屬性。
+原因是這些上下文的內容是文字，而不是 HTML，而且包含的 HTML 元素會被視為簡單的字元資料。 所以如果沒有真正的 HTML 元素，也無法執行 `data-sly` 屬性。
 
 這方法聽起來限制很大。 但推薦優先使用此方法，因為 HTML 範本語言應該只產生有效的 HTML 輸出。 底下[用於存取邏輯的 Use-API](#use-api-for-accessing-logic) 一節會介紹如何從範本呼叫其他邏輯，可以在需要為這些上下文準備複雜輸出時使用它。 若要將資料從後端傳送到前端指令碼，請使用元件的邏輯產生 JSON 字串，並使用簡單的 HTL 運算式將其放置在資料屬性中。
 
@@ -192,7 +189,7 @@ HTML 註解不可包含 HTL 註解，反之亦然。
 
 ### 用於存取邏輯的 Use-API {#use-api-for-accessing-logic}
 
-HTML 範本語言 (HTL) Java Use-API 讓 HTL 檔案能夠透過 `data-sly-use` 存取自訂 Java 類別中的 helper 方法。 此方法可讓所有複雜的商業邏輯都封裝在 Java 程式碼中，而 HTL 程式碼只需處理直接標記的生產。
+HTML 範本語言 (HTL) Java Use-API 讓 HTL 檔案能夠透過 `data-sly-use` 存取自訂 Java 類別中的 helper 方法。 此方法可讓所有複雜的商業邏輯都封裝在 Java 程式碼中，而 HTL 程式碼只需處理直接標記的產生。
 
 如需詳細資訊，請參閱文件「[HTL Java Use-API](java-use-api.md)」。
 
@@ -210,7 +207,7 @@ HTML 範本語言 (HTL) Java Use-API 讓 HTL 檔案能夠透過 `data-sly-use` �
 
 在大多數的範本語言中，此範例可能會產生跨網站指令碼 (XSS) 安全漏洞，因為即便所有變數都自動進行 HTML 逸出，`href` 屬性還是必須專門進行 URL 逸出。 這種遺漏是最常見的錯誤之一，因為很容易被忘記，而且很難藉由自動化方式發現。
 
-為了解決此問題，HTML 範本語言會根據每個變數在設定語法中的位置自動跳脫。 此方法之所以可行，是因為 HTL 了解 HTML 的語法。
+為了解決此問題，HTML 範本語言會根據每個變數所在的內容脈絡自動跳脫。 此方法之所以可行，是因為 HTL 了解 HTML 的語法。
 
 假設有以下 `logic.js` 檔案：
 
@@ -224,7 +221,7 @@ use(function () {
 });
 ```
 
-然後最初範例會產生以下輸出：
+最初的範例會產生以下輸出：
 
 ```xml
 <p>
@@ -248,21 +245,21 @@ use(function () {
 
 如果 `class` 屬性 (Property) 的值剛好是空的，則 HTML 範本語言會自動從輸出中移除整個 `class` 屬性 (Attribute)。
 
-同樣的，這個方法之所以可行，是因為 HTL 了解 HTML 語法，而且只有在屬性值不是空白的情況下，可以有條件地顯示具有動態值的屬性。 原因是非常方便，因為這可以避免在屬性周圍增加條件區塊，而這些區塊可能讓標記變成無效和無法讀取。
+同樣的，這個方法之所以可行，是因為 HTL 了解 HTML 語法，而且只有在屬性值不是空白的情況下，可以有條件地顯示具有動態值的屬性。 這樣做非常方便，因為這可以避免在屬性周圍加入條件區塊，否則會讓標記變得無效且難以閱讀。
 
 此外，放在運算式中的變數類型很重要：
 
 * **字串：**
-   * **不是空的：**&#x200B;將字串設為屬性值。
-   * **空的：**&#x200B;完全移除屬性。
+  * **不是空的：**&#x200B;將字串設為屬性值。
+  * **空的：**&#x200B;完全移除屬性。
 
 * **數字：**&#x200B;將值設為屬性值。
 
 * **布林值：**
-   * **true：**&#x200B;顯示不含值的屬性 (當作布林值 HTML 屬性)
-   * **false：**&#x200B;完全移除屬性。
+  * **true：**&#x200B;顯示不含值的屬性 (當作布林值 HTML 屬性)
+  * **false：**&#x200B;完全移除屬性。
 
-以下範例說明布林值運算式如何允許控制布林值 HTML 屬性：
+以下範例說明布林值運算式如何控制布林值 HTML 屬性：
 
 ```xml
 <input type="checkbox" checked="${properties.isChecked}"/>
@@ -282,7 +279,7 @@ use(function () {
 * **`js`** - 僅載入參照的用戶端程式庫的 JavaScript 檔案。
 * **`all`** - 載入參照的用戶端程式庫的所有檔案 (CSS 和 JavaScript)。
 
-每個 helper 範本都需要 `categories` 選項來參照所需的用戶端程式庫。 該選項可以是字串值的陣列，或是一個包含以逗號分隔值清單的字串。
+每個 helper 範本都需要 `categories` 選項來參照所需的用戶端程式庫。 該選項可以是字串值的陣列，或是一個包含以逗號分隔的值清單的字串。
 
 以下是兩個簡短的範例。
 
@@ -338,7 +335,7 @@ use(function () {
 });
 ```
 
-透過上述方法，不難想像用戶端 JavaScript 如何存取該屬性，然後再次剖析 JSON。 這種方法會將對應的 JavaScript 放入用戶端資料庫中，例如：
+透過上述方法，不難想像用戶端 JavaScript 如何存取該屬性，然後再次剖析 JSON。 這種方法會將對應的 JavaScript 放入用戶端程式庫中，例如：
 
 ```javascript
 var elements = document.querySelectorAll("[data-json]");
