@@ -3,32 +3,29 @@ title: HTL Java Use-API
 description: HTL Java Use-API 讓 HTL 檔案能夠存取自訂 Java 類別中的 helper 方法。
 exl-id: 9a9a2bf8-d178-4460-a3ec-cbefcfc09959
 index: false
-TQID: https://experienceleague.adobe.com/lCMIs0khRwcDzk97TQcNMMl4h7OZNf3KlK2YA4ANbZQ
+TQID: 'https://experienceleague.adobe.com/lCMIs0khRwcDzk97TQcNMMl4h7OZNf3KlK2YA4ANbZQ'
 product_v2:
   - id: fd1f54a9-f50c-467d-8956-cebbaf4f3eb8
+    internal-label: Experience Manager
 role_v2:
   - id: ff6a42d2-313e-452e-93a6-792e4fad9ff8
-topic_v2:
-  - id: a732f735-539c-44c2-ad33-4aa4f7480b3a
-  - id: ea99d093-20a6-45a0-99ac-a82e7018eb37
-source-git-commit: 944fa924e7ccba0a195b2c92584ab75df86b1f83
-workflow-type: ht
-source-wordcount: 1643
+    internal-label: Developer
+source-git-commit: ad1e15465b8b969663842d4946a1fa182821bcc1
+workflow-type: tm+mt
+source-wordcount: '1643'
 ht-degree: 100%
-
 ---
-
 # HTL Java Use-API {#htl-java-use-api}
 
 HTL Java Use-API 讓 HTL 檔案能夠存取自訂 Java 類別中的 helper 方法。
 
 ## 使用案例 {#use-case}
 
-HTL Java Use-API 讓 HTL 檔案能夠透過 `data-sly-use` 存取自訂 Java 類別中的 helper 方法。 這個方法可讓所有複雜的商業邏輯都封裝在 Java 程式碼中，而 HTL 程式碼只需處理直接標記的生產。
+HTL Java Use-API 讓 HTL 檔案能夠透過 `data-sly-use` 存取自訂 Java 類別中的 helper 方法。 這個方法可讓所有複雜的商業邏輯都封裝在 Java 程式碼中，而 HTL 程式碼只需處理直接標記生產。
 
 Java Use-API 物件可以是簡單 POJO，由特定實作透過 POJO 的預設建構函式具現化。
 
-Use-API POJO 也可以透過以下簽章公開 public 方法 (稱為 init)：
+Use-API POJO 也可以公開名為 init 的 public 方法，其簽章如下：
 
 ```java
     /**
@@ -43,7 +40,7 @@ Use-API POJO 也可以透過以下簽章公開 public 方法 (稱為 init)：
 
 ## 簡單範例 {#a-simple-example}
 
-本範例說明 Use-API 的使用情況。
+本範例說明如何使用 Use-API。
 
 >[!NOTE]
 >
@@ -125,11 +122,11 @@ public class Info extends WCMUsePojo {
 
 現在，我們來看看程式碼各個部分。
 
-### 本機與套件 Java 類別 {#local-vs-bundle-java-class}
+### 本機與組合包 Java 類別 {#local-vs-bundle-java-class}
 
 Java 的 use 類別有兩種安裝方法：
 
-* **本機** - 在本機安裝中，Java 來源檔案與 HTL 檔案一起放在相同的存放庫資料夾中。 來源會自動隨需編譯。 不需要個別的編譯或封裝步驟。
+* **本機** - 在本機安裝中，Java 來源檔案與 HTL 檔案一起放在相同的存放庫資料夾中。 來源會自動隨選編譯。 不需要個別的編譯或封裝步驟。
 * **套件** - 在套件安裝中，您必須使用標準 AEM 套件部署機制在 OSGi 套件中編譯及部署 Java 類別 (請參閱「[套件式 Java 類別](#bundled-java-class)」小節)。
 
 要知道什麼時候使用哪種方法，請記得以下兩個重點：
@@ -208,7 +205,7 @@ public class Info extends WCMUsePojo {
 
 [`<T> T get(String name, Class<T> type)`](https://developer.adobe.com/experience-manager/reference-materials/6-5/javadoc/com/adobe/cq/sightly/WCMUsePojo.html)
 
-或者，您可以使用本表格所列的適當的便利方法，直接存取常用的設定語法物件。
+或者，您可以使用本表格所列的適當便利方法，直接存取常用的內容脈絡物件。
 
 | 物件 | 便利方法 |
 |---|---|
@@ -230,7 +227,7 @@ public class Info extends WCMUsePojo {
 
 ### Getter 方法 {#getter-methods}
 
-在 use 類別初始化後，HTL 檔案就會執行。 在這個階段中，HTL 通常會拉入 use 類別的各種成員變數的狀態，並加以呈現。
+在 use 類別初始化後，就會執行 HTL 檔案。 在這個階段中，HTL 通常會擷取 use 類別各種成員變數的狀態，並加以呈現。
 
 若要允許從 HTL 檔案內部存取這些值，您必須根據以下命名慣例在 use 類別中定義自訂 getter 方法：
 
@@ -257,7 +254,7 @@ public class Info extends WCMUsePojo {
 
 ### `data-sly-use` 屬性 {#data-sly-use-attribute}
 
-`data-sly-use` 屬性是用來初始化 HTL 程式碼中的 use 類別。 在範例中，`data-sly-use` 屬性會宣告使用的 `Info` 類別。 您可以僅使用類別的本機名稱，因為您正在使用本機安裝 (已將 Java 來源檔案放在與 HTL 檔案相同的資料夾中)。 如果您之前是使用套件安裝，就必須指定完整類別名稱。
+`data-sly-use` 屬性是用來初始化 HTL 程式碼中的 use 類別。 在範例中，`data-sly-use` 屬性會宣告使用的 `Info` 類別。 您可以僅使用類別的本機名稱，因為您正在使用本機安裝 (已將 Java 來源檔案放在與 HTL 檔案相同的資料夾中)。 如果您之前是使用組合包安裝，就必須指定完整類別名稱。
 
 請注意這個 `/apps/my-example/component/info/info.html` 範例的使用情況。
 
@@ -311,20 +308,20 @@ public class Info extends WCMUsePojo {
 
 ## 超越基本知識 {#beyond-the-basics}
 
-本節進一步介紹更多功能，比之前敘述的範例更加深入。
+本節介紹一些先前所述範例之外的其他功能。
 
 * 傳遞參數給 use 類別
 * 套件式 Java use 類別
 
 ### 傳遞參數 {#passing-parameters}
 
-在初始化之後，可以將參數傳遞給 use 類別。
+初始化時，可以將參數傳遞給 use 類別。
 
 如需詳細資訊，請參閱 `Sling` [HTL Scripting Engine 文件](https://sling.apache.org/documentation/bundles/scripting/scripting-htl.html#passing-parameters-to-java-use-objects)。
 
 ### 套件式 Java 類別 {#bundled-java-class}
 
-使用套件式 use 類別時，必須使用標準 OSGi 套件部署機制在 AEM 中編譯、封裝及部署該類別。 與本機安裝不同，use 類別套件宣告應該以一般方式命名，如同此 `/apps/my-example/component/info/Info.java` 範例。
+使用組合包式 use 類別時，必須使用標準 OSGi 組合包部署機制在 AEM 中編譯、封裝及部署該類別。 與本機安裝不同，use 類別套件宣告應該以一般方式命名，如同此 `/apps/my-example/component/info/Info.java` 範例。
 
 ```java
 package org.example.app.components;
