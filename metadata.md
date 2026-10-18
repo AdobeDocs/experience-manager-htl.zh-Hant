@@ -8,14 +8,13 @@ landing-page-breadcrumb-title: AEM
 recommendations: noDisplay
 product_v2:
   - id: fd1f54a9-f50c-467d-8956-cebbaf4f3eb8
+    internal-label: "Experience Manager"
 usetq: true
 source-git-commit: d9500886a302eafb90cb5ece6dec09849acd7ae2
 workflow-type: tm+mt
-source-wordcount: 86
+source-wordcount: '80'
 ht-degree: 2%
-
 ---
-
 
 # 內部使用的中繼資料
 
